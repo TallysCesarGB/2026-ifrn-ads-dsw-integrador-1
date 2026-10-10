@@ -1,0 +1,2 @@
+TMDB_API_KEY=ad5fabcbb64e9c338be44a544862772e
+DATABASE_URL=postgres://cineclub:cineclub@localhost:5432/cineclub

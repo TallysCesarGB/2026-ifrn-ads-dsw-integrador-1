@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=cineclub
+POSTGRES_USER=YQiJFdWDrpcdXDLWundcbxMRztJCvcQp
+POSTGRES_PASSWORD=OC1mUAZW6QEsHEA77FhVqTTBnC3a33G27Kr1m815kbdsX6pnFIT4TV4ZZgvq7zhR
