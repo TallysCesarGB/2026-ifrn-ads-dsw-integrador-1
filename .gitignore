@@ -65,7 +65,7 @@ target/
 .venv
 venv/
 ENV/
-.envs/local/.tmdb
+.envs/.local/.tmdb
 
 # Rope project settings
 .ropeproject
