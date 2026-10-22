@@ -47,6 +47,24 @@ class UserSerializer(serializers.ModelSerializer):
         read_only_fields = fields
 
 
+class PublicUserSerializer(UserSerializer):
+    """Perfil público: os mesmos dados do UserSerializer, sem o e-mail."""
+
+    class Meta(UserSerializer.Meta):
+        fields = [
+            "id",
+            "username",
+            "display_name",
+            "bio",
+            "avatar_url",
+            "followers_count",
+            "following_count",
+            "posts_count",
+            "date_joined",
+        ]
+        read_only_fields = fields
+
+
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, validators=[validate_password])
     display_name = serializers.CharField(

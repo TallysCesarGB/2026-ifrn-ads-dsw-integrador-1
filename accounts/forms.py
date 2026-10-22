@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 
 from .models import Profile
@@ -28,7 +29,6 @@ class RegisterForm(forms.Form):
     )
     password = forms.CharField(
         label="Senha",
-        min_length=6,
         widget=forms.PasswordInput(attrs={"placeholder": "••••••••"}),
     )
 
@@ -43,6 +43,18 @@ class RegisterForm(forms.Form):
         if User.objects.filter(email__iexact=email).exists():
             raise ValidationError("Esse e-mail já está cadastrado.")
         return email
+
+    def clean_password(self):
+        """Aplica as mesmas regras de senha da API (AUTH_PASSWORD_VALIDATORS):
+        mínimo de 8 caracteres, não pode ser comum, só números ou parecida
+        com o username/e-mail."""
+        password = self.cleaned_data["password"]
+        candidate = User(
+            username=self.cleaned_data.get("username", ""),
+            email=self.cleaned_data.get("email", ""),
+        )
+        validate_password(password, user=candidate)
+        return password
 
     def save(self):
         data = self.cleaned_data
