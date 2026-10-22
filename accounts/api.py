@@ -14,6 +14,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .models import Follow
 from .serializers import FollowActionSerializer
+from .serializers import PublicUserSerializer
 from .serializers import RegisterSerializer
 from .serializers import UserSerializer
 
@@ -101,7 +102,7 @@ class UserDetailView(generics.RetrieveAPIView):
     """GET /api/v1/users/{username}/"""
 
     queryset = User.objects.select_related("profile")
-    serializer_class = UserSerializer
+    serializer_class = PublicUserSerializer
     lookup_field = "username"
     permission_classes = [permissions.AllowAny]
 
@@ -109,7 +110,7 @@ class UserDetailView(generics.RetrieveAPIView):
 class UserSearchView(generics.ListAPIView):
     """GET /api/v1/users/search/?q=tallys"""
 
-    serializer_class = UserSerializer
+    serializer_class = PublicUserSerializer
     permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):

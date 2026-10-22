@@ -82,3 +82,22 @@ class TestUserSearchAPI:
         assert response.status_code == 200
         usernames = [u["username"] for u in response.data["results"]]
         assert "maria" in usernames
+
+
+@pytest.mark.django_db
+class TestPublicUserPrivacy:
+    def test_user_detail_hides_email(self, api_client, other_user):
+        url = reverse("api-user-detail", kwargs={"username": other_user.username})
+        response = api_client.get(url)
+        assert response.status_code == 200
+        assert "email" not in response.data
+
+    def test_user_search_hides_email(self, api_client, other_user):
+        response = api_client.get(reverse("api-user-search") + "?q=maria")
+        assert response.status_code == 200
+        assert response.data["results"]
+        assert all("email" not in u for u in response.data["results"])
+
+    def test_me_still_returns_own_email(self, api_auth_client, user):
+        response = api_auth_client.get(reverse("api-me"))
+        assert response.data["email"] == user.email
