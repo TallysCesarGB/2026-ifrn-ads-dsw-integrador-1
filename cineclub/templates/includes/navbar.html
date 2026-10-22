@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <a href="{% url 'posts:feed' %}" class="brand">🎬 CineClub</a>
+  <div class="navbar-actions">
+    <a href="{% url 'posts:feed' %}"
+       class="nav-btn {% if request.resolver_match.url_name == 'feed' %}active{% endif %}">Feed</a>
+    <a href="{% url 'posts:new_post' %}" class="btn-gold">+ Indicar</a>
+    <a href="{% url 'accounts:profile' username=user.username %}">
+      <img src="{{ user.profile.avatar_url }}" alt="avatar" class="avatar-nav" />
+    </a>
+    <form method="post"
+          action="{% url 'accounts:logout' %}"
+          style="display:inline">
+      {% csrf_token %}
+      <button type="submit" class="logout-btn" title="Sair">⏻</button>
+    </form>
+  </div>
+</nav>

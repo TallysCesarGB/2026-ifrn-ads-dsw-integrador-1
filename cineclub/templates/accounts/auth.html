@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Entrar — CineClub{% endblock %}
+{% block content %}
+  <div class="auth-shell">
+    <div class="auth-box">
+      <div class="auth-logo">
+        <span class="brand">🎬 CineClub</span>
+        <div class="tagline">A rede social para quem ama cinema</div>
+      </div>
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <a href="?mode=login" class="{% if mode == 'login' %}active{% endif %}">Entrar</a>
+          <a href="?mode=register"
+             class="{% if mode == 'register' %}active{% endif %}">Criar conta</a>
+        </div>
+        {% if mode == "register" %}
+          <form method="post" action="?mode=register">
+            {% csrf_token %}
+            <input type="hidden" name="mode" value="register" />
+            <div class="field">
+              <label>Nome de exibição</label>
+              {{ register_form.display_name }}
+              {{ register_form.display_name.errors }}
+            </div>
+            <div class="field">
+              <label>Username</label>
+              {{ register_form.username }}
+              {{ register_form.username.errors }}
+            </div>
+            <div class="field">
+              <label>E-mail</label>
+              {{ register_form.email }}
+              {{ register_form.email.errors }}
+            </div>
+            <div class="field">
+              <label>Senha</label>
+              {{ register_form.password }}
+              {{ register_form.password.errors }}
+            </div>
+            <button type="submit" class="submit-btn">Criar minha conta</button>
+          </form>
+        {% else %}
+          <form method="post" action="?mode=login">
+            {% csrf_token %}
+            <input type="hidden" name="mode" value="login" />
+            <div class="field">
+              <label>E-mail</label>
+              {{ login_form.username }}
+            </div>
+            <div class="field">
+              <label>Senha</label>
+              {{ login_form.password }}
+            </div>
+            {% if login_form.non_field_errors %}
+              <div class="field">
+                <ul class="errorlist">
+                  {{ login_form.non_field_errors }}
+                </ul>
+              </div>
+            {% endif %}
+            <button type="submit" class="submit-btn">Entrar</button>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
