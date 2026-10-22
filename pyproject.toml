@@ -21,9 +21,11 @@ dependencies = [
   "django-cors-headers==4.9.0",
   "django-crispy-forms==2.7",
   "django-environ==0.14.0",
+  "django-filter==26.1",
   "django-model-utils==5.0.0",
   "django-redis==7.0.0",
   "djangorestframework==3.18.1",
+  "djangorestframework-simplejwt==5.5.1",
   "drf-spectacular==0.30.0",
   "gunicorn==26.2.0",
   "hiredis==3.4.2",
@@ -31,6 +33,7 @@ dependencies = [
   "psycopg[c]==3.3.6",
   "python-slugify==9.1.2",
   "redis==8.1.0",
+  "requests==2.34.2",
   "whitenoise==6.12.0",
 ]
 
@@ -45,12 +48,14 @@ dev = [
   "djangorestframework-stubs==3.18.1",
   "djlint==1.46.4",
   "factory-boy==3.3.3",
+  "faker==40.37.0",
   "ipdb==0.13.13",
   "mypy==2.4.0",
   "pre-commit==4.6.2",
   "psycopg[c]==3.3.6",
   "pytest==9.1.1",
   "pytest-django==4.14.0",
+  "pytest-mock==3.15.1",
   "pytest-sugar==1.1.1",
   "ruff==0.16.10",
   "sphinx==9.1.0",
@@ -69,7 +74,7 @@ close_void_tags = true
 format_css = true
 format_js = true
 custom_blocks = "element,slot"
-ignore = "H006,H030,H031"
+ignore = "H006,H021,H030,H031"
 css.indent_size = 2
 js.indent_size = 2
 
@@ -137,6 +142,20 @@ lint.ignore = [
   # of types for comparison.
   # Deactivated because it can make the code slow:
   # https://github.com/astral-sh/ruff/issues/7871
+]
+# Regras ajustadas ao estilo do CineClub
+lint.extend-ignore = [
+  "EM101",  # mensagens de erro em português direto no raise (padrão Django)
+  "EM102",
+  "TRY003",
+]
+lint.per-file-ignores."**/tests/*" = [
+  "PLR2004", # comparar status code com 200/302/404 é o normal em teste
+  "S106",    # senhas fixas são de teste
+]
+lint.per-file-ignores."conftest.py" = [
+  "PLC0415", # import dentro da fixture evita import circular entre apps
+  "S106",
 ]
 lint.isort.force-single-line = true
 

@@ -4,25 +4,23 @@ from django.contrib import admin
 from django.urls import include
 from django.urls import path
 from django.views import defaults as default_views
-from django.views.generic import TemplateView
 from drf_spectacular.views import SpectacularAPIView
+from drf_spectacular.views import SpectacularRedocView
 from drf_spectacular.views import SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/",
-        TemplateView.as_view(template_name="pages/about.html"),
-        name="about",
-    ),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("cineclub.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
-    # ...
+    # allauth fica fora do caminho "accounts/", que agora é do CineClub
+    path("allauth/", include("allauth.urls")),
+    # Site do CineClub (Django Templates)
+    path("", include("posts.urls")),
+    path("accounts/", include("accounts.urls")),
+    path("filmes/", include("films.urls")),
+    path("avaliacoes/", include("ratings.urls")),
     # Media files
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]
@@ -33,11 +31,22 @@ urlpatterns += [
     path("api/", include("config.api_router")),
     # DRF auth token
     path("api/auth-token/", obtain_auth_token, name="obtain_auth_token"),
+    # API REST v1 do CineClub
+    path("api/v1/auth/", include("accounts.api_urls")),
+    path("api/v1/", include("accounts.user_api_urls")),
+    path("api/v1/", include("posts.api_urls")),
+    path("api/v1/", include("films.api_urls")),
+    path("api/v1/", include("ratings.api_urls")),
     path("api/schema/", SpectacularAPIView.as_view(), name="api-schema"),
     path(
         "api/docs/",
         SpectacularSwaggerView.as_view(url_name="api-schema"),
         name="api-docs",
+    ),
+    path(
+        "api/redoc/",
+        SpectacularRedocView.as_view(url_name="api-schema"),
+        name="api-redoc",
     ),
 ]
 

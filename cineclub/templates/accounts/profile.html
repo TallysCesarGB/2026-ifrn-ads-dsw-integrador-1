@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}@{{ profile_user.username }} — CineClub{% endblock %}
+{% block content %}
+  <div class="container-medium">
+    <div class="profile-header">
+      <a href="{% url 'posts:feed' %}"
+         class="back-btn"
+         style="margin-bottom:16px;
+                display:inline-block">←</a>
+      <div class="profile-top">
+        <div class="profile-avatar-wrap">
+          <img src="{{ profile.avatar_url }}" alt="{{ profile_user.username }}" />
+          {% if is_me %}
+            <button class="profile-avatar-edit"
+                    id="avatarEditBtn"
+                    title="Trocar foto"
+                    type="button">📷</button>
+          {% endif %}
+        </div>
+        <div style="flex:1;min-width:0;">
+          {% if is_me %}
+            <form method="post"
+                  enctype="multipart/form-data"
+                  id="editProfileForm"
+                  style="{% if not request.GET.edit %}display:none{% endif %}">
+              {% csrf_token %}
+              <div class="field">{{ edit_form.display_name }}</div>
+              <div class="field">{{ edit_form.bio }}</div>
+              <div class="field" style="display:none;">{{ edit_form.avatar }}</div>
+              <div style="display:flex;gap:8px;">
+                <button type="submit" class="btn-gold">Salvar</button>
+                <button type="button" class="trade-btn" id="cancelEditBtn">Cancelar</button>
+              </div>
+            </form>
+            <div id="profileView">
+              <h2 class="serif"
+                  style="font-size:20px;
+                         font-weight:900;
+                         color:var(--fg);
+                         margin:0 0 2px">{{ profile.display_name_or_username }}</h2>
+              <div style="font-size:13px;color:var(--muted-2);margin-bottom:6px;">@{{ profile_user.username }}</div>
+              {% if profile.bio %}<div style="font-size:13px;
+            color:#999;
+            line-height:1.5;
+            margin-bottom:10px">{{ profile.bio }}</div>{% endif %}
+            </div>
+          {% else %}
+            <h2 class="serif"
+                style="font-size:20px;
+                       font-weight:900;
+                       color:var(--fg);
+                       margin:0 0 2px">{{ profile.display_name_or_username }}</h2>
+            <div style="font-size:13px;color:var(--muted-2);margin-bottom:6px;">@{{ profile_user.username }}</div>
+            {% if profile.bio %}<div style="font-size:13px;
+            color:#999;
+            line-height:1.5;
+            margin-bottom:10px">{{ profile.bio }}</div>{% endif %}
+          {% endif %}
+          <div class="profile-stats">
+            <div class="profile-stat">
+              <div class="n">{{ profile.posts_count }}</div>
+              <div class="label">posts</div>
+            </div>
+            <div class="profile-stat">
+              <div class="n">{{ profile.followers_count }}</div>
+              <div class="label">seguidores</div>
+            </div>
+            <div class="profile-stat">
+              <div class="n">{{ profile.following_count }}</div>
+              <div class="label">seguindo</div>
+            </div>
+          </div>
+          {% if is_me %}
+            <button class="edit-btn" id="editProfileBtn" type="button">✏️ Editar perfil</button>
+          {% else %}
+            <button type="button"
+                    class="follow-btn {% if is_following %}following{% endif %}"
+                    id="followBtn"
+                    data-user-id="{{ profile_user.id }}"
+                    data-following="{{ is_following|yesno:'true,false' }}">
+              {% if is_following %}Deixar de seguir{% else %}+ Seguir{% endif %}
+            </button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="profile-tabs">
+      <a href="#" class="active" data-tab="posts">🎬 Posts</a>
+      {% if is_me %}<a href="#" data-tab="search">🔍 Buscar usuários</a>{% endif %}
+    </div>
+    <div id="tab-posts" class="tab-content">
+      {% if posts %}
+        <div class="post-grid">
+          {% for post in posts %}
+            <a href="{% url 'films:detail' media_type=post.media_type tmdb_id=post.tmdb_id %}"
+               class="post-grid-item">
+              {% if post.poster_url %}
+                <img src="{{ post.poster_url }}" alt="{{ post.title }}" />
+              {% else %}
+                <div class="post-poster-empty" style="height:100%;">🎬</div>
+              {% endif %}
+            </a>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty-state">
+          <div class="emoji">🍿</div>
+          <p>Nenhuma indicação ainda.</p>
+        </div>
+      {% endif %}
+    </div>
+    {% if is_me %}
+      <div id="tab-search"
+           class="tab-content"
+           style="display:none;
+                  padding:16px 20px 40px">
+        <div class="search-box">
+          <input type="text"
+                 id="userSearchInput"
+                 placeholder="Busque por @username ou nome…"
+                 autocomplete="off" />
+          <span class="icon">🔍</span>
+        </div>
+        <div id="userSearchResults"></div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
+{% block extra_scripts %}
+  <script src="{% static 'js/profile.js' %}"></script>
+{% endblock %}
