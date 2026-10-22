@@ -38,6 +38,24 @@ class TestAuthView:
         assert response.status_code == 200  # re-renderiza com erro
         assert User.objects.filter(username="tallys").count() == 1
 
+    @pytest.mark.parametrize(
+        "weak_password",
+        ["123", "12345678", "password", "joaozinho123"],
+    )
+    def test_register_rejects_weak_password(self, client, weak_password):
+        url = reverse("accounts:login") + "?mode=register"
+        response = client.post(
+            url,
+            {
+                "mode": "register",
+                "username": "joaozinho",
+                "email": "joaozinho@example.com",
+                "password": weak_password,
+            },
+        )
+        assert response.status_code == 200  # re-renderiza com erro
+        assert not User.objects.filter(username="joaozinho").exists()
+
     def test_login_with_correct_credentials(self, client, user):
         url = reverse("accounts:login") + "?mode=login"
         response = client.post(
