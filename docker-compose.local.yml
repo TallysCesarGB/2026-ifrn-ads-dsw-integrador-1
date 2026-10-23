@@ -31,7 +31,7 @@ services:
     image: cineclub_production_postgres
     container_name: cineclub_local_postgres
     volumes:
-      - cineclub_local_postgres_data:/var/lib/postgresql/data
+      - cineclub_local_postgres_data:/var/lib/postgresql
       - cineclub_local_postgres_data_backups:/backups
     env_file:
       - path: ./.envs/.local/.postgres
