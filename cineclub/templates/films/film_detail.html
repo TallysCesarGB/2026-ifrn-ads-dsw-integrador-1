@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ film.title }} — CineClub{% endblock %}
+{% block content %}
+<div class="container-wide" id="filmDetailRoot"
+     data-tmdb-id="{{ film.tmdb_id }}" data-media-type="{{ film.media_type }}"
+     data-my-score="{{ my_score|default_if_none:'' }}">
+
+  <div class="film-hero" id="filmHero">
+    {% if film.trailer %}
+      <div id="trailerFrameWrap" style="display:none;position:relative;padding-bottom:56.25%;height:0;">
+        <iframe id="trailerFrame" src="" title="Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe>
+      </div>
+    {% endif %}
+    <div id="backdropWrap">
+      {% if film.backdrop_url %}
+        <img src="{{ film.backdrop_url }}" alt="">
+      {% endif %}
+      <div class="fade"></div>
+      {% if film.trailer %}
+        <button class="play-btn" id="playTrailerBtn" data-trailer-url="{{ film.trailer.url }}">▶</button>
+      {% endif %}
+    </div>
+
+    <a href="javascript:history.back()" class="film-back">← Voltar</a>
+    {% if film.trailer %}
+      <button class="film-back" id="closeTrailerBtn" style="left:auto;right:12px;display:none;">✕ Fechar trailer</button>
+    {% endif %}
+    <div class="film-type-badge {{ film.media_type }}" id="filmTypeBadge">
+      {% if film.media_type == 'tv' %}📺 Série{% else %}🎬 Filme{% endif %}
+    </div>
+  </div>
+
+  <div class="film-hero-info" id="filmHeroInfo">
+    {% if film.poster_url %}
+      <img src="{{ film.poster_url }}" alt="{{ film.title }}" class="film-poster">
+    {% else %}
+      <div class="film-poster" style="display:flex;align-items:center;justify-content:center;font-size:36px;background:#111;">🎬</div>
+    {% endif %}
+    <div style="flex:1;min-width:0;">
+      <h1 class="film-title serif">{{ film.title }}</h1>
+      {% if film.tagline %}<div class="film-tagline">"{{ film.tagline }}"</div>{% endif %}
+      <div>
+        {% for genre in film.genres %}<span class="genre-pill">{{ genre }}</span>{% endfor %}
+      </div>
+      <div class="film-meta">
+        {% if film.release_date %}<span>📅 {{ film.release_date|slice:":4" }}</span>{% endif %}
+        {% if film.runtime %}<span>⏱ {{ film.runtime }} min</span>{% endif %}
+        {% if film.seasons %}<span>📺 {{ film.seasons }} temporadas</span>{% endif %}
+        {% if film.directors %}<span>🎬 {{ film.directors|join:", " }}</span>{% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="scores-row">
+    <div class="score-card">
+      <div class="value" style="color:#f5c518;">{{ film.rating|floatformat:1 }}</div>
+      <div class="label">TMDB</div>
+      <div class="sub">{{ film.vote_count|default:0 }} votos</div>
+    </div>
+    <div class="score-card">
+      <div class="value" style="color:var(--gold);">{% if rating_average %}{{ rating_average }}{% else %}—{% endif %}</div>
+      <div class="label">CineClub</div>
+      <div class="sub">{{ rating_total }} avaliações</div>
+    </div>
+  </div>
+
+  <div style="padding:16px 20px 0;">
+    <div style="font-size:11px;color:var(--muted-2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Sua nota</div>
+    <div class="rate-row" id="rateRow">
+      {% for n in score_range %}
+        <button class="rate-btn {% if my_score and n <= my_score %}active{% endif %}" data-score="{{ n }}">{{ n }}</button>
+      {% endfor %}
+    </div>
+    <div id="myScoreLabel" style="font-size:12px;color:var(--gold);margin-top:6px;">
+      {% if my_score %}Sua avaliação: {{ my_score }}/10{% endif %}
+    </div>
+  </div>
+
+  <div class="tabs-row">
+    <button class="tab-btn active" data-tab="info">Sinopse</button>
+    <button class="tab-btn" data-tab="cast">Elenco</button>
+    <button class="tab-btn" data-tab="streaming">Onde Assistir</button>
+  </div>
+
+  <div class="tab-panel active" id="tab-info">
+    <p style="font-size:14px;color:#aaa;line-height:1.75;margin:0;">{{ film.overview|default:"Sinopse não disponível em português." }}</p>
+  </div>
+
+  <div class="tab-panel" id="tab-cast">
+    {% if film.cast %}
+      <div class="cast-row">
+        {% for actor in film.cast %}
+          <div class="cast-item">
+            {% if actor.photo_url %}
+              <img src="{{ actor.photo_url }}" alt="{{ actor.name }}">
+            {% else %}
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ actor.name|urlencode }}" alt="{{ actor.name }}">
+            {% endif %}
+            <div style="font-size:10px;color:var(--fg);font-weight:600;">{{ actor.name|truncatechars:14 }}</div>
+            <div style="font-size:9px;color:var(--muted-2);">{{ actor.character|default:""|truncatechars:16 }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div style="color:var(--muted-2);font-size:14px;">Elenco não disponível.</div>
+    {% endif %}
+  </div>
+
+  <div class="tab-panel" id="tab-streaming">
+    {% if film.streaming.stream or film.streaming.rent or film.streaming.buy %}
+      {% if film.streaming.stream %}
+        <div class="stream-group">
+          <div class="label">📡 Incluído no plano</div>
+          <div class="stream-links">
+            {% for item in film.streaming.stream %}
+              <a class="stream-btn" href="{{ item.web_link }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ item.logo_url }}" alt="{{ item.name }}"> <span>{{ item.name }}</span>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+      {% if film.streaming.rent %}
+        <div class="stream-group">
+          <div class="label">💳 Alugar</div>
+          <div class="stream-links">
+            {% for item in film.streaming.rent %}
+              <a class="stream-btn" href="{{ item.web_link }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ item.logo_url }}" alt="{{ item.name }}"> <span>{{ item.name }}</span>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+      {% if film.streaming.buy %}
+        <div class="stream-group">
+          <div class="label">🛒 Comprar</div>
+          <div class="stream-links">
+            {% for item in film.streaming.buy %}
+              <a class="stream-btn" href="{{ item.web_link }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ item.logo_url }}" alt="{{ item.name }}"> <span>{{ item.name }}</span>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    {% else %}
+      <div style="text-align:center;padding:20px 0;">
+        <div style="font-size:32px;margin-bottom:10px;">😔</div>
+        <div style="color:var(--muted-2);font-size:14px;">Não encontrado em streaming no Brasil no momento.</div>
+      </div>
+    {% endif %}
+    <div style="margin-top:16px;padding:10px 14px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);">
+      <div style="font-size:11px;color:var(--muted-2);line-height:1.6;">
+        ℹ️ Disponibilidade via <strong style="color:#888;">TMDB Watch Providers</strong>. Abre direto no serviço de streaming.
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/film_detail.js' %}"></script>
+{% endblock %}

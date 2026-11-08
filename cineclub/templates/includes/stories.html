@@ -1,0 +1,36 @@
+<div class="stories-row" id="storiesRow">
+  <button class="story-bubble" data-category="movies"><div class="story-ring"><div class="story-ring-inner">🎬</div></div><span class="story-label">Filmes BR</span></button>
+  <button class="story-bubble" data-category="series"><div class="story-ring"><div class="story-ring-inner">📺</div></div><span class="story-label">Séries BR</span></button>
+  <button class="story-bubble" data-category="world"><div class="story-ring"><div class="story-ring-inner">🌍</div></div><span class="story-label">Top Mundo</span></button>
+  <button class="story-bubble" data-category="upcoming"><div class="story-ring"><div class="story-ring-inner">🚀</div></div><span class="story-label">Lançamentos</span></button>
+  <button class="story-bubble" data-category="app"><div class="story-ring"><div class="story-ring-inner">⭐</div></div><span class="story-label">CineClub</span></button>
+  <button class="story-bubble" data-category="rated"><div class="story-ring"><div class="story-ring-inner">🏆</div></div><span class="story-label">Avaliados</span></button>
+</div>
+
+<div class="story-viewer" id="storyViewer">
+  <img class="story-backdrop" id="storyBackdrop" src="" alt="">
+  <div class="story-gradient"></div>
+  <div class="story-bars" id="storyBars"></div>
+  <div class="story-header">
+    <div class="story-cat-icon" id="storyCatIcon"></div>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:var(--fg);" id="storyCatLabel"></div>
+      <div style="font-size:10px;color:#666;" id="storyRankLabel"></div>
+    </div>
+    <button class="story-close" id="storyCloseBtn">✕</button>
+  </div>
+  <div class="story-content">
+    <div class="story-rank-ghost" id="storyRankGhost"></div>
+    <div class="story-poster-row">
+      <img id="storyPoster" src="" alt="" style="display:none;">
+      <div style="flex:1;min-width:0;">
+        <div class="story-badge" id="storyBadge"></div>
+        <h2 class="story-title" id="storyTitle"></h2>
+        <div class="story-meta" id="storyMeta"></div>
+      </div>
+    </div>
+    <p class="story-overview" id="storyOverview"></p>
+    <button class="story-cta" id="storyCta">Ver detalhes completos →</button>
+    <div class="story-hint-row"><span>← voltar</span><span>avançar →</span></div>
+  </div>
+</div>
