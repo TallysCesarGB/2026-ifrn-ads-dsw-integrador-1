@@ -125,6 +125,8 @@ Acesse **http://localhost:8000**. Usuário de demonstração: **demo@cineclub.co
 
 > ⚠️ A chave da TMDB fica só em `.envs/.local/.tmdb`, que está no `.gitignore`. Nunca a coloque em `.envs/.local/.django`, que é versionado.
 
+> Se alternar entre branches, mantenha uma cópia local de `.envs/.local/.tmdb` fora do repositório enquanto alguma branch ainda versionar esse caminho. O Git pode remover ou substituir o arquivo ao trocar de branch; depois, restaure a cópia em `.envs/.local/.tmdb`.
+
 ### Atalhos com `just`
 
 ```bash

@@ -18,6 +18,8 @@ services:
     env_file:
       - path: ./.envs/.local/.django
         required: false
+      - path: ./.envs/.local/.tmdb
+        required: false
       - path: ./.envs/.local/.postgres
         required: false
     ports:
