@@ -1,0 +1,5710 @@
+[
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$fmCWY6qw1y4JKQBgjyCNsU$qi6JzZW2QmBNAi1ln0ClD5g5Anhi+bb4i9oteIQrFNU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "demo",
+    "email": "demo@cineclub.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:35.479Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$owULAOcVTgUkUnEsvUDRsg$QGEx5ycdhS14WMum94AD8BnYE//Y0peR9QnHQ+veV/s=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "alvesyan",
+    "email": "alvesyan@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:35.781Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$W607WPFOpNOGdj5Ah59MYF$8nnvYwnY9tTaWgKoG44T+ZYs2IuLk6DLB3YmyxZH7iQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "rochazoe",
+    "email": "rochazoe@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:36.070Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$x34z6behKLbWwCzhyoG2Yu$/wEHJ8JXCDSnh1Yrk+NId1gD9i8h0h1u9LCmni215Fo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "borgespedro-henrique",
+    "email": "borgespedro-henrique@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:36.360Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$UxEbACjPK2DTHDIFI1L8q8$B5L22hyRJ3a3+1my7qOfpqJY3bfknA5xKruVswL39fc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "novaismiguel",
+    "email": "novaismiguel@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:36.655Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$RVkhlOpjl5no1rUBnJlLwU$8KfqDPhIHhPXpLZaY1KHh+T0VWNAIZ3TnadhNC5wqQI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "manuelapastor",
+    "email": "manuelapastor@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:36.944Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$cgRrKAy9eiARhFYdzeVjgt$Uhm51qeoSdAr9Nu1PFNWtc2FvgCBXUK5ni7Bnjmrgt4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "laviniafernandes",
+    "email": "laviniafernandes@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:37.234Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$FOwkKSaFixHSi44nG9DQyV$/ROQB7YytG7XuIimUkBo38MUZqR43rNeIa946o0JMHM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "gustavo16",
+    "email": "gustavo16@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:37.527Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$6MNHQpe8uKJCRkXRxOVwch$RryziarjG/EBOf2kZCX7W72Z2CQGp7kcwGIk06srxTU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "caio78",
+    "email": "caio78@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:37.822Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$9CkGhiAuEKGYY0VTlC39uF$G4UA66mO4NiHJ1fj3b10zhC0kdU5UzdSp1S05wPBL4I=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "eloa93",
+    "email": "eloa93@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:38.115Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$OZvdc9YPZKmkbGeBf4uRzd$e8UiMmpiqzGhO7NrTvspyU2Wepai+HhtR0w91dyIXJw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "amandabarros",
+    "email": "amandabarros@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:38.411Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$A0m9VLd9U5lQnpsj3IuuPy$u3dPH4dr+gtRRshc3XansYFqjn+0GKcHn6DEBatsDVg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "maria52",
+    "email": "maria52@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:38.702Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$xEfartDr9AKXSQURliGY4J$Q1i5JvdS8MEht21V2pfuzmPfjrEMkX5DJ1mLU4mcdo0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "diego92",
+    "email": "diego92@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-26T20:49:38.992Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "display_name": "Usuário Demo",
+    "bio": "Conta de demonstração para correção do projeto.",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:35.480Z",
+    "updated_at": "2026-08-26T20:49:35.780Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "display_name": "Henry Gabriel Carvalho",
+    "bio": "",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:36.069Z",
+    "updated_at": "2026-08-26T20:49:36.069Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "display_name": "Otávio Andrade",
+    "bio": "Cinéfilo(a) de carteirinha 🎬",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:36.359Z",
+    "updated_at": "2026-08-26T20:49:36.359Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "display_name": "Thiago Pereira",
+    "bio": "Cinéfilo(a) de carteirinha 🎬",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:36.654Z",
+    "updated_at": "2026-08-26T20:49:36.655Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "display_name": "Dra. Ísis Leão",
+    "bio": "",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:36.943Z",
+    "updated_at": "2026-08-26T20:49:36.943Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "display_name": "André Teixeira",
+    "bio": "Ficção científica > tudo.",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:37.233Z",
+    "updated_at": "2026-08-26T20:49:37.233Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "display_name": "Eduardo Cunha",
+    "bio": "Assistindo tudo que aparece na frente.",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:37.526Z",
+    "updated_at": "2026-08-26T20:49:37.527Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "display_name": "Luiz Henrique Ferreira",
+    "bio": "Assistindo tudo que aparece na frente.",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:37.821Z",
+    "updated_at": "2026-08-26T20:49:37.822Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "display_name": "Marcos Vinicius Barros",
+    "bio": "Assistindo tudo que aparece na frente.",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:38.114Z",
+    "updated_at": "2026-08-26T20:49:38.114Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 10,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "display_name": "Srta. Ana Clara Ribeiro",
+    "bio": "",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:38.411Z",
+    "updated_at": "2026-08-26T20:49:38.411Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 11,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "display_name": "Carlos Eduardo Garcia",
+    "bio": "Cinéfilo(a) de carteirinha 🎬",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:38.701Z",
+    "updated_at": "2026-08-26T20:49:38.701Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 12,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "display_name": "Dr. Gustavo Henrique Rios",
+    "bio": "",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:38.991Z",
+    "updated_at": "2026-08-26T20:49:38.991Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 13,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "display_name": "Isabelly Castro",
+    "bio": "",
+    "avatar": "",
+    "created_at": "2026-08-26T20:49:39.282Z",
+    "updated_at": "2026-08-26T20:49:39.283Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 1,
+  "fields": {
+    "follower": [
+      "demo"
+    ],
+    "followed": [
+      "rochazoe"
+    ],
+    "created_at": "2026-08-26T20:49:39.284Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 2,
+  "fields": {
+    "follower": [
+      "demo"
+    ],
+    "followed": [
+      "amandabarros"
+    ],
+    "created_at": "2026-08-26T20:49:39.285Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 3,
+  "fields": {
+    "follower": [
+      "demo"
+    ],
+    "followed": [
+      "gustavo16"
+    ],
+    "created_at": "2026-08-26T20:49:39.285Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 4,
+  "fields": {
+    "follower": [
+      "demo"
+    ],
+    "followed": [
+      "alvesyan"
+    ],
+    "created_at": "2026-08-26T20:49:39.286Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 5,
+  "fields": {
+    "follower": [
+      "demo"
+    ],
+    "followed": [
+      "eloa93"
+    ],
+    "created_at": "2026-08-26T20:49:39.287Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 6,
+  "fields": {
+    "follower": [
+      "alvesyan"
+    ],
+    "followed": [
+      "novaismiguel"
+    ],
+    "created_at": "2026-08-26T20:49:39.287Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 7,
+  "fields": {
+    "follower": [
+      "rochazoe"
+    ],
+    "followed": [
+      "eloa93"
+    ],
+    "created_at": "2026-08-26T20:49:39.288Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 8,
+  "fields": {
+    "follower": [
+      "rochazoe"
+    ],
+    "followed": [
+      "amandabarros"
+    ],
+    "created_at": "2026-08-26T20:49:39.288Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 9,
+  "fields": {
+    "follower": [
+      "borgespedro-henrique"
+    ],
+    "followed": [
+      "eloa93"
+    ],
+    "created_at": "2026-08-26T20:49:39.289Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 10,
+  "fields": {
+    "follower": [
+      "novaismiguel"
+    ],
+    "followed": [
+      "diego92"
+    ],
+    "created_at": "2026-08-26T20:49:39.290Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 11,
+  "fields": {
+    "follower": [
+      "novaismiguel"
+    ],
+    "followed": [
+      "maria52"
+    ],
+    "created_at": "2026-08-26T20:49:39.290Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 12,
+  "fields": {
+    "follower": [
+      "manuelapastor"
+    ],
+    "followed": [
+      "gustavo16"
+    ],
+    "created_at": "2026-08-26T20:49:39.291Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 13,
+  "fields": {
+    "follower": [
+      "manuelapastor"
+    ],
+    "followed": [
+      "borgespedro-henrique"
+    ],
+    "created_at": "2026-08-26T20:49:39.291Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 14,
+  "fields": {
+    "follower": [
+      "manuelapastor"
+    ],
+    "followed": [
+      "caio78"
+    ],
+    "created_at": "2026-08-26T20:49:39.292Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 15,
+  "fields": {
+    "follower": [
+      "manuelapastor"
+    ],
+    "followed": [
+      "novaismiguel"
+    ],
+    "created_at": "2026-08-26T20:49:39.292Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 16,
+  "fields": {
+    "follower": [
+      "manuelapastor"
+    ],
+    "followed": [
+      "demo"
+    ],
+    "created_at": "2026-08-26T20:49:39.293Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 17,
+  "fields": {
+    "follower": [
+      "laviniafernandes"
+    ],
+    "followed": [
+      "diego92"
+    ],
+    "created_at": "2026-08-26T20:49:39.294Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 18,
+  "fields": {
+    "follower": [
+      "laviniafernandes"
+    ],
+    "followed": [
+      "gustavo16"
+    ],
+    "created_at": "2026-08-26T20:49:39.294Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 19,
+  "fields": {
+    "follower": [
+      "gustavo16"
+    ],
+    "followed": [
+      "novaismiguel"
+    ],
+    "created_at": "2026-08-26T20:49:39.295Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 20,
+  "fields": {
+    "follower": [
+      "gustavo16"
+    ],
+    "followed": [
+      "rochazoe"
+    ],
+    "created_at": "2026-08-26T20:49:39.295Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 21,
+  "fields": {
+    "follower": [
+      "gustavo16"
+    ],
+    "followed": [
+      "borgespedro-henrique"
+    ],
+    "created_at": "2026-08-26T20:49:39.296Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 22,
+  "fields": {
+    "follower": [
+      "caio78"
+    ],
+    "followed": [
+      "alvesyan"
+    ],
+    "created_at": "2026-08-26T20:49:39.297Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 23,
+  "fields": {
+    "follower": [
+      "caio78"
+    ],
+    "followed": [
+      "diego92"
+    ],
+    "created_at": "2026-08-26T20:49:39.297Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 24,
+  "fields": {
+    "follower": [
+      "caio78"
+    ],
+    "followed": [
+      "laviniafernandes"
+    ],
+    "created_at": "2026-08-26T20:49:39.298Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 25,
+  "fields": {
+    "follower": [
+      "eloa93"
+    ],
+    "followed": [
+      "manuelapastor"
+    ],
+    "created_at": "2026-08-26T20:49:39.298Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 26,
+  "fields": {
+    "follower": [
+      "amandabarros"
+    ],
+    "followed": [
+      "eloa93"
+    ],
+    "created_at": "2026-08-26T20:49:39.299Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 27,
+  "fields": {
+    "follower": [
+      "amandabarros"
+    ],
+    "followed": [
+      "novaismiguel"
+    ],
+    "created_at": "2026-08-26T20:49:39.300Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 28,
+  "fields": {
+    "follower": [
+      "amandabarros"
+    ],
+    "followed": [
+      "demo"
+    ],
+    "created_at": "2026-08-26T20:49:39.300Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 29,
+  "fields": {
+    "follower": [
+      "maria52"
+    ],
+    "followed": [
+      "caio78"
+    ],
+    "created_at": "2026-08-26T20:49:39.301Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 30,
+  "fields": {
+    "follower": [
+      "maria52"
+    ],
+    "followed": [
+      "alvesyan"
+    ],
+    "created_at": "2026-08-26T20:49:39.301Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 31,
+  "fields": {
+    "follower": [
+      "maria52"
+    ],
+    "followed": [
+      "laviniafernandes"
+    ],
+    "created_at": "2026-08-26T20:49:39.302Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 32,
+  "fields": {
+    "follower": [
+      "maria52"
+    ],
+    "followed": [
+      "amandabarros"
+    ],
+    "created_at": "2026-08-26T20:49:39.302Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 33,
+  "fields": {
+    "follower": [
+      "diego92"
+    ],
+    "followed": [
+      "novaismiguel"
+    ],
+    "created_at": "2026-08-26T20:49:39.303Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 34,
+  "fields": {
+    "follower": [
+      "diego92"
+    ],
+    "followed": [
+      "amandabarros"
+    ],
+    "created_at": "2026-08-26T20:49:39.304Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 35,
+  "fields": {
+    "follower": [
+      "diego92"
+    ],
+    "followed": [
+      "eloa93"
+    ],
+    "created_at": "2026-08-26T20:49:39.304Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 36,
+  "fields": {
+    "follower": [
+      "diego92"
+    ],
+    "followed": [
+      "manuelapastor"
+    ],
+    "created_at": "2026-08-26T20:49:39.305Z"
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 37,
+  "fields": {
+    "follower": [
+      "diego92"
+    ],
+    "followed": [
+      "borgespedro-henrique"
+    ],
+    "created_at": "2026-08-26T20:49:39.305Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "tmdb_id": 155,
+    "media_type": "movie",
+    "title": "Batman: O Cavaleiro das Trevas",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "comment": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.306Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 155,
+    "media_type": "movie",
+    "title": "Batman: O Cavaleiro das Trevas",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "comment": "",
+    "created_at": "2026-08-26T20:49:39.306Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "title": "Peaky Blinders",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vUUqzWa2LnHIVqkaKVlVGkPaQNb.jpg",
+    "comment": "Não é para todo mundo, mas eu amei.",
+    "created_at": "2026-08-26T20:49:39.307Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "tmdb_id": 550,
+    "media_type": "movie",
+    "title": "Clube da Luta",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+    "comment": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.307Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "tmdb_id": 155,
+    "media_type": "movie",
+    "title": "Batman: O Cavaleiro das Trevas",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "comment": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.307Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 680,
+    "media_type": "movie",
+    "title": "Pulp Fiction",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+    "comment": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.307Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "tmdb_id": 680,
+    "media_type": "movie",
+    "title": "Pulp Fiction",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+    "comment": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.307Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "tmdb_id": 680,
+    "media_type": "movie",
+    "title": "Pulp Fiction",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+    "comment": "",
+    "created_at": "2026-08-26T20:49:39.307Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "title": "Peaky Blinders",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vUUqzWa2LnHIVqkaKVlVGkPaQNb.jpg",
+    "comment": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.308Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 10,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 1396,
+    "media_type": "tv",
+    "title": "Breaking Bad",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+    "comment": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.308Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 11,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 2316,
+    "media_type": "tv",
+    "title": "The Office",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qWnJzyZhyy74gjpSjIXWmuk0ifX.jpg",
+    "comment": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.308Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 12,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 497,
+    "media_type": "movie",
+    "title": "O Verde Mile",
+    "poster_url": "https://image.tmdb.org/t/p/w500/velWPhVMQeQKcxggNEU8YmU1xZu.jpg",
+    "comment": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.308Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 13,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "title": "Peaky Blinders",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vUUqzWa2LnHIVqkaKVlVGkPaQNb.jpg",
+    "comment": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.308Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 14,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 71446,
+    "media_type": "tv",
+    "title": "La Casa de Papel",
+    "poster_url": "https://image.tmdb.org/t/p/w500/reEMJA1O0oMfRxv4r9KrpBRLGYk.jpg",
+    "comment": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.308Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 15,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 424,
+    "media_type": "movie",
+    "title": "A Lista de Schindler",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+    "comment": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.308Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 16,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "tmdb_id": 155,
+    "media_type": "movie",
+    "title": "Batman: O Cavaleiro das Trevas",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "comment": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.309Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 17,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 71446,
+    "media_type": "tv",
+    "title": "La Casa de Papel",
+    "poster_url": "https://image.tmdb.org/t/p/w500/reEMJA1O0oMfRxv4r9KrpBRLGYk.jpg",
+    "comment": "",
+    "created_at": "2026-08-26T20:49:39.309Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 18,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "tmdb_id": 278,
+    "media_type": "movie",
+    "title": "Um Sonho de Liberdade",
+    "poster_url": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+    "comment": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.309Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 19,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "tmdb_id": 497,
+    "media_type": "movie",
+    "title": "O Verde Mile",
+    "poster_url": "https://image.tmdb.org/t/p/w500/velWPhVMQeQKcxggNEU8YmU1xZu.jpg",
+    "comment": "A trilha sonora sozinha já vale a sessão.",
+    "created_at": "2026-08-26T20:49:39.309Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 20,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "tmdb_id": 68718,
+    "media_type": "movie",
+    "title": "Django Livre",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2YMnBRh8F6fEuzOGeGgbIKRFRn5.jpg",
+    "comment": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.309Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 21,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "tmdb_id": 497,
+    "media_type": "movie",
+    "title": "O Verde Mile",
+    "poster_url": "https://image.tmdb.org/t/p/w500/velWPhVMQeQKcxggNEU8YmU1xZu.jpg",
+    "comment": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.309Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 22,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "tmdb_id": 424,
+    "media_type": "movie",
+    "title": "A Lista de Schindler",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+    "comment": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.309Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 23,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 157336,
+    "media_type": "movie",
+    "title": "Interestelar",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+    "comment": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.310Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 24,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "tmdb_id": 71446,
+    "media_type": "tv",
+    "title": "La Casa de Papel",
+    "poster_url": "https://image.tmdb.org/t/p/w500/reEMJA1O0oMfRxv4r9KrpBRLGYk.jpg",
+    "comment": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.310Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 25,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 278,
+    "media_type": "movie",
+    "title": "Um Sonho de Liberdade",
+    "poster_url": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+    "comment": "",
+    "created_at": "2026-08-26T20:49:39.310Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 26,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 68718,
+    "media_type": "movie",
+    "title": "Django Livre",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2YMnBRh8F6fEuzOGeGgbIKRFRn5.jpg",
+    "comment": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.310Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 27,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 155,
+    "media_type": "movie",
+    "title": "Batman: O Cavaleiro das Trevas",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "comment": "A trilha sonora sozinha já vale a sessão.",
+    "created_at": "2026-08-26T20:49:39.310Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 28,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 27205,
+    "media_type": "movie",
+    "title": "A Origem",
+    "poster_url": "https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
+    "comment": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.310Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 29,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 550,
+    "media_type": "movie",
+    "title": "Clube da Luta",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+    "comment": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.310Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 30,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 66732,
+    "media_type": "tv",
+    "title": "Stranger Things",
+    "poster_url": "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
+    "comment": "",
+    "created_at": "2026-08-26T20:49:39.311Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 31,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 157336,
+    "media_type": "movie",
+    "title": "Interestelar",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+    "comment": "Não é para todo mundo, mas eu amei.",
+    "created_at": "2026-08-26T20:49:39.311Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 32,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "tmdb_id": 2316,
+    "media_type": "tv",
+    "title": "The Office",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qWnJzyZhyy74gjpSjIXWmuk0ifX.jpg",
+    "comment": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.311Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 33,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 680,
+    "media_type": "movie",
+    "title": "Pulp Fiction",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+    "comment": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.311Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 34,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "tmdb_id": 680,
+    "media_type": "movie",
+    "title": "Pulp Fiction",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+    "comment": "A trilha sonora sozinha já vale a sessão.",
+    "created_at": "2026-08-26T20:49:39.311Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 35,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "title": "O Poderoso Chefão",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsLegHejKInmC.jpg",
+    "comment": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.311Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 36,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 1396,
+    "media_type": "tv",
+    "title": "Breaking Bad",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+    "comment": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.311Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 37,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 1668,
+    "media_type": "tv",
+    "title": "Friends",
+    "poster_url": "https://image.tmdb.org/t/p/w500/f496cm9enuEsZkSPzCwnTESEK5s.jpg",
+    "comment": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.312Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 38,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 1668,
+    "media_type": "tv",
+    "title": "Friends",
+    "poster_url": "https://image.tmdb.org/t/p/w500/f496cm9enuEsZkSPzCwnTESEK5s.jpg",
+    "comment": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.312Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 39,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 157336,
+    "media_type": "movie",
+    "title": "Interestelar",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+    "comment": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.312Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 40,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "tmdb_id": 1399,
+    "media_type": "tv",
+    "title": "Game of Thrones",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7WUHnWGx5OrhL2FLR1ba05aMwhT.jpg",
+    "comment": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.312Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 1,
+    "created_at": "2026-08-26T20:49:39.313Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 2,
+    "created_at": "2026-08-26T20:49:39.314Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 2,
+    "created_at": "2026-08-26T20:49:39.314Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 2,
+    "created_at": "2026-08-26T20:49:39.315Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 2,
+    "created_at": "2026-08-26T20:49:39.316Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "post": 2,
+    "created_at": "2026-08-26T20:49:39.316Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 2,
+    "created_at": "2026-08-26T20:49:39.317Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 3,
+    "created_at": "2026-08-26T20:49:39.317Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 3,
+    "created_at": "2026-08-26T20:49:39.318Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 10,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 3,
+    "created_at": "2026-08-26T20:49:39.318Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 11,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 3,
+    "created_at": "2026-08-26T20:49:39.319Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 12,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 3,
+    "created_at": "2026-08-26T20:49:39.320Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 13,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 3,
+    "created_at": "2026-08-26T20:49:39.320Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 14,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 3,
+    "created_at": "2026-08-26T20:49:39.321Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 15,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 3,
+    "created_at": "2026-08-26T20:49:39.321Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 16,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 4,
+    "created_at": "2026-08-26T20:49:39.322Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 17,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 4,
+    "created_at": "2026-08-26T20:49:39.322Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 18,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 4,
+    "created_at": "2026-08-26T20:49:39.323Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 19,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 4,
+    "created_at": "2026-08-26T20:49:39.324Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 20,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 4,
+    "created_at": "2026-08-26T20:49:39.324Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 21,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "post": 4,
+    "created_at": "2026-08-26T20:49:39.325Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 22,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 4,
+    "created_at": "2026-08-26T20:49:39.325Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 23,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 5,
+    "created_at": "2026-08-26T20:49:39.326Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 24,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 5,
+    "created_at": "2026-08-26T20:49:39.327Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 25,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 5,
+    "created_at": "2026-08-26T20:49:39.327Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 26,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 6,
+    "created_at": "2026-08-26T20:49:39.328Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 27,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 6,
+    "created_at": "2026-08-26T20:49:39.328Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 28,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 6,
+    "created_at": "2026-08-26T20:49:39.329Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 29,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 6,
+    "created_at": "2026-08-26T20:49:39.329Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 30,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 6,
+    "created_at": "2026-08-26T20:49:39.330Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 31,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 6,
+    "created_at": "2026-08-26T20:49:39.331Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 32,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 6,
+    "created_at": "2026-08-26T20:49:39.331Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 33,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 7,
+    "created_at": "2026-08-26T20:49:39.332Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 34,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 7,
+    "created_at": "2026-08-26T20:49:39.332Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 35,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 7,
+    "created_at": "2026-08-26T20:49:39.333Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 36,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 7,
+    "created_at": "2026-08-26T20:49:39.334Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 37,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 8,
+    "created_at": "2026-08-26T20:49:39.334Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 38,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 8,
+    "created_at": "2026-08-26T20:49:39.335Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 39,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 8,
+    "created_at": "2026-08-26T20:49:39.335Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 40,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 8,
+    "created_at": "2026-08-26T20:49:39.336Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 41,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 8,
+    "created_at": "2026-08-26T20:49:39.336Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 42,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 8,
+    "created_at": "2026-08-26T20:49:39.337Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 43,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 8,
+    "created_at": "2026-08-26T20:49:39.338Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 44,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 8,
+    "created_at": "2026-08-26T20:49:39.338Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 45,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 9,
+    "created_at": "2026-08-26T20:49:39.339Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 46,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 9,
+    "created_at": "2026-08-26T20:49:39.339Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 47,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 9,
+    "created_at": "2026-08-26T20:49:39.340Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 48,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 9,
+    "created_at": "2026-08-26T20:49:39.341Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 49,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "post": 9,
+    "created_at": "2026-08-26T20:49:39.341Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 50,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 9,
+    "created_at": "2026-08-26T20:49:39.342Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 51,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 9,
+    "created_at": "2026-08-26T20:49:39.342Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 52,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 9,
+    "created_at": "2026-08-26T20:49:39.343Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 53,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 10,
+    "created_at": "2026-08-26T20:49:39.343Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 54,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 10,
+    "created_at": "2026-08-26T20:49:39.344Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 55,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 11,
+    "created_at": "2026-08-26T20:49:39.345Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 56,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "post": 12,
+    "created_at": "2026-08-26T20:49:39.345Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 57,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 13,
+    "created_at": "2026-08-26T20:49:39.346Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 58,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 14,
+    "created_at": "2026-08-26T20:49:39.346Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 59,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 14,
+    "created_at": "2026-08-26T20:49:39.347Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 60,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "post": 14,
+    "created_at": "2026-08-26T20:49:39.347Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 61,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "post": 15,
+    "created_at": "2026-08-26T20:49:39.348Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 62,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 15,
+    "created_at": "2026-08-26T20:49:39.349Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 63,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 15,
+    "created_at": "2026-08-26T20:49:39.349Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 64,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 16,
+    "created_at": "2026-08-26T20:49:39.350Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 65,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 17,
+    "created_at": "2026-08-26T20:49:39.350Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 66,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 17,
+    "created_at": "2026-08-26T20:49:39.351Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 67,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 17,
+    "created_at": "2026-08-26T20:49:39.351Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 68,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 17,
+    "created_at": "2026-08-26T20:49:39.352Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 69,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 17,
+    "created_at": "2026-08-26T20:49:39.353Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 70,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 17,
+    "created_at": "2026-08-26T20:49:39.353Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 71,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 17,
+    "created_at": "2026-08-26T20:49:39.354Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 72,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 17,
+    "created_at": "2026-08-26T20:49:39.354Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 73,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 18,
+    "created_at": "2026-08-26T20:49:39.355Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 74,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 18,
+    "created_at": "2026-08-26T20:49:39.355Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 75,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 18,
+    "created_at": "2026-08-26T20:49:39.356Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 76,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 18,
+    "created_at": "2026-08-26T20:49:39.357Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 77,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "post": 19,
+    "created_at": "2026-08-26T20:49:39.357Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 78,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 19,
+    "created_at": "2026-08-26T20:49:39.358Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 79,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 19,
+    "created_at": "2026-08-26T20:49:39.358Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 80,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 19,
+    "created_at": "2026-08-26T20:49:39.359Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 81,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 19,
+    "created_at": "2026-08-26T20:49:39.359Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 82,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 19,
+    "created_at": "2026-08-26T20:49:39.360Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 83,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 19,
+    "created_at": "2026-08-26T20:49:39.361Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 84,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 20,
+    "created_at": "2026-08-26T20:49:39.361Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 85,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 20,
+    "created_at": "2026-08-26T20:49:39.362Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 86,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 20,
+    "created_at": "2026-08-26T20:49:39.362Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 87,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 20,
+    "created_at": "2026-08-26T20:49:39.363Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 88,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 21,
+    "created_at": "2026-08-26T20:49:39.363Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 89,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 21,
+    "created_at": "2026-08-26T20:49:39.364Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 90,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 21,
+    "created_at": "2026-08-26T20:49:39.365Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 91,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 21,
+    "created_at": "2026-08-26T20:49:39.365Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 92,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 21,
+    "created_at": "2026-08-26T20:49:39.366Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 93,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 22,
+    "created_at": "2026-08-26T20:49:39.366Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 94,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 22,
+    "created_at": "2026-08-26T20:49:39.367Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 95,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 22,
+    "created_at": "2026-08-26T20:49:39.367Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 96,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 22,
+    "created_at": "2026-08-26T20:49:39.368Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 97,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 22,
+    "created_at": "2026-08-26T20:49:39.368Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 98,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 22,
+    "created_at": "2026-08-26T20:49:39.369Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 99,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 22,
+    "created_at": "2026-08-26T20:49:39.370Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 100,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 22,
+    "created_at": "2026-08-26T20:49:39.370Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 101,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 23,
+    "created_at": "2026-08-26T20:49:39.371Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 102,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 24,
+    "created_at": "2026-08-26T20:49:39.371Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 103,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 24,
+    "created_at": "2026-08-26T20:49:39.372Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 104,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 24,
+    "created_at": "2026-08-26T20:49:39.373Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 105,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "post": 24,
+    "created_at": "2026-08-26T20:49:39.373Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 106,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 24,
+    "created_at": "2026-08-26T20:49:39.374Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 107,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 24,
+    "created_at": "2026-08-26T20:49:39.374Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 108,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 24,
+    "created_at": "2026-08-26T20:49:39.375Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 109,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 24,
+    "created_at": "2026-08-26T20:49:39.375Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 110,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 25,
+    "created_at": "2026-08-26T20:49:39.376Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 111,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 25,
+    "created_at": "2026-08-26T20:49:39.377Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 112,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 25,
+    "created_at": "2026-08-26T20:49:39.377Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 113,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 25,
+    "created_at": "2026-08-26T20:49:39.378Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 114,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 26,
+    "created_at": "2026-08-26T20:49:39.378Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 115,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 27,
+    "created_at": "2026-08-26T20:49:39.379Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 116,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 27,
+    "created_at": "2026-08-26T20:49:39.379Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 117,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 27,
+    "created_at": "2026-08-26T20:49:39.380Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 118,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 27,
+    "created_at": "2026-08-26T20:49:39.381Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 119,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 27,
+    "created_at": "2026-08-26T20:49:39.381Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 120,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 27,
+    "created_at": "2026-08-26T20:49:39.382Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 121,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 28,
+    "created_at": "2026-08-26T20:49:39.382Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 122,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 28,
+    "created_at": "2026-08-26T20:49:39.383Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 123,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 29,
+    "created_at": "2026-08-26T20:49:39.383Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 124,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 29,
+    "created_at": "2026-08-26T20:49:39.384Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 125,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 29,
+    "created_at": "2026-08-26T20:49:39.385Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 126,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 29,
+    "created_at": "2026-08-26T20:49:39.385Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 127,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 29,
+    "created_at": "2026-08-26T20:49:39.386Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 128,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 29,
+    "created_at": "2026-08-26T20:49:39.386Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 129,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 29,
+    "created_at": "2026-08-26T20:49:39.387Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 130,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 29,
+    "created_at": "2026-08-26T20:49:39.387Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 131,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 30,
+    "created_at": "2026-08-26T20:49:39.388Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 132,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 30,
+    "created_at": "2026-08-26T20:49:39.389Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 133,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "post": 30,
+    "created_at": "2026-08-26T20:49:39.389Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 134,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 30,
+    "created_at": "2026-08-26T20:49:39.390Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 135,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 30,
+    "created_at": "2026-08-26T20:49:39.390Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 136,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 30,
+    "created_at": "2026-08-26T20:49:39.391Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 137,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 30,
+    "created_at": "2026-08-26T20:49:39.392Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 138,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 30,
+    "created_at": "2026-08-26T20:49:39.392Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 139,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 31,
+    "created_at": "2026-08-26T20:49:39.393Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 140,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 31,
+    "created_at": "2026-08-26T20:49:39.393Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 141,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 31,
+    "created_at": "2026-08-26T20:49:39.394Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 142,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 31,
+    "created_at": "2026-08-26T20:49:39.395Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 143,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 32,
+    "created_at": "2026-08-26T20:49:39.395Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 144,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 32,
+    "created_at": "2026-08-26T20:49:39.396Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 145,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 32,
+    "created_at": "2026-08-26T20:49:39.396Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 146,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 33,
+    "created_at": "2026-08-26T20:49:39.397Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 147,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "post": 33,
+    "created_at": "2026-08-26T20:49:39.397Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 148,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 33,
+    "created_at": "2026-08-26T20:49:39.398Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 149,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 33,
+    "created_at": "2026-08-26T20:49:39.399Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 150,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 33,
+    "created_at": "2026-08-26T20:49:39.399Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 151,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 33,
+    "created_at": "2026-08-26T20:49:39.400Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 152,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 33,
+    "created_at": "2026-08-26T20:49:39.400Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 153,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 33,
+    "created_at": "2026-08-26T20:49:39.401Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 154,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 34,
+    "created_at": "2026-08-26T20:49:39.401Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 155,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 34,
+    "created_at": "2026-08-26T20:49:39.402Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 156,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 35,
+    "created_at": "2026-08-26T20:49:39.403Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 157,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 35,
+    "created_at": "2026-08-26T20:49:39.403Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 158,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 35,
+    "created_at": "2026-08-26T20:49:39.404Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 159,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 35,
+    "created_at": "2026-08-26T20:49:39.404Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 160,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "post": 35,
+    "created_at": "2026-08-26T20:49:39.405Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 161,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "post": 35,
+    "created_at": "2026-08-26T20:49:39.405Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 162,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 36,
+    "created_at": "2026-08-26T20:49:39.406Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 163,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "post": 36,
+    "created_at": "2026-08-26T20:49:39.407Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 164,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 36,
+    "created_at": "2026-08-26T20:49:39.409Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 165,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 36,
+    "created_at": "2026-08-26T20:49:39.410Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 166,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 36,
+    "created_at": "2026-08-26T20:49:39.411Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 167,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 36,
+    "created_at": "2026-08-26T20:49:39.411Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 168,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 37,
+    "created_at": "2026-08-26T20:49:39.413Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 169,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "post": 37,
+    "created_at": "2026-08-26T20:49:39.414Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 170,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "post": 37,
+    "created_at": "2026-08-26T20:49:39.414Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 171,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "post": 37,
+    "created_at": "2026-08-26T20:49:39.415Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 172,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 38,
+    "created_at": "2026-08-26T20:49:39.416Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 173,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 38,
+    "created_at": "2026-08-26T20:49:39.417Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 174,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "post": 38,
+    "created_at": "2026-08-26T20:49:39.418Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 175,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "post": 39,
+    "created_at": "2026-08-26T20:49:39.419Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 176,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "post": 40,
+    "created_at": "2026-08-26T20:49:39.420Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 177,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "post": 40,
+    "created_at": "2026-08-26T20:49:39.420Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 178,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "post": 40,
+    "created_at": "2026-08-26T20:49:39.421Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 179,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "post": 40,
+    "created_at": "2026-08-26T20:49:39.422Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 1,
+  "fields": {
+    "post": 1,
+    "user": [
+      "manuelapastor"
+    ],
+    "content": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.422Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 2,
+  "fields": {
+    "post": 1,
+    "user": [
+      "demo"
+    ],
+    "content": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.423Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 3,
+  "fields": {
+    "post": 1,
+    "user": [
+      "alvesyan"
+    ],
+    "content": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.423Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 4,
+  "fields": {
+    "post": 1,
+    "user": [
+      "novaismiguel"
+    ],
+    "content": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.423Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 5,
+  "fields": {
+    "post": 3,
+    "user": [
+      "laviniafernandes"
+    ],
+    "content": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.423Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 6,
+  "fields": {
+    "post": 3,
+    "user": [
+      "manuelapastor"
+    ],
+    "content": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.423Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 7,
+  "fields": {
+    "post": 3,
+    "user": [
+      "maria52"
+    ],
+    "content": "A trilha sonora sozinha já vale a sessão.",
+    "created_at": "2026-08-26T20:49:39.423Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 8,
+  "fields": {
+    "post": 3,
+    "user": [
+      "diego92"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.424Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 9,
+  "fields": {
+    "post": 4,
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "content": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.424Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 10,
+  "fields": {
+    "post": 4,
+    "user": [
+      "novaismiguel"
+    ],
+    "content": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.424Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 11,
+  "fields": {
+    "post": 4,
+    "user": [
+      "demo"
+    ],
+    "content": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.424Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 12,
+  "fields": {
+    "post": 4,
+    "user": [
+      "laviniafernandes"
+    ],
+    "content": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.424Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 13,
+  "fields": {
+    "post": 5,
+    "user": [
+      "laviniafernandes"
+    ],
+    "content": "Não é para todo mundo, mas eu amei.",
+    "created_at": "2026-08-26T20:49:39.424Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 14,
+  "fields": {
+    "post": 5,
+    "user": [
+      "alvesyan"
+    ],
+    "content": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.424Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 15,
+  "fields": {
+    "post": 6,
+    "user": [
+      "amandabarros"
+    ],
+    "content": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.425Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 16,
+  "fields": {
+    "post": 6,
+    "user": [
+      "alvesyan"
+    ],
+    "content": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.425Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 17,
+  "fields": {
+    "post": 7,
+    "user": [
+      "amandabarros"
+    ],
+    "content": "Não é para todo mundo, mas eu amei.",
+    "created_at": "2026-08-26T20:49:39.425Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 18,
+  "fields": {
+    "post": 7,
+    "user": [
+      "laviniafernandes"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.425Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 19,
+  "fields": {
+    "post": 8,
+    "user": [
+      "caio78"
+    ],
+    "content": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.425Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 20,
+  "fields": {
+    "post": 8,
+    "user": [
+      "rochazoe"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.425Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 21,
+  "fields": {
+    "post": 9,
+    "user": [
+      "amandabarros"
+    ],
+    "content": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.425Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 22,
+  "fields": {
+    "post": 9,
+    "user": [
+      "maria52"
+    ],
+    "content": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.425Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 23,
+  "fields": {
+    "post": 9,
+    "user": [
+      "rochazoe"
+    ],
+    "content": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.426Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 24,
+  "fields": {
+    "post": 10,
+    "user": [
+      "caio78"
+    ],
+    "content": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.426Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 25,
+  "fields": {
+    "post": 10,
+    "user": [
+      "demo"
+    ],
+    "content": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.426Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 26,
+  "fields": {
+    "post": 10,
+    "user": [
+      "novaismiguel"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.426Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 27,
+  "fields": {
+    "post": 11,
+    "user": [
+      "eloa93"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.426Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 28,
+  "fields": {
+    "post": 11,
+    "user": [
+      "amandabarros"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.426Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 29,
+  "fields": {
+    "post": 11,
+    "user": [
+      "manuelapastor"
+    ],
+    "content": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.426Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 30,
+  "fields": {
+    "post": 11,
+    "user": [
+      "gustavo16"
+    ],
+    "content": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.426Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 31,
+  "fields": {
+    "post": 12,
+    "user": [
+      "diego92"
+    ],
+    "content": "A trilha sonora sozinha já vale a sessão.",
+    "created_at": "2026-08-26T20:49:39.427Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 32,
+  "fields": {
+    "post": 12,
+    "user": [
+      "maria52"
+    ],
+    "content": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.427Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 33,
+  "fields": {
+    "post": 12,
+    "user": [
+      "rochazoe"
+    ],
+    "content": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.427Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 34,
+  "fields": {
+    "post": 13,
+    "user": [
+      "manuelapastor"
+    ],
+    "content": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.428Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 35,
+  "fields": {
+    "post": 13,
+    "user": [
+      "alvesyan"
+    ],
+    "content": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.428Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 36,
+  "fields": {
+    "post": 13,
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "content": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.428Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 37,
+  "fields": {
+    "post": 13,
+    "user": [
+      "novaismiguel"
+    ],
+    "content": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.428Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 38,
+  "fields": {
+    "post": 15,
+    "user": [
+      "gustavo16"
+    ],
+    "content": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.428Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 39,
+  "fields": {
+    "post": 17,
+    "user": [
+      "laviniafernandes"
+    ],
+    "content": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.428Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 40,
+  "fields": {
+    "post": 17,
+    "user": [
+      "amandabarros"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.428Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 41,
+  "fields": {
+    "post": 17,
+    "user": [
+      "eloa93"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.429Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 42,
+  "fields": {
+    "post": 18,
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "content": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.429Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 43,
+  "fields": {
+    "post": 18,
+    "user": [
+      "rochazoe"
+    ],
+    "content": "A trilha sonora sozinha já vale a sessão.",
+    "created_at": "2026-08-26T20:49:39.429Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 44,
+  "fields": {
+    "post": 18,
+    "user": [
+      "amandabarros"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.429Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 45,
+  "fields": {
+    "post": 19,
+    "user": [
+      "rochazoe"
+    ],
+    "content": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.429Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 46,
+  "fields": {
+    "post": 20,
+    "user": [
+      "demo"
+    ],
+    "content": "A trilha sonora sozinha já vale a sessão.",
+    "created_at": "2026-08-26T20:49:39.429Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 47,
+  "fields": {
+    "post": 20,
+    "user": [
+      "caio78"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.429Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 48,
+  "fields": {
+    "post": 20,
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "content": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.430Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 49,
+  "fields": {
+    "post": 21,
+    "user": [
+      "amandabarros"
+    ],
+    "content": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.430Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 50,
+  "fields": {
+    "post": 21,
+    "user": [
+      "caio78"
+    ],
+    "content": "Não é para todo mundo, mas eu amei.",
+    "created_at": "2026-08-26T20:49:39.430Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 51,
+  "fields": {
+    "post": 21,
+    "user": [
+      "maria52"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.430Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 52,
+  "fields": {
+    "post": 22,
+    "user": [
+      "maria52"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.430Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 53,
+  "fields": {
+    "post": 22,
+    "user": [
+      "caio78"
+    ],
+    "content": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.430Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 54,
+  "fields": {
+    "post": 22,
+    "user": [
+      "laviniafernandes"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.430Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 55,
+  "fields": {
+    "post": 22,
+    "user": [
+      "diego92"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.431Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 56,
+  "fields": {
+    "post": 23,
+    "user": [
+      "diego92"
+    ],
+    "content": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.431Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 57,
+  "fields": {
+    "post": 23,
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "content": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.431Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 58,
+  "fields": {
+    "post": 24,
+    "user": [
+      "amandabarros"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.431Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 59,
+  "fields": {
+    "post": 24,
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "content": "A trilha sonora sozinha já vale a sessão.",
+    "created_at": "2026-08-26T20:49:39.431Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 60,
+  "fields": {
+    "post": 24,
+    "user": [
+      "novaismiguel"
+    ],
+    "content": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.431Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 61,
+  "fields": {
+    "post": 25,
+    "user": [
+      "novaismiguel"
+    ],
+    "content": "Não é para todo mundo, mas eu amei.",
+    "created_at": "2026-08-26T20:49:39.431Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 62,
+  "fields": {
+    "post": 26,
+    "user": [
+      "caio78"
+    ],
+    "content": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.431Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 63,
+  "fields": {
+    "post": 26,
+    "user": [
+      "alvesyan"
+    ],
+    "content": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.432Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 64,
+  "fields": {
+    "post": 27,
+    "user": [
+      "laviniafernandes"
+    ],
+    "content": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.432Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 65,
+  "fields": {
+    "post": 28,
+    "user": [
+      "alvesyan"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.432Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 66,
+  "fields": {
+    "post": 29,
+    "user": [
+      "manuelapastor"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.432Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 67,
+  "fields": {
+    "post": 29,
+    "user": [
+      "caio78"
+    ],
+    "content": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.432Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 68,
+  "fields": {
+    "post": 29,
+    "user": [
+      "gustavo16"
+    ],
+    "content": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.432Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 69,
+  "fields": {
+    "post": 30,
+    "user": [
+      "laviniafernandes"
+    ],
+    "content": "Reviravolta que eu não vi vindo de jeito nenhum.",
+    "created_at": "2026-08-26T20:49:39.432Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 70,
+  "fields": {
+    "post": 30,
+    "user": [
+      "eloa93"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.433Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 71,
+  "fields": {
+    "post": 30,
+    "user": [
+      "demo"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.433Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 72,
+  "fields": {
+    "post": 32,
+    "user": [
+      "novaismiguel"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.433Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 73,
+  "fields": {
+    "post": 32,
+    "user": [
+      "laviniafernandes"
+    ],
+    "content": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.433Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 74,
+  "fields": {
+    "post": 33,
+    "user": [
+      "diego92"
+    ],
+    "content": "Já assisti três vezes e ainda descubro detalhes novos.",
+    "created_at": "2026-08-26T20:49:39.433Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 75,
+  "fields": {
+    "post": 33,
+    "user": [
+      "eloa93"
+    ],
+    "content": "Elenco impecável, direção de outro nível.",
+    "created_at": "2026-08-26T20:49:39.433Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 76,
+  "fields": {
+    "post": 33,
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.433Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 77,
+  "fields": {
+    "post": 33,
+    "user": [
+      "gustavo16"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.433Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 78,
+  "fields": {
+    "post": 35,
+    "user": [
+      "manuelapastor"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.434Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 79,
+  "fields": {
+    "post": 35,
+    "user": [
+      "amandabarros"
+    ],
+    "content": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.434Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 80,
+  "fields": {
+    "post": 35,
+    "user": [
+      "maria52"
+    ],
+    "content": "Perfeito para maratonar num fim de semana chuvoso.",
+    "created_at": "2026-08-26T20:49:39.434Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 81,
+  "fields": {
+    "post": 36,
+    "user": [
+      "eloa93"
+    ],
+    "content": "A fotografia é de tirar o fôlego.",
+    "created_at": "2026-08-26T20:49:39.434Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 82,
+  "fields": {
+    "post": 38,
+    "user": [
+      "eloa93"
+    ],
+    "content": "Um dos melhores que já vi, recomendo demais!",
+    "created_at": "2026-08-26T20:49:39.434Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 83,
+  "fields": {
+    "post": 38,
+    "user": [
+      "diego92"
+    ],
+    "content": "A trilha sonora sozinha já vale a sessão.",
+    "created_at": "2026-08-26T20:49:39.434Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 84,
+  "fields": {
+    "post": 38,
+    "user": [
+      "amandabarros"
+    ],
+    "content": "Chorei no final, não vou mentir.",
+    "created_at": "2026-08-26T20:49:39.435Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 85,
+  "fields": {
+    "post": 39,
+    "user": [
+      "gustavo16"
+    ],
+    "content": "Achei um pouco lento no começo, mas o final compensa.",
+    "created_at": "2026-08-26T20:49:39.435Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "tmdb_id": 680,
+    "media_type": "movie",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.436Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "tmdb_id": 680,
+    "media_type": "movie",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.437Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 680,
+    "media_type": "movie",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.438Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 680,
+    "media_type": "movie",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.438Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 680,
+    "media_type": "movie",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.439Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 71446,
+    "media_type": "tv",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.440Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 71446,
+    "media_type": "tv",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.440Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 71446,
+    "media_type": "tv",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.441Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "tmdb_id": 71446,
+    "media_type": "tv",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.443Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 10,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "tmdb_id": 71446,
+    "media_type": "tv",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.443Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 11,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "tmdb_id": 71446,
+    "media_type": "tv",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.444Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 12,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 71446,
+    "media_type": "tv",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.445Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 13,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 2316,
+    "media_type": "tv",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.445Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 14,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "tmdb_id": 155,
+    "media_type": "movie",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.446Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 15,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 424,
+    "media_type": "movie",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.447Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 16,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 424,
+    "media_type": "movie",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.447Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 17,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "tmdb_id": 424,
+    "media_type": "movie",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.448Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 18,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 424,
+    "media_type": "movie",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.449Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 19,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "tmdb_id": 550,
+    "media_type": "movie",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.449Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 20,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "tmdb_id": 550,
+    "media_type": "movie",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.450Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 21,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 550,
+    "media_type": "movie",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.451Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 22,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "tmdb_id": 550,
+    "media_type": "movie",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.451Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 23,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 550,
+    "media_type": "movie",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.452Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 24,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.453Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 25,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.453Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 26,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.454Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 27,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.455Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 28,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.456Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 29,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.457Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 30,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.458Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 31,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.458Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 32,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.459Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 33,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "tmdb_id": 238,
+    "media_type": "movie",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.460Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 34,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "tmdb_id": 68718,
+    "media_type": "movie",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.460Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 35,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "tmdb_id": 1668,
+    "media_type": "tv",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.461Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 36,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "tmdb_id": 1668,
+    "media_type": "tv",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.462Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 37,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 1668,
+    "media_type": "tv",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.462Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 38,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "tmdb_id": 1668,
+    "media_type": "tv",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.463Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 39,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 1668,
+    "media_type": "tv",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.464Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 40,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "tmdb_id": 1668,
+    "media_type": "tv",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.464Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 41,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "tmdb_id": 1668,
+    "media_type": "tv",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.465Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 42,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.466Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 43,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.467Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 44,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.467Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 45,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.468Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 46,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.469Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 47,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.469Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 48,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.470Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 49,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "tmdb_id": 60574,
+    "media_type": "tv",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.471Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 50,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 278,
+    "media_type": "movie",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.472Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 51,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 278,
+    "media_type": "movie",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.472Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 52,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 278,
+    "media_type": "movie",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.473Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 53,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 278,
+    "media_type": "movie",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.474Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 54,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "tmdb_id": 278,
+    "media_type": "movie",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.474Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 55,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "tmdb_id": 278,
+    "media_type": "movie",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.475Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 56,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "tmdb_id": 1396,
+    "media_type": "tv",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.476Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 57,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 1396,
+    "media_type": "tv",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.477Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 58,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 1396,
+    "media_type": "tv",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.477Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 59,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 1396,
+    "media_type": "tv",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.478Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 60,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "tmdb_id": 1396,
+    "media_type": "tv",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.479Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 61,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 1396,
+    "media_type": "tv",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.479Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 62,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 1396,
+    "media_type": "tv",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.480Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 63,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "tmdb_id": 1396,
+    "media_type": "tv",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.481Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 64,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 157336,
+    "media_type": "movie",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.481Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 65,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "tmdb_id": 157336,
+    "media_type": "movie",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.482Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 66,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 157336,
+    "media_type": "movie",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.483Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 67,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "tmdb_id": 157336,
+    "media_type": "movie",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.484Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 68,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 27205,
+    "media_type": "movie",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.484Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 69,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "tmdb_id": 27205,
+    "media_type": "movie",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.485Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 70,
+  "fields": {
+    "user": [
+      "alvesyan"
+    ],
+    "tmdb_id": 27205,
+    "media_type": "movie",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.486Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 71,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 27205,
+    "media_type": "movie",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.486Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 72,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 27205,
+    "media_type": "movie",
+    "score": 7,
+    "created_at": "2026-08-26T20:49:39.488Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 73,
+  "fields": {
+    "user": [
+      "laviniafernandes"
+    ],
+    "tmdb_id": 27205,
+    "media_type": "movie",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.488Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 74,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "tmdb_id": 27205,
+    "media_type": "movie",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.489Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 75,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "tmdb_id": 27205,
+    "media_type": "movie",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.490Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 76,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 497,
+    "media_type": "movie",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.490Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 77,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "tmdb_id": 497,
+    "media_type": "movie",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.491Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 78,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "tmdb_id": 497,
+    "media_type": "movie",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.492Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 79,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "tmdb_id": 497,
+    "media_type": "movie",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.493Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 80,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 497,
+    "media_type": "movie",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.494Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 81,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 497,
+    "media_type": "movie",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.494Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 82,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 497,
+    "media_type": "movie",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.495Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 83,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "tmdb_id": 1399,
+    "media_type": "tv",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.496Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 84,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 1399,
+    "media_type": "tv",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.497Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 85,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 1399,
+    "media_type": "tv",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.497Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 86,
+  "fields": {
+    "user": [
+      "borgespedro-henrique"
+    ],
+    "tmdb_id": 1399,
+    "media_type": "tv",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.498Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 87,
+  "fields": {
+    "user": [
+      "eloa93"
+    ],
+    "tmdb_id": 1399,
+    "media_type": "tv",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.499Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 88,
+  "fields": {
+    "user": [
+      "gustavo16"
+    ],
+    "tmdb_id": 1399,
+    "media_type": "tv",
+    "score": 10,
+    "created_at": "2026-08-26T20:49:39.499Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 89,
+  "fields": {
+    "user": [
+      "amandabarros"
+    ],
+    "tmdb_id": 1399,
+    "media_type": "tv",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.500Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 90,
+  "fields": {
+    "user": [
+      "manuelapastor"
+    ],
+    "tmdb_id": 1399,
+    "media_type": "tv",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.501Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 91,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 1399,
+    "media_type": "tv",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.501Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 92,
+  "fields": {
+    "user": [
+      "rochazoe"
+    ],
+    "tmdb_id": 66732,
+    "media_type": "tv",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.502Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 93,
+  "fields": {
+    "user": [
+      "novaismiguel"
+    ],
+    "tmdb_id": 66732,
+    "media_type": "tv",
+    "score": 4,
+    "created_at": "2026-08-26T20:49:39.503Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 94,
+  "fields": {
+    "user": [
+      "demo"
+    ],
+    "tmdb_id": 66732,
+    "media_type": "tv",
+    "score": 8,
+    "created_at": "2026-08-26T20:49:39.504Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 95,
+  "fields": {
+    "user": [
+      "caio78"
+    ],
+    "tmdb_id": 66732,
+    "media_type": "tv",
+    "score": 6,
+    "created_at": "2026-08-26T20:49:39.504Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 96,
+  "fields": {
+    "user": [
+      "diego92"
+    ],
+    "tmdb_id": 66732,
+    "media_type": "tv",
+    "score": 9,
+    "created_at": "2026-08-26T20:49:39.505Z"
+  }
+},
+{
+  "model": "ratings.rating",
+  "pk": 97,
+  "fields": {
+    "user": [
+      "maria52"
+    ],
+    "tmdb_id": 66732,
+    "media_type": "tv",
+    "score": 5,
+    "created_at": "2026-08-26T20:49:39.506Z"
+  }
+}
+]

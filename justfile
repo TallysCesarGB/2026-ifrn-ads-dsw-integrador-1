@@ -40,3 +40,15 @@ manage +args:
 # pytest: Run tests with pytest.
 pytest *args:
     @docker compose run --rm django pytest {{args}}
+
+# test: Run the CineClub test suite (alias for pytest).
+test *args:
+    @docker compose run --rm django pytest {{args}}
+
+# seed: Populate the database with fake demo data.
+seed *args:
+    @docker compose run --rm django python ./manage.py seed_demo_data {{args}}
+
+# loaddata: Load the demo fixture.
+loaddata:
+    @docker compose run --rm django python ./manage.py loaddata fixtures/demo_data.json
