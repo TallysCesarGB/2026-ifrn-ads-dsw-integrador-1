@@ -1,0 +1,59 @@
+{% for post in posts %}
+  <div class="post-card" data-post-id="{{ post.id }}">
+    <div class="post-header">
+      <a href="{% url 'accounts:profile' username=post.user.username %}">
+        <img src="{{ post.user.profile.avatar_url }}"
+             alt="{{ post.user.username }}" />
+      </a>
+      <div style="flex:1;">
+        <a href="{% url 'accounts:profile' username=post.user.username %}"
+           class="username">@{{ post.user.username }}</a>
+      </div>
+      <span style="font-size:11px;color:#444;">{% if post.media_type == "tv" %}📺{% else %}🎬{% endif %}</span>
+    </div>
+    <a href="{% url 'films:detail' media_type=post.media_type tmdb_id=post.tmdb_id %}"
+       class="post-poster-wrap">
+      {% if post.poster_url %}
+        <img src="{{ post.poster_url }}" alt="{{ post.title }}" />
+      {% else %}
+        <div class="post-poster-empty">🎬</div>
+      {% endif %}
+      <div class="post-info-badge">ⓘ</div>
+    </a>
+    <div class="post-actions">
+      <button type="button"
+              class="like-btn {% if post.is_liked %}liked{% endif %}"
+              data-post-id="{{ post.id }}">
+        <span class="like-icon">{% if post.is_liked %}❤️{% else %}🤍{% endif %}</span>
+        <span class="like-count">{{ post.likes_count|default_if_none:"" }}</span>
+      </button>
+      <button type="button" class="comment-toggle-btn" data-post-id="{{ post.id }}">
+        💬 <span class="comment-count">{{ post.comments_count|default_if_none:"" }}</span>
+      </button>
+      <button type="button" class="recommend-btn" data-post-id="{{ post.id }}">🔁 Recomendar</button>
+      {# djlint:off H054 #}
+      {# o botão dentro do link herda o estilo de .post-actions button #}
+      <a href="{% url 'films:detail' media_type=post.media_type tmdb_id=post.tmdb_id %}"
+         style="text-decoration:none">
+        <button type="button">ⓘ Ver filme</button>
+      </a>
+      {# djlint:on #}
+    </div>
+    <div class="post-body">
+      <div class="post-title">{{ post.title }}</div>
+      {% if post.comment %}
+        <div class="post-comment"><span class="who">@{{ post.user.username }}</span> {{ post.comment }}</div>
+      {% endif %}
+    </div>
+    <div class="comments-box" id="comments-{{ post.id }}">
+      <div class="comments-list"></div>
+      <form class="comment-form" data-post-id="{{ post.id }}">
+        <input type="text"
+               name="content"
+               placeholder="Adicione um comentário…"
+               required />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+{% endfor %}

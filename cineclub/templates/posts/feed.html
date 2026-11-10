@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Feed — CineClub{% endblock %}
+{% block content %}
+  <div class="container-narrow">
+    {% include "includes/stories.html" %}
+    <div style="padding:12px 16px;">
+      <div id="postsContainer">
+        {% if posts %}
+          {% include "posts/_post_list.html" %}
+        {% else %}
+          <div class="empty-state">
+            <div class="emoji">🍿</div>
+            <h3>Seu feed está vazio</h3>
+            <p>Siga outros usuários ou faça sua primeira indicação!</p>
+            <a href="{% url 'posts:new_post' %}"
+               class="btn-gold"
+               style="padding:12px 24px">+ Indicar meu primeiro filme</a>
+          </div>
+        {% endif %}
+      </div>
+      {% if page_obj.has_next %}
+        <div class="load-more">
+          <button type="button"
+                  id="loadMoreBtn"
+                  data-next-page="{{ page_obj.next_page_number }}">Ver mais</button>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
+{% block extra_scripts %}
+  <script src="{% static 'js/feed.js' %}"></script>
+  <script src="{% static 'js/stories.js' %}"></script>
+{% endblock %}
