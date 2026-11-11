@@ -6,13 +6,21 @@ antigo `services/film-service`. Todas as chamadas passam por cache em
 memória (django.core.cache) para reduzir requisições repetidas, do
 mesmo jeito que o serviço original usava Redis.
 """
+
 from __future__ import annotations
 
 import logging
+from datetime import timedelta
 
 import requests
 from django.conf import settings
 from django.core.cache import cache
+from django.db.models import Avg
+from django.db.models import Count
+from django.utils import timezone
+
+from posts.models import Post
+from ratings.models import Rating
 
 logger = logging.getLogger(__name__)
 
@@ -21,14 +29,42 @@ LANG = settings.TMDB_LANGUAGE
 CACHE_TTL = settings.TMDB_CACHE_TTL
 
 PLATFORMS = {
-    8: {"name": "Netflix", "emoji": "🔴", "web": lambda i: f"https://www.netflix.com/search?q={i}"},
-    119: {"name": "Prime Video", "emoji": "🔵", "web": lambda i: f"https://www.primevideo.com/search?phrase={i}"},
-    337: {"name": "Disney+", "emoji": "🟦", "web": lambda i: f"https://www.disneyplus.com/search/{i}"},
-    1899: {"name": "Max", "emoji": "🟣", "web": lambda i: f"https://play.max.com/search?q={i}"},
-    531: {"name": "Paramount+", "emoji": "⭐", "web": lambda i: f"https://www.paramountplus.com/search/{i}"},
-    350: {"name": "Apple TV+", "emoji": "⬛", "web": lambda i: f"https://tv.apple.com/search?term={i}"},
+    8: {
+        "name": "Netflix",
+        "emoji": "🔴",
+        "web": lambda i: f"https://www.netflix.com/search?q={i}",
+    },
+    119: {
+        "name": "Prime Video",
+        "emoji": "🔵",
+        "web": lambda i: f"https://www.primevideo.com/search?phrase={i}",
+    },
+    337: {
+        "name": "Disney+",
+        "emoji": "🟦",
+        "web": lambda i: f"https://www.disneyplus.com/search/{i}",
+    },
+    1899: {
+        "name": "Max",
+        "emoji": "🟣",
+        "web": lambda i: f"https://play.max.com/search?q={i}",
+    },
+    531: {
+        "name": "Paramount+",
+        "emoji": "⭐",
+        "web": lambda i: f"https://www.paramountplus.com/search/{i}",
+    },
+    350: {
+        "name": "Apple TV+",
+        "emoji": "⬛",
+        "web": lambda i: f"https://tv.apple.com/search?term={i}",
+    },
     619: {"name": "Star+", "emoji": "⚡", "web": lambda i: "https://www.starplus.com"},
-    167: {"name": "Mubi", "emoji": "🎭", "web": lambda i: f"https://mubi.com/films/{i}"},
+    167: {
+        "name": "Mubi",
+        "emoji": "🎭",
+        "web": lambda i: f"https://mubi.com/films/{i}",
+    },
 }
 
 
@@ -70,7 +106,10 @@ def search(query: str, media_type: str = "multi") -> list[dict]:
     cache_key = f"search:{media_type}:{query.lower()}"
 
     def fetch():
-        data = _tmdb_get(f"/search/{media_type}", {"query": query, "include_adult": "false"})
+        data = _tmdb_get(
+            f"/search/{media_type}",
+            {"query": query, "include_adult": "false"},
+        )
         results = []
         for m in (data.get("results") or [])[:15]:
             is_tv = m.get("media_type") == "tv" or media_type == "tv"
@@ -82,11 +121,13 @@ def search(query: str, media_type: str = "multi") -> list[dict]:
                     "tmdb_id": m["id"],
                     "media_type": "tv" if is_tv else "movie",
                     "title": title,
-                    "year": (m.get("release_date") or m.get("first_air_date") or "")[:4],
+                    "year": (m.get("release_date") or m.get("first_air_date") or "")[
+                        :4
+                    ],
                     "poster_url": _poster(m.get("poster_path")),
                     "rating": m.get("vote_average"),
                     "overview": m.get("overview"),
-                }
+                },
             )
         return results
 
@@ -101,13 +142,30 @@ def get_trailer(media_type: str, tmdb_id: int) -> dict | None:
         return None
     all_videos = (pt.get("results") or []) + (en.get("results") or [])
     trailer = (
-        next((v for v in all_videos if v.get("site") == "YouTube" and v.get("type") == "Trailer"), None)
-        or next((v for v in all_videos if v.get("site") == "YouTube" and v.get("type") == "Teaser"), None)
+        next(
+            (
+                v
+                for v in all_videos
+                if v.get("site") == "YouTube" and v.get("type") == "Trailer"
+            ),
+            None,
+        )
+        or next(
+            (
+                v
+                for v in all_videos
+                if v.get("site") == "YouTube" and v.get("type") == "Teaser"
+            ),
+            None,
+        )
         or next((v for v in all_videos if v.get("site") == "YouTube"), None)
     )
     if not trailer:
         return None
-    return {"key": trailer["key"], "url": f"https://www.youtube.com/embed/{trailer['key']}?rel=0&mute=1&enablejsapi=1"}
+    return {
+        "key": trailer["key"],
+        "url": f"https://www.youtube.com/embed/{trailer['key']}?rel=0&mute=1&enablejsapi=1",
+    }
 
 
 def _build_streaming(br_providers: dict, tmdb_id: int) -> dict:
@@ -124,22 +182,29 @@ def _build_streaming(br_providers: dict, tmdb_id: int) -> dict:
                 "logo_url": _poster(p.get("logo_path"), "original"),
                 "web_link": info["web"](tmdb_id),
             }
+
         return inner
 
     return {
-        "stream": [x for x in map(to_link("stream"), br_providers.get("flatrate", [])) if x],
+        "stream": [
+            x for x in map(to_link("stream"), br_providers.get("flatrate", [])) if x
+        ],
         "rent": [x for x in map(to_link("rent"), br_providers.get("rent", [])) if x],
         "buy": [x for x in map(to_link("buy"), br_providers.get("buy", [])) if x],
     }
 
 
-def get_detail(media_type: str, tmdb_id: int, request_user_id: int | None = None) -> dict:
+def get_detail(
+    media_type: str,
+    tmdb_id: int,
+    request_user_id: int | None = None,
+) -> dict:
     media_type = "tv" if media_type == "tv" else "movie"
     cache_key = f"film:{media_type}:{tmdb_id}"
 
     def fetch():
         details = _tmdb_get(f"/{media_type}/{tmdb_id}")
-        credits = _tmdb_get(f"/{media_type}/{tmdb_id}/credits")
+        credits_data = _tmdb_get(f"/{media_type}/{tmdb_id}/credits")
         providers = _tmdb_get(f"/{media_type}/{tmdb_id}/watch/providers")
         trailer = get_trailer(media_type, tmdb_id)
         br_providers = (providers.get("results") or {}).get("BR", {})
@@ -155,8 +220,11 @@ def get_detail(media_type: str, tmdb_id: int, request_user_id: int | None = None
             "backdrop_url": _backdrop(details.get("backdrop_path"), "original"),
             "rating": details.get("vote_average"),
             "vote_count": details.get("vote_count"),
-            "runtime": (details.get("episode_run_time") or [None])[0] if is_tv else details.get("runtime"),
-            "release_date": details.get("release_date") or details.get("first_air_date"),
+            "runtime": (details.get("episode_run_time") or [None])[0]
+            if is_tv
+            else details.get("runtime"),
+            "release_date": details.get("release_date")
+            or details.get("first_air_date"),
             "genres": [g["name"] for g in details.get("genres", [])],
             "seasons": details.get("number_of_seasons") if is_tv else None,
             "trailer": trailer,
@@ -166,9 +234,13 @@ def get_detail(media_type: str, tmdb_id: int, request_user_id: int | None = None
                     "character": a.get("character"),
                     "photo_url": _poster(a.get("profile_path"), "w185"),
                 }
-                for a in (credits.get("cast") or [])[:12]
+                for a in (credits_data.get("cast") or [])[:12]
             ],
-            "directors": [c["name"] for c in (credits.get("crew") or []) if c.get("job") == "Director"][:3],
+            "directors": [
+                c["name"]
+                for c in (credits_data.get("crew") or [])
+                if c.get("job") == "Director"
+            ][:3],
             "streaming": _build_streaming(br_providers, tmdb_id),
         }
 
@@ -206,31 +278,42 @@ def _to_rank_item(m: dict, index: int, override_type: str | None = None) -> dict
 def ranking_movies() -> list[dict]:
     def fetch():
         data = _tmdb_get("/trending/movie/day", {"region": "BR"})
-        return [_to_rank_item(m, i, "movie") for i, m in enumerate((data.get("results") or [])[:10])]
+        return [
+            _to_rank_item(m, i, "movie")
+            for i, m in enumerate((data.get("results") or [])[:10])
+        ]
+
     return _cached("rankings:movies", 60 * 60 * 3, fetch)
 
 
 def ranking_series() -> list[dict]:
     def fetch():
         data = _tmdb_get("/trending/tv/day", {"region": "BR"})
-        return [_to_rank_item(m, i, "tv") for i, m in enumerate((data.get("results") or [])[:10])]
+        return [
+            _to_rank_item(m, i, "tv")
+            for i, m in enumerate((data.get("results") or [])[:10])
+        ]
+
     return _cached("rankings:series", 60 * 60 * 3, fetch)
 
 
 def ranking_world() -> list[dict]:
     def fetch():
         data = _tmdb_get("/trending/all/day")
-        items = [m for m in (data.get("results") or []) if m.get("media_type") in ("movie", "tv")][:10]
+        items = [
+            m
+            for m in (data.get("results") or [])
+            if m.get("media_type") in ("movie", "tv")
+        ][:10]
         return [_to_rank_item(m, i, None) for i, m in enumerate(items)]
+
     return _cached("rankings:world", 60 * 60 * 3, fetch)
 
 
 def ranking_upcoming() -> list[dict]:
     def fetch():
-        import datetime
-
-        today = datetime.date.today()
-        future = today + datetime.timedelta(days=60)
+        today = timezone.localdate()
+        future = today + timedelta(days=60)
         data = _tmdb_get(
             "/discover/movie",
             {
@@ -244,7 +327,9 @@ def ranking_upcoming() -> list[dict]:
         items = [m for m in (data.get("results") or []) if m.get("poster_path")][:10]
         if not items:
             fallback = _tmdb_get("/movie/upcoming", {"region": "BR"})
-            items = [m for m in (fallback.get("results") or []) if m.get("poster_path")][:10]
+            items = [
+                m for m in (fallback.get("results") or []) if m.get("poster_path")
+            ][:10]
         ranked = sorted(items, key=lambda m: m.get("release_date") or "9999-99-99")
         result = []
         for i, m in enumerate(ranked):
@@ -252,14 +337,12 @@ def ranking_upcoming() -> list[dict]:
             item["release_date"] = m.get("release_date")
             result.append(item)
         return result
+
     return _cached("rankings:upcoming", 60 * 60 * 6, fetch)
 
 
 def ranking_app() -> list[dict]:
     """Top 10 mais indicados dentro do próprio CineClub (dados internos)."""
-    from django.db.models import Count
-
-    from posts.models import Post
 
     def fetch():
         qs = (
@@ -270,8 +353,15 @@ def ranking_app() -> list[dict]:
         rows = list(qs)
         if not rows:
             data = _tmdb_get("/trending/all/day")
-            items = [m for m in (data.get("results") or []) if m.get("media_type") in ("movie", "tv")][:10]
-            return [{**_to_rank_item(m, i, None), "total_posts": 0} for i, m in enumerate(items)]
+            items = [
+                m
+                for m in (data.get("results") or [])
+                if m.get("media_type") in ("movie", "tv")
+            ][:10]
+            return [
+                {**_to_rank_item(m, i, None), "total_posts": 0}
+                for i, m in enumerate(items)
+            ]
 
         return [
             {
@@ -295,21 +385,20 @@ def ranking_app() -> list[dict]:
 
 def ranking_rated() -> list[dict]:
     """Top 10 melhor avaliados pela comunidade do CineClub (dados internos)."""
-    from django.db.models import Avg, Count
-
-    from posts.models import Post
-    from ratings.models import Rating
 
     def fetch():
         rows = list(
             Rating.objects.values("tmdb_id", "media_type")
             .annotate(avg_score=Avg("score"), total_ratings=Count("id"))
-            .order_by("-avg_score")[:10]
+            .order_by("-avg_score")[:10],
         )
         if not rows:
             data = _tmdb_get("/movie/top_rated", {"region": "BR"})
             items = (data.get("results") or [])[:10]
-            return [{**_to_rank_item(m, i, "movie"), "total_ratings": 0} for i, m in enumerate(items)]
+            return [
+                {**_to_rank_item(m, i, "movie"), "total_ratings": 0}
+                for i, m in enumerate(items)
+            ]
 
         result = []
         for i, r in enumerate(rows):
@@ -331,7 +420,7 @@ def ranking_rated() -> list[dict]:
                     "year": None,
                     "total_ratings": r["total_ratings"],
                     "source": "app",
-                }
+                },
             )
         return result
 

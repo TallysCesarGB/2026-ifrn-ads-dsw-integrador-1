@@ -33,6 +33,20 @@
     });
   }
 
+  // ── Voltar ───────────────────────────────────────────
+  // Volta para a página anterior do próprio site; sem histórico (link aberto
+  // direto ou em nova aba) segue o href, que aponta para o feed.
+  const backLink = document.getElementById("filmBackLink");
+  if (backLink) {
+    backLink.addEventListener("click", (e) => {
+      const cameFromSite = document.referrer.startsWith(window.location.origin);
+      if (cameFromSite && window.history.length > 1) {
+        e.preventDefault();
+        window.history.back();
+      }
+    });
+  }
+
   // ── Tabs ─────────────────────────────────────────────
   document.querySelectorAll(".tab-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
