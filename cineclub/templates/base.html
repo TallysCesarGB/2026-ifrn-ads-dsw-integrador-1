@@ -5,6 +5,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {# Token CSRF para o fetchJSON. Não dá para ler do cookie: ele é HttpOnly #}
+    {# (CSRF_COOKIE_HTTPONLY) e em produção se chama __Secure-csrftoken. #39  #}
+    <meta name="csrf-token" content="{{ csrf_token }}" />
     <title>{% block title %}CineClub{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     {% block extra_head %}{% endblock %}
@@ -24,14 +27,8 @@
       {% block content %}{% endblock %}
     </div>
     <script>
-      // CSRF token para chamadas fetch/AJAX (padrão Django)
-      function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-        return null;
-      }
-      window.CSRF_TOKEN = getCookie('csrftoken');
+      // Token CSRF renderizado pelo Django na <meta name="csrf-token">.
+      window.CSRF_TOKEN = document.querySelector('meta[name="csrf-token"]').content;
       window.fetchJSON = async function(url, options = {}) {
         options.headers = Object.assign({
             'X-CSRFToken': window.CSRF_TOKEN
