@@ -100,6 +100,14 @@ class TestProfileView:
         assert response.status_code == 200
         assert b"Seguir" in response.content
 
+    def test_own_profile_no_longer_has_user_search(self, auth_client, user):
+        """#41: a busca de usuários saiu do perfil e foi para o feed."""
+        url = reverse("accounts:profile", kwargs={"username": user.username})
+        html = auth_client.get(url).content.decode()
+
+        assert 'id="userSearchInput"' not in html
+        assert "Buscar usuários" not in html
+
     def test_profile_shows_users_posts(self, auth_client, user, post):
         url = reverse("accounts:profile", kwargs={"username": user.username})
         response = auth_client.get(url)

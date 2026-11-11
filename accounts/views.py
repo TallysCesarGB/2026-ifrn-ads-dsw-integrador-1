@@ -9,6 +9,7 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 from django.views.decorators.http import require_POST
+
 from posts.models import Post
 
 from .forms import LoginForm
@@ -126,7 +127,7 @@ def toggle_follow(request, user_id):
 @login_required
 @require_GET
 def search_users(request):
-    """Busca de usuários por username/nome (AJAX), usado na aba de busca do perfil."""
+    """Busca de usuários por username/nome (AJAX), usada no feed (user_search.js)."""
     q = request.GET.get("q", "").strip().lstrip("@")
     results = []
     if len(q) >= MIN_SEARCH_LENGTH:
