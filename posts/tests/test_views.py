@@ -1,4 +1,7 @@
+import re
+
 import pytest
+from django.test import Client
 from django.urls import reverse
 
 from accounts.models import Follow
@@ -121,3 +124,38 @@ class TestPostActions:
         like_url = reverse("posts:toggle_like", kwargs={"post_id": post.id})
         response = client.post(like_url)
         assert response.status_code == 302
+
+
+@pytest.mark.django_db
+class TestCsrfAjax:
+    """Regressão #39: o JS lia o token do cookie `csrftoken`, que é HttpOnly
+    (CSRF_COOKIE_HTTPONLY), e todo POST via fetchJSON voltava 403. O token
+    agora vem da <meta name="csrf-token"> renderizada no base.html."""
+
+    @pytest.fixture
+    def csrf_client(self, user):
+        client = Client(enforce_csrf_checks=True)
+        client.force_login(user)
+        return client
+
+    @staticmethod
+    def _meta_token(client):
+        html = client.get(reverse("posts:feed")).content.decode()
+        match = re.search(r'<meta name="csrf-token" content="([^"]+)"', html)
+        assert match, "base.html não expõe o token CSRF na <meta>"
+        return match.group(1)
+
+    def test_post_without_token_is_rejected(self, csrf_client, post):
+        response = csrf_client.post(reverse("posts:toggle_like", args=[post.id]))
+        assert response.status_code == 403
+
+    def test_post_with_token_from_meta_tag_succeeds(self, csrf_client, post):
+        token = self._meta_token(csrf_client)
+
+        response = csrf_client.post(
+            reverse("posts:toggle_like", args=[post.id]),
+            HTTP_X_CSRFTOKEN=token,
+        )
+
+        assert response.status_code == 200
+        assert response.json()["liked"] is True
