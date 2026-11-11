@@ -262,6 +262,9 @@ a { color: inherit; text-decoration: none; }
 .film-type-badge.tv { background: rgba(100,180,255,0.2); border: 1px solid rgba(100,180,255,0.4); color: #64b4ff; }
 .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: rgba(226,185,110,0.9); border: none; border-radius: 50%; width: 64px; height: 64px; cursor: pointer; font-size: 26px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
 .film-hero-info { display: flex; gap: 20px; padding: 0 20px; margin-top: -100px; position: relative; z-index: 2; }
+/* Trailer aberto: o player 16:9 precisa de mais que 300px e não pode ficar coberto pelo pôster. */
+.film-hero.is-playing { height: auto; padding-top: 52px; } /* faixa para Voltar/Fechar fora dos controles do YouTube */
+.film-hero.is-playing + .film-hero-info { margin-top: 16px; }
 .film-poster { width: 110px; height: 165px; object-fit: cover; border-radius: 12px; border: 3px solid var(--gold); box-shadow: 0 8px 40px rgba(0,0,0,0.7); }
 .film-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--fg); margin: 0 0 4px; line-height: 1.2; padding-top: 80px; }
 .film-tagline { font-size: 12px; color: var(--gold); font-style: italic; margin-bottom: 8px; }

@@ -13,10 +13,12 @@
   const trailerFrame = document.getElementById("trailerFrame");
   const backdropWrap = document.getElementById("backdropWrap");
   const filmTypeBadge = document.getElementById("filmTypeBadge");
+  const filmHero = document.getElementById("filmHero");
 
   if (playBtn) {
     playBtn.addEventListener("click", () => {
       trailerFrame.src = playBtn.dataset.trailerUrl;
+      filmHero.classList.add("is-playing");
       trailerWrap.style.display = "block";
       backdropWrap.style.display = "none";
       closeTrailerBtn.style.display = "block";
@@ -26,10 +28,25 @@
   if (closeTrailerBtn) {
     closeTrailerBtn.addEventListener("click", () => {
       trailerFrame.src = "";
+      filmHero.classList.remove("is-playing");
       trailerWrap.style.display = "none";
       backdropWrap.style.display = "block";
       closeTrailerBtn.style.display = "none";
       filmTypeBadge.style.display = "block";
+    });
+  }
+
+  // ── Voltar ───────────────────────────────────────────
+  // Volta para a página anterior do próprio site; sem histórico (link aberto
+  // direto ou em nova aba) segue o href, que aponta para o feed.
+  const backLink = document.getElementById("filmBackLink");
+  if (backLink) {
+    backLink.addEventListener("click", (e) => {
+      const cameFromSite = document.referrer.startsWith(window.location.origin);
+      if (cameFromSite && window.history.length > 1) {
+        e.preventDefault();
+        window.history.back();
+      }
     });
   }
 
