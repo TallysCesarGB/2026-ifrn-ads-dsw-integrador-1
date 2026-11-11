@@ -44,7 +44,7 @@ flowchart LR
         FIL[films<br/>catálogo TMDB]
     end
 
-    APP -- ORM --> DB[(PostgreSQL 16)]
+    APP -- ORM --> DB[(PostgreSQL 18)]
     FIL -- HTTP + cache --> TMDB[API da TMDB]
 ```
 
@@ -65,7 +65,7 @@ Os dados de filmes e séries não são guardados no banco: são consultados na T
 | Linguagem e framework | Python 3.14, Django 6.0 |
 | API | Django REST Framework, SimpleJWT, drf-spectacular |
 | Interface | Django Templates, CSS e JavaScript sem frameworks |
-| Banco de dados | PostgreSQL 16 |
+| Banco de dados | PostgreSQL 18 |
 | Ambiente | Docker Compose, uv, WhiteNoise, Gunicorn (produção) |
 | Qualidade | pytest, pytest-django, pytest-mock, pre-commit (ruff, djLint), GitHub Actions |
 | Dados externos | API v3 da TMDB |
@@ -126,6 +126,32 @@ Acesse **http://localhost:8000**. Usuário de demonstração: **demo@cineclub.co
 > ⚠️ A chave da TMDB fica só em `.envs/.local/.tmdb`, que está no `.gitignore`. Nunca a coloque em `.envs/.local/.django`, que é versionado.
 
 > Se alternar entre branches, mantenha uma cópia local de `.envs/.local/.tmdb` fora do repositório enquanto alguma branch ainda versionar esse caminho. O Git pode remover ou substituir o arquivo ao trocar de branch; depois, restaure a cópia em `.envs/.local/.tmdb`.
+
+### Problemas comuns
+
+**Django tenta conectar em `localhost:5432`.** O `config/settings/base.py` usa `DATABASE_URL` sempre que essa variável existe, e ela tem prioridade sobre `POSTGRES_HOST=postgres`. Não defina `DATABASE_URL` em nenhum arquivo de `.envs/.local/`. O `docker-compose.local.yml` já força `DATABASE_URL` vazia no container django para evitar isso.
+
+**Postgres não sobe: "in 18+, these Docker images are configured to store database data in a format..."** O volume foi criado com o PostgreSQL 16 e a imagem agora é a 18. Para migrar mantendo os dados:
+
+```bash
+export COMPOSE_FILE=docker-compose.local.yml
+docker compose down
+# 1. Dump com um Postgres 16 temporário sobre o volume antigo
+docker run -d --name pg16_dump --env-file .envs/.local/.postgres \
+  -e PGDATA=/var/lib/postgresql \
+  -v cineclub_cineclub_local_postgres_data:/var/lib/postgresql postgres:16
+docker exec pg16_dump pg_isready   # repita até responder "accepting connections"
+docker exec pg16_dump pg_dumpall -U <POSTGRES_USER> > backup_pg16.sql
+docker rm -f pg16_dump
+# 2. Recriar os volumes (apaga os dados antigos; confira o backup antes)
+docker compose down -v
+docker compose up -d postgres
+# 3. Restaurar antes de subir o Django (erros de "already exists" são esperados)
+docker compose exec -T postgres psql -U <POSTGRES_USER> -d postgres < backup_pg16.sql
+docker compose up -d
+```
+
+Se não precisar dos dados, basta `docker compose down -v`, depois `up -d` e o `migrate`.
 
 ### Atalhos com `just`
 

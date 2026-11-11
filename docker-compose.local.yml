@@ -22,6 +22,10 @@ services:
         required: false
       - path: ./.envs/.local/.postgres
         required: false
+    environment:
+      # Força o uso de POSTGRES_HOST=postgres; um DATABASE_URL vindo de algum
+      # env_file (ex.: apontando para localhost) teria prioridade em base.py.
+      DATABASE_URL: ''
     ports:
       - '8000:8000'
     command: /start
