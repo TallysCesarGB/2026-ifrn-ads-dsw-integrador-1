@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
+from django.db.models import Count
+from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
@@ -20,6 +22,9 @@ from .models import Follow
 User = get_user_model()
 
 MIN_SEARCH_LENGTH = 2
+
+# Abas da grade do perfil: valor de ?tipo= -> media_type (None = todos).
+PROFILE_TABS = {"todos": None, "filmes": "movie", "series": "tv"}
 
 
 def auth_view(request):
@@ -77,7 +82,18 @@ def profile_view(request, username):
             followed=profile_user,
         ).exists()
 
-    posts = Post.objects.filter(user=profile_user).order_by("-created_at")
+    user_posts = Post.objects.filter(user=profile_user)
+    counts = user_posts.aggregate(
+        todos=Count("id"),
+        filmes=Count("id", filter=Q(media_type="movie")),
+        series=Count("id", filter=Q(media_type="tv")),
+    )
+    active_tab = request.GET.get("tipo", "todos")
+    if active_tab not in PROFILE_TABS:
+        active_tab = "todos"
+    posts = user_posts.order_by("-created_at")
+    if PROFILE_TABS[active_tab]:
+        posts = posts.filter(media_type=PROFILE_TABS[active_tab])
 
     edit_form = ProfileEditForm(instance=profile) if is_me else None
 
@@ -95,6 +111,8 @@ def profile_view(request, username):
             "profile_user": profile_user,
             "profile": profile,
             "posts": posts,
+            "active_tab": active_tab,
+            "tab_counts": counts,
             "is_me": is_me,
             "is_following": is_following,
             "edit_form": edit_form,

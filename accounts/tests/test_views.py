@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 
 from accounts.models import Follow
+from posts.models import Post
 
 User = get_user_model()
 
@@ -159,3 +160,89 @@ class TestUserSearch:
         url = reverse("accounts:search_users") + "?q=m"
         response = auth_client.get(url)
         assert response.json() == []
+
+
+@pytest.mark.django_db
+class TestProfileTabs:
+    """#62: abas Todos / Filmes / Séries na grade do perfil."""
+
+    @pytest.fixture
+    def indicacoes(self, user):
+        return {
+            "matrix": Post.objects.create(
+                user=user,
+                tmdb_id=603,
+                media_type="movie",
+                title="Matrix",
+            ),
+            "duna": Post.objects.create(
+                user=user,
+                tmdb_id=438631,
+                media_type="movie",
+                title="Duna",
+            ),
+            "dark": Post.objects.create(
+                user=user,
+                tmdb_id=70523,
+                media_type="tv",
+                title="Dark",
+            ),
+        }
+
+    def _get(self, client, user, tipo=None):
+        url = reverse("accounts:profile", kwargs={"username": user.username})
+        return client.get(url, {"tipo": tipo} if tipo else {})
+
+    def test_defaults_to_all_posts(self, auth_client, user, indicacoes):
+        response = self._get(auth_client, user)
+
+        assert response.context["active_tab"] == "todos"
+        assert set(response.context["posts"]) == set(indicacoes.values())
+
+    @pytest.mark.parametrize(
+        ("tipo", "esperados"),
+        [("filmes", {"matrix", "duna"}), ("series", {"dark"})],
+    )
+    def test_filters_by_media_type(
+        self,
+        auth_client,
+        user,
+        indicacoes,
+        tipo,
+        esperados,
+    ):
+        response = self._get(auth_client, user, tipo)
+
+        assert response.context["active_tab"] == tipo
+        assert set(response.context["posts"]) == {indicacoes[k] for k in esperados}
+
+    def test_counts_are_shown_in_every_tab(self, auth_client, user, indicacoes):
+        response = self._get(auth_client, user, "series")
+
+        assert response.context["tab_counts"] == {"todos": 3, "filmes": 2, "series": 1}
+
+    def test_invalid_tab_falls_back_to_all(self, auth_client, user, indicacoes):
+        response = self._get(auth_client, user, "banana")
+
+        assert response.context["active_tab"] == "todos"
+        assert len(response.context["posts"]) == len(indicacoes)
+
+    def test_active_tab_is_marked_for_screen_readers(self, auth_client, user):
+        html = self._get(auth_client, user, "filmes").content.decode()
+
+        assert html.count('aria-current="page"') == 1
+        assert 'href="/accounts/perfil/tallys/?tipo=filmes"' in html
+
+    def test_series_badge_only_in_all_tab(self, auth_client, user, indicacoes):
+        todos = self._get(auth_client, user).content.decode()
+        series = self._get(auth_client, user, "series").content.decode()
+
+        assert todos.count('class="post-grid-badge"') == 1
+        assert 'class="post-grid-badge"' not in series
+
+    def test_empty_tab_has_its_own_message(self, auth_client, user):
+        Post.objects.create(user=user, tmdb_id=603, media_type="movie", title="Matrix")
+
+        html = self._get(auth_client, user, "series").content.decode()
+
+        assert "Nenhuma série indicada ainda." in html

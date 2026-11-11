@@ -87,9 +87,24 @@
         </div>
       </div>
     </div>
-    <div class="profile-tabs">
-      <span class="active">🎬 Posts</span>
-    </div>
+    {% url 'accounts:profile' username=profile_user.username as profile_url %}
+    <nav class="profile-tabs" aria-label="Indicações">
+      <a href="{{ profile_url }}"
+         class="{% if active_tab == 'todos' %}active{% endif %}"
+         {% if active_tab == 'todos' %}aria-current="page"{% endif %}>
+        Todos <span class="tab-count">{{ tab_counts.todos }}</span>
+      </a>
+      <a href="{{ profile_url }}?tipo=filmes"
+         class="{% if active_tab == 'filmes' %}active{% endif %}"
+         {% if active_tab == 'filmes' %}aria-current="page"{% endif %}>
+        🎬 Filmes <span class="tab-count">{{ tab_counts.filmes }}</span>
+      </a>
+      <a href="{{ profile_url }}?tipo=series"
+         class="{% if active_tab == 'series' %}active{% endif %}"
+         {% if active_tab == 'series' %}aria-current="page"{% endif %}>
+        📺 Séries <span class="tab-count">{{ tab_counts.series }}</span>
+      </a>
+    </nav>
     <div id="tab-posts">
       {% if posts %}
         <div class="post-grid">
@@ -101,13 +116,24 @@
               {% else %}
                 <div class="post-poster-empty" style="height:100%;">🎬</div>
               {% endif %}
+              {% if active_tab == "todos" and post.media_type == "tv" %}
+                <span class="post-grid-badge" title="Série" aria-label="Série">📺</span>
+              {% endif %}
             </a>
           {% endfor %}
         </div>
       {% else %}
         <div class="empty-state">
           <div class="emoji">🍿</div>
-          <p>Nenhuma indicação ainda.</p>
+          <p>
+            {% if active_tab == "filmes" %}
+              Nenhum filme indicado ainda.
+            {% elif active_tab == "series" %}
+              Nenhuma série indicada ainda.
+            {% else %}
+              Nenhuma indicação ainda.
+            {% endif %}
+          </p>
         </div>
       {% endif %}
     </div>
