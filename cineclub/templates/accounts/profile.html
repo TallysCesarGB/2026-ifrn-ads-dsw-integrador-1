@@ -88,10 +88,9 @@
       </div>
     </div>
     <div class="profile-tabs">
-      <a href="#" class="active" data-tab="posts">🎬 Posts</a>
-      {% if is_me %}<a href="#" data-tab="search">🔍 Buscar usuários</a>{% endif %}
+      <span class="active">🎬 Posts</span>
     </div>
-    <div id="tab-posts" class="tab-content">
+    <div id="tab-posts">
       {% if posts %}
         <div class="post-grid">
           {% for post in posts %}
@@ -112,21 +111,6 @@
         </div>
       {% endif %}
     </div>
-    {% if is_me %}
-      <div id="tab-search"
-           class="tab-content"
-           style="display:none;
-                  padding:16px 20px 40px">
-        <div class="search-box">
-          <input type="text"
-                 id="userSearchInput"
-                 placeholder="Busque por @username ou nome…"
-                 autocomplete="off" />
-          <span class="icon">🔍</span>
-        </div>
-        <div id="userSearchResults"></div>
-      </div>
-    {% endif %}
   </div>
 {% endblock %}
 {% block extra_scripts %}

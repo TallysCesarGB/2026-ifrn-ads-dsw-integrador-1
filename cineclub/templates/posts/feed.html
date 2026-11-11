@@ -7,6 +7,18 @@
   <div class="container-narrow">
     {% include "includes/stories.html" %}
     <div style="padding:12px 16px;">
+      <section class="user-search" aria-label="Buscar usuários">
+        <div class="search-box">
+          <input type="search"
+                 id="userSearchInput"
+                 placeholder="Buscar pessoas por @username ou nome…"
+                 aria-label="Buscar pessoas por @username ou nome"
+                 aria-controls="userSearchResults"
+                 autocomplete="off" />
+          <span class="icon" aria-hidden="true">🔍</span>
+        </div>
+        <div id="userSearchResults" aria-live="polite"></div>
+      </section>
       <div id="postsContainer">
         {% if posts %}
           {% include "posts/_post_list.html" %}
@@ -34,4 +46,5 @@
 {% block extra_scripts %}
   <script src="{% static 'js/feed.js' %}"></script>
   <script src="{% static 'js/stories.js' %}"></script>
+  <script src="{% static 'js/user_search.js' %}"></script>
 {% endblock %}

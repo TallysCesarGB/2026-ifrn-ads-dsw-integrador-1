@@ -44,6 +44,14 @@ class TestFeedView:
         response = auth_client.get(reverse("posts:feed"))
         assert b"Indicado pela Maria" in response.content
 
+    def test_feed_has_user_search(self, auth_client):
+        """#41: a busca de usuários fica na página principal."""
+        html = auth_client.get(reverse("posts:feed")).content.decode()
+
+        assert 'id="userSearchInput"' in html
+        assert 'id="userSearchResults"' in html
+        assert "js/user_search.js" in html
+
     def test_feed_pagination_endpoint(self, auth_client, post):
         response = auth_client.get(reverse("posts:feed_more") + "?page=1")
         assert response.status_code == 200
