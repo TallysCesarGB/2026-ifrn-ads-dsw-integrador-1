@@ -13,10 +13,12 @@
   const trailerFrame = document.getElementById("trailerFrame");
   const backdropWrap = document.getElementById("backdropWrap");
   const filmTypeBadge = document.getElementById("filmTypeBadge");
+  const filmHero = document.getElementById("filmHero");
 
   if (playBtn) {
     playBtn.addEventListener("click", () => {
       trailerFrame.src = playBtn.dataset.trailerUrl;
+      filmHero.classList.add("is-playing");
       trailerWrap.style.display = "block";
       backdropWrap.style.display = "none";
       closeTrailerBtn.style.display = "block";
@@ -26,6 +28,7 @@
   if (closeTrailerBtn) {
     closeTrailerBtn.addEventListener("click", () => {
       trailerFrame.src = "";
+      filmHero.classList.remove("is-playing");
       trailerWrap.style.display = "none";
       backdropWrap.style.display = "block";
       closeTrailerBtn.style.display = "none";

@@ -16,9 +16,12 @@
                     position:relative;
                     padding-bottom:56.25%;
                     height:0">
+          {# referrerpolicy: o site usa Referrer-Policy: same-origin, que faria o iframe #}
+          {# carregar sem Referer; o YouTube recusa embeds sem Referer (Erro 153). #40  #}
           <iframe id="trailerFrame"
-                  title="Trailer"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  title="Trailer de {{ film.title }}"
+                  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                  referrerpolicy="strict-origin-when-cross-origin"
                   allowfullscreen
                   style="position:absolute;
                          top:0;

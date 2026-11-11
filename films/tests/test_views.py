@@ -42,6 +42,27 @@ class TestFilmDetailView:
         assert response.status_code == 200
         assert b"Matrix" in response.content
 
+    def test_trailer_iframe_sends_referrer_to_youtube(self, auth_client, mocker):
+        """Regressão #40: com Referrer-Policy: same-origin (padrão do Django), o
+        iframe carregaria sem Referer e o YouTube responderia com o Erro 153.
+        O atributo no iframe sobrepõe a política só para o trailer."""
+        mocker.patch("films.services.get_detail", return_value=FAKE_FILM)
+        url = reverse("films:detail", kwargs={"media_type": "movie", "tmdb_id": 603})
+
+        html = auth_client.get(url).content.decode()
+        assert 'id="trailerFrame"' in html
+        assert 'referrerpolicy="strict-origin-when-cross-origin"' in html
+        assert 'data-trailer-url="https://www.youtube.com/embed/abc123"' in html
+
+    def test_no_trailer_player_when_film_has_no_trailer(self, auth_client, mocker):
+        film_sem_trailer = {**FAKE_FILM, "trailer": None}
+        mocker.patch("films.services.get_detail", return_value=film_sem_trailer)
+        url = reverse("films:detail", kwargs={"media_type": "movie", "tmdb_id": 603})
+
+        html = auth_client.get(url).content.decode()
+        assert 'id="trailerFrame"' not in html
+        assert 'id="playTrailerBtn"' not in html
+
     def test_404_when_tmdb_fails(self, auth_client, mocker):
         mocker.patch(
             "films.services.get_detail",

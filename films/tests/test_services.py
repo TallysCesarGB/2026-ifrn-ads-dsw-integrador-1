@@ -112,6 +112,38 @@ class TestGetDetail:
             services.get_detail("movie", 999999)
 
 
+class TestGetTrailer:
+    def test_embed_url_autoplays_muted_without_js_api(self, mocker):
+        """Regressão #40: o ▶ do site já é o clique do usuário, então o vídeo
+        começa sozinho (sem som, exigência de autoplay dos navegadores).
+        enablejsapi exigiria também o parâmetro `origin` e não é usado."""
+        mocker.patch("films.services._tmdb_get", return_value=TMDB_VIDEOS)
+
+        trailer = services.get_trailer("movie", 603)
+
+        assert trailer == {
+            "key": "abc123",
+            "url": "https://www.youtube.com/embed/abc123?rel=0&autoplay=1&mute=1",
+        }
+
+    def test_prefers_trailer_over_teaser(self, mocker):
+        videos = {
+            "results": [
+                {"site": "YouTube", "type": "Teaser", "key": "teaser"},
+                {"site": "Vimeo", "type": "Trailer", "key": "vimeo"},
+                {"site": "YouTube", "type": "Trailer", "key": "trailer"},
+            ],
+        }
+        mocker.patch("films.services._tmdb_get", return_value=videos)
+
+        assert services.get_trailer("movie", 603)["key"] == "trailer"
+
+    def test_returns_none_when_tmdb_fails(self, mocker):
+        mocker.patch("films.services._tmdb_get", side_effect=services.TMDBError("500"))
+
+        assert services.get_trailer("movie", 603) is None
+
+
 class TestRankings:
     def test_ranking_app_falls_back_to_tmdb_when_no_posts(self, db, mocker):
         mocker.patch(

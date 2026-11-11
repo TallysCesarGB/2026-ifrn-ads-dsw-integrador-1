@@ -162,9 +162,12 @@ def get_trailer(media_type: str, tmdb_id: int) -> dict | None:
     )
     if not trailer:
         return None
+    # autoplay=1 + mute=1: o usuário já clicou em ▶, então o vídeo começa direto
+    # (navegadores só permitem autoplay sem som). Sem enablejsapi: nenhum JS
+    # controla o player, e esse modo exigiria também o parâmetro `origin`.
     return {
         "key": trailer["key"],
-        "url": f"https://www.youtube.com/embed/{trailer['key']}?rel=0&mute=1&enablejsapi=1",
+        "url": f"https://www.youtube.com/embed/{trailer['key']}?rel=0&autoplay=1&mute=1",
     }
 
 
