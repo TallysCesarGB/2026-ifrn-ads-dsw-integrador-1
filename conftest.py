@@ -2,8 +2,12 @@
 Fixtures compartilhadas entre os testes de todos os apps do CineClub.
 """
 
+import re
+
 import pytest
 from django.contrib.auth import get_user_model
+from django.test import Client
+from django.urls import reverse
 from rest_framework.test import APIClient
 
 User = get_user_model()
@@ -68,3 +72,22 @@ def post(db, user):
         poster_url="https://image.tmdb.org/t/p/w500/matrix.jpg",
         comment="Filme incrível!",
     )
+
+
+@pytest.fixture
+def csrf_client(user):
+    """Client de sessão logado COM checagem de CSRF (o Client padrão do
+    Django a desliga). Use para testar as chamadas AJAX como o navegador faz."""
+    client = Client(enforce_csrf_checks=True)
+    client.force_login(user)
+    return client
+
+
+@pytest.fixture
+def page_csrf_token(csrf_client):
+    """Token CSRF lido da <meta name="csrf-token"> do feed, o mesmo lugar de
+    onde o window.fetchJSON (base.html) o lê."""
+    html = csrf_client.get(reverse("posts:feed")).content.decode()
+    match = re.search(r'<meta name="csrf-token" content="([^"]+)"', html)
+    assert match, "base.html não expõe o token CSRF na <meta>"
+    return match.group(1)
