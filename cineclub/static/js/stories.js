@@ -213,7 +213,9 @@
     startTimer();
     if (dx > 15) return;
     if (dt < 300) {
-      if (x < window.innerWidth / 3) prevItem();
+      // Mede pela coluna do story (no desktop ela fica centralizada, não ocupa a tela toda)
+      const area = viewer.querySelector(".story-content").getBoundingClientRect();
+      if (x < area.left + area.width / 3) prevItem();
       else nextItem();
     }
   }
