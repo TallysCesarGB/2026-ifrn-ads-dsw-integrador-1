@@ -136,8 +136,8 @@
                 <img src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ actor.name|urlencode }}"
                      alt="{{ actor.name }}" />
               {% endif %}
-              <div style="font-size:10px;color:var(--fg);font-weight:600;">{{ actor.name|truncatechars:14 }}</div>
-              <div style="font-size:9px;color:var(--muted-2);">{{ actor.character|default:""|truncatechars:16 }}</div>
+              <div class="cast-name">{{ actor.name|truncatechars:14 }}</div>
+              <div class="cast-character">{{ actor.character|default:""|truncatechars:16 }}</div>
             </div>
           {% endfor %}
         </div>

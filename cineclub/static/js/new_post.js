@@ -63,7 +63,7 @@
         }
         <div style="flex:1;min-width:0;text-align:left;">
           <div style="font-weight:700;font-size:14px;color:var(--fg);margin-bottom:3px;">${escapeHtml(film.title)}</div>
-          <div style="font-size:12px;color:#666;display:flex;gap:10px;margin-bottom:4px;flex-wrap:wrap;">
+          <div style="font-size:12px;color:var(--muted);display:flex;gap:10px;margin-bottom:4px;flex-wrap:wrap;">
             <span class="pill ${film.media_type}">${film.media_type === "tv" ? "📺 Série" : "🎬 Filme"}</span>
             ${film.year ? `<span>📅 ${film.year}</span>` : ""}
             ${film.rating ? `<span>★ ${Number(film.rating).toFixed(1)}</span>` : ""}
