@@ -39,7 +39,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-  "coverage==7.17.3",
+  "coverage==7.17.4",
   "django-coverage-plugin==3.2.2",
   "django-debug-toolbar==8.0.0",
   "django-extensions==4.1",
@@ -48,7 +48,7 @@ dev = [
   "djangorestframework-stubs==3.18.2",
   "djlint==1.54.0",
   "factory-boy==3.3.3",
-  "faker==40.54.0",
+  "faker==40.63.0",
   "ipdb==0.13.13",
   "mypy==2.4.1",
   "pre-commit==4.7.0",
