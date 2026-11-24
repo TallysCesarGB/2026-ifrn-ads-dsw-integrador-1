@@ -21,17 +21,54 @@ concurrency:
 jobs:
   linter:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      # Corrige automaticamente só em PRs de branches deste repositório
+      # (forks não aceitam push e o token do Dependabot é somente leitura).
+      AUTOFIX: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' }}
     steps:
       - name: Checkout Code Repository
         uses: actions/checkout@v7
+        with:
+          # Em PR, faz checkout da branch (não do merge commit) para poder dar push.
+          ref: ${{ env.AUTOFIX == 'true' && github.head_ref || '' }}
+          # Push com o GITHUB_TOKEN não dispara um novo CI; com o secret
+          # AUTOFIX_TOKEN (PAT com permissão de contents) o commit de correção
+          # também é testado.
+          token: ${{ secrets.AUTOFIX_TOKEN || github.token }}
 
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
           python-version-file: '.python-version'
-      # Consider using pre-commit.ci for open source project
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Cache pre-commit environments
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
+
+      - name: Auto-fix and push
+        if: env.AUTOFIX == 'true'
+        run: |
+          # Duas passadas: ruff format e ruff --fix às vezes mexem um depois do outro.
+          pre-commit run --all-files || pre-commit run --all-files || true
+          if git diff --quiet; then
+            echo "Nada para corrigir."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "style: correções automáticas do pre-commit"
+          git push
+
+      # Falha se sobrar algo que só se corrige à mão (ou, fora de PR, qualquer erro).
       - name: Run pre-commit
-        uses: pre-commit/action@v3.0.1
+        run: pre-commit run --all-files --show-diff-on-failure
 
   # With no caching at all the entire ci process takes 3m to complete!
   pytest:

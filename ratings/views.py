@@ -2,6 +2,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 
+from .models import MAX_SCORE
+from .models import MIN_SCORE
 from .models import Rating
 
 
@@ -15,14 +17,19 @@ def rate(request):
         tmdb_id = int(request.POST.get("tmdb_id"))
         media_type = request.POST.get("media_type", "movie")
         score = int(request.POST.get("score"))
-    except (TypeError, ValueError):
+    except TypeError, ValueError:
         return JsonResponse({"error": "Parâmetros inválidos."}, status=400)
 
-    if not 0 <= score <= 10:
+    if not MIN_SCORE <= score <= MAX_SCORE:
         return JsonResponse({"error": "Score deve ser entre 0 e 10."}, status=400)
 
     Rating.objects.update_or_create(
-        user=request.user, tmdb_id=tmdb_id, media_type=media_type, defaults={"score": score}
+        user=request.user,
+        tmdb_id=tmdb_id,
+        media_type=media_type,
+        defaults={"score": score},
     )
     average, total = Rating.average_for(tmdb_id, media_type)
-    return JsonResponse({"ok": True, "average": average, "total": total, "my_score": score})
+    return JsonResponse(
+        {"ok": True, "average": average, "total": total, "my_score": score},
+    )

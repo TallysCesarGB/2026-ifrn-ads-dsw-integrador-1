@@ -27,6 +27,8 @@ logger = logging.getLogger(__name__)
 TMDB_BASE = settings.TMDB_BASE_URL
 LANG = settings.TMDB_LANGUAGE
 CACHE_TTL = settings.TMDB_CACHE_TTL
+# Mínimo de caracteres para buscar na TMDB
+MIN_QUERY_LENGTH = 2
 
 PLATFORMS = {
     8: {

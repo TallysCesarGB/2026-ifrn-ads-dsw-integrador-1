@@ -19,7 +19,12 @@ class TestRating:
 
     def test_average_for_multiple_ratings(self, user, other_user):
         Rating.objects.create(user=user, tmdb_id=603, media_type="movie", score=8)
-        Rating.objects.create(user=other_user, tmdb_id=603, media_type="movie", score=10)
+        Rating.objects.create(
+            user=other_user,
+            tmdb_id=603,
+            media_type="movie",
+            score=10,
+        )
         average, total = Rating.average_for(603, "movie")
         assert average == 9.0
         assert total == 2

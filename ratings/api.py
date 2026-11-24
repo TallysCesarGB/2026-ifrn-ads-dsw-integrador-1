@@ -1,15 +1,18 @@
-from django.shortcuts import get_object_or_404
 from drf_spectacular.utils import extend_schema
-from rest_framework import permissions, status
+from rest_framework import permissions
+from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Rating
-from .serializers import MyRatingSerializer, RatingCreateSerializer, RatingSummarySerializer
+from .serializers import MyRatingSerializer
+from .serializers import RatingCreateSerializer
+from .serializers import RatingSummarySerializer
 
 
 class RatingCreateView(APIView):
     """POST /api/v1/ratings/ — cria ou atualiza a nota do usuário autenticado."""
+
     permission_classes = [permissions.IsAuthenticated]
 
     @extend_schema(request=RatingCreateSerializer, responses=RatingSummarySerializer)
@@ -29,6 +32,7 @@ class RatingCreateView(APIView):
 
 class RatingSummaryView(APIView):
     """GET /api/v1/ratings/{tmdb_id}/?media_type=movie"""
+
     permission_classes = [permissions.AllowAny]
 
     @extend_schema(responses=RatingSummarySerializer)
@@ -40,13 +44,18 @@ class RatingSummaryView(APIView):
 
 class MyRatingView(APIView):
     """GET /api/v1/ratings/{tmdb_id}/me/?media_type=movie"""
+
     permission_classes = [permissions.IsAuthenticated]
 
     @extend_schema(responses=MyRatingSerializer)
     def get(self, request, tmdb_id):
         media_type = request.query_params.get("media_type", "movie")
         score = (
-            Rating.objects.filter(user=request.user, tmdb_id=tmdb_id, media_type=media_type)
+            Rating.objects.filter(
+                user=request.user,
+                tmdb_id=tmdb_id,
+                media_type=media_type,
+            )
             .values_list("score", flat=True)
             .first()
         )
