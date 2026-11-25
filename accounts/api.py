@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
@@ -6,6 +7,7 @@ from rest_framework import generics
 from rest_framework import permissions
 from rest_framework import serializers
 from rest_framework import status
+from rest_framework.exceptions import PermissionDenied
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.exceptions import AuthenticationFailed
@@ -82,6 +84,11 @@ class RegisterView(generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]
 
     def create(self, request, *args, **kwargs):
+        # Mesma flag dos adapters do allauth. Levantada aqui (e não numa
+        # permission class) para responder 403: com JWT, o DRF transforma
+        # permissão negada de anônimo em 401.
+        if not getattr(settings, "ACCOUNT_ALLOW_REGISTRATION", True):
+            raise PermissionDenied("O cadastro de novas contas está desativado.")
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()

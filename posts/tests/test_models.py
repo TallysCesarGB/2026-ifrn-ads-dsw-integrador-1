@@ -46,6 +46,10 @@ class TestLike:
         with pytest.raises(IntegrityError):
             Like.objects.create(user=user, post=post)
 
+    def test_str_representation(self, post, user):
+        like = Like.objects.create(user=user, post=post)
+        assert str(like) == f"tallys curtiu #{post.id}"
+
 
 @pytest.mark.django_db
 class TestComment:
@@ -58,6 +62,10 @@ class TestComment:
         c2 = Comment.objects.create(post=post, user=user, content="Segundo")
         assert list(post.comment_set.all()) == [c1, c2]
 
+    def test_str_truncates_content(self, post, user):
+        comment = Comment.objects.create(post=post, user=user, content="a" * 40)
+        assert str(comment) == f"tallys: {'a' * 30}"
+
 
 @pytest.mark.django_db
 class TestRecommendation:
@@ -68,3 +76,10 @@ class TestRecommendation:
         )
         assert rec.original_post == post
         assert post.recommendations.count() == 1
+
+    def test_str_representation(self, post, other_user):
+        rec = Recommendation.objects.create(
+            original_post=post,
+            recommended_by=other_user,
+        )
+        assert str(rec) == f"maria recomendou #{post.id}"

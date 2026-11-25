@@ -128,6 +128,14 @@ class TestPostActions:
         assert len(data) == 1
         assert data[0]["content"] == "Muito bom mesmo!"
 
+    @pytest.mark.parametrize("content", ["", "x" * 501])
+    def test_create_comment_invalid_returns_400(self, auth_client, post, content):
+        url = reverse("posts:create_comment", kwargs={"post_id": post.id})
+        response = auth_client.post(url, {"content": content})
+        assert response.status_code == 400
+        assert "content" in response.json()["errors"]
+        assert not Comment.objects.filter(post=post).exists()
+
     def test_actions_require_login(self, client, post):
         like_url = reverse("posts:toggle_like", kwargs={"post_id": post.id})
         response = client.post(like_url)

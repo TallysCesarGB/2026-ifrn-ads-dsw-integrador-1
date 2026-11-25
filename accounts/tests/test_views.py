@@ -57,6 +57,53 @@ class TestAuthView:
         assert response.status_code == 200  # re-renderiza com erro
         assert not User.objects.filter(username="joaozinho").exists()
 
+    def test_register_rejects_duplicate_email(self, client, user):
+        url = reverse("accounts:login") + "?mode=register"
+        response = client.post(
+            url,
+            {
+                "mode": "register",
+                "username": "outro",
+                "email": "TALLYS@ifrn.edu.br",
+                "password": "senha123456",
+            },
+        )
+        assert response.status_code == 200
+        assert "Esse e-mail já está cadastrado.".encode() in response.content
+        assert not User.objects.filter(username="outro").exists()
+
+    def test_register_blocked_when_registration_disabled(self, client, settings):
+        settings.ACCOUNT_ALLOW_REGISTRATION = False
+        url = reverse("accounts:login") + "?mode=register"
+        response = client.post(
+            url,
+            {
+                "mode": "register",
+                "username": "novo",
+                "email": "novo@example.com",
+                "password": "senha123456",
+            },
+        )
+        assert response.status_code == 200
+        assert "O cadastro de novas contas está desativado.".encode() in (
+            response.content
+        )
+        assert not User.objects.filter(username="novo").exists()
+
+    def test_login_with_unknown_email_shows_error(self, client, user):
+        url = reverse("accounts:login") + "?mode=login"
+        response = client.post(
+            url,
+            {
+                "mode": "login",
+                "username": "ninguem@example.com",
+                "password": "senha123456",
+            },
+        )
+        assert response.status_code == 200
+        assert "Credenciais inválidas.".encode() in response.content
+        assert "_auth_user_id" not in client.session
+
     def test_login_with_correct_credentials(self, client, user):
         url = reverse("accounts:login") + "?mode=login"
         response = client.post(

@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth import login as auth_login
@@ -27,6 +28,11 @@ MIN_SEARCH_LENGTH = 2
 PROFILE_TABS = {"todos": None, "filmes": "movie", "series": "tv"}
 
 
+def registration_open():
+    """Mesma flag usada pelos adapters do allauth (cineclub.users.adapters)."""
+    return getattr(settings, "ACCOUNT_ALLOW_REGISTRATION", True)
+
+
 def auth_view(request):
     """Página única com abas de Entrar / Criar conta (equivalente à
     Auth.jsx do front-end original)."""
@@ -38,7 +44,9 @@ def auth_view(request):
     register_form = RegisterForm()
 
     if request.method == "POST":
-        if mode == "register":
+        if mode == "register" and not registration_open():
+            messages.error(request, "O cadastro de novas contas está desativado.")
+        elif mode == "register":
             register_form = RegisterForm(request.POST)
             if register_form.is_valid():
                 user = register_form.save()
