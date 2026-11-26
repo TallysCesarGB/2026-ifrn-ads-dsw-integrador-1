@@ -7,12 +7,12 @@ from django.db.models import Count
 
 from posts.models import MEDIA_TYPE_CHOICES
 
-MIN_SCORE = 0
+MIN_SCORE = 1
 MAX_SCORE = 10
 
 
 class Rating(models.Model):
-    """Nota (0-10) que um usuário dá a um filme/série (por tmdb_id)."""
+    """Nota (1-10) que um usuário dá a um filme/série (por tmdb_id)."""
 
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,

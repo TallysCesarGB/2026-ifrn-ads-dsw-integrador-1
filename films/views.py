@@ -4,6 +4,8 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 
+from ratings.models import MAX_SCORE
+from ratings.models import MIN_SCORE
 from ratings.models import Rating
 
 from . import services
@@ -36,7 +38,7 @@ def film_detail(request, media_type, tmdb_id):
             "rating_average": average,
             "rating_total": total,
             "my_score": my_score,
-            "score_range": range(1, 11),
+            "score_range": range(MIN_SCORE, MAX_SCORE + 1),
         },
     )
 
