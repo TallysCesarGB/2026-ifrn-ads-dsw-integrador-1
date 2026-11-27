@@ -121,9 +121,46 @@ class TestGetDetail:
             services.get_detail("movie", 999999)
 
 
+class TestIconsInsteadOfEmoji:
+    """#54: os dados não carregam emoji; o front desenha ícones e logos."""
+
+    def test_platforms_have_no_emoji(self):
+        for platform in services.PLATFORMS.values():
+            assert set(platform) == {"name", "web"}
+
+    def test_streaming_link_uses_tmdb_logo_without_emoji(self):
+        br = {"flatrate": [{"provider_id": 8, "logo_path": "/netflix.png"}]}
+        link = services._build_streaming(br, 603)["stream"][0]
+
+        assert "emoji" not in link
+        assert link["logo_url"] == "https://image.tmdb.org/t/p/original/netflix.png"
+
+    @pytest.mark.parametrize(
+        ("category", "label", "icon"),
+        [
+            ("movies", "Top 10 Filmes do Brasil", "clapperboard"),
+            ("series", "Top 10 Séries do Brasil", "tv"),
+            ("world", "Top 10 Mundo", "globe"),
+            ("upcoming", "Lançamentos", "rocket"),
+            ("app", "Top 10 CineClub", "star"),
+            ("rated", "Top 10 Avaliados", "trophy"),
+        ],
+    )
+    @pytest.mark.django_db
+    def test_ranking_returns_plain_label_and_icon(self, mocker, category, label, icon):
+        mocker.patch(
+            "films.services._tmdb_get",
+            side_effect=services.TMDBError("fora do ar"),
+        )
+        data = services.get_ranking(category)
+
+        assert data["label"] == label
+        assert data["icon"] == icon
+
+
 class TestGetTrailer:
     def test_embed_url_autoplays_muted_without_js_api(self, mocker):
-        """Regressão #40: o ▶ do site já é o clique do usuário, então o vídeo
+        """Regressão #40: o play do site já é o clique do usuário, então o vídeo
         começa sozinho (sem som, exigência de autoplay dos navegadores).
         enablejsapi exigiria também o parâmetro `origin` e não é usado."""
         mocker.patch("films.services._tmdb_get", return_value=TMDB_VIDEOS)
@@ -352,7 +389,6 @@ class TestBuildStreaming:
             {
                 "provider_id": 119,
                 "name": "Prime Video",
-                "emoji": "🔵",
                 "kind": "rent",
                 "logo_url": "https://image.tmdb.org/t/p/original/prime.png",
                 "web_link": "https://www.primevideo.com/search?phrase=603",
@@ -544,7 +580,8 @@ class TestGetRankingErrors:
 
         assert data == {
             "category": "movies",
-            "label": services.RANKINGS["movies"][0],
+            "label": "Top 10 Filmes do Brasil",
+            "icon": "clapperboard",
             "items": [],
         }
         assert "movies" in caplog.text

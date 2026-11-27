@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Ícones Lucide (https://lucide.dev), lucide-static v1.66.0, licença ISC. -->
+  <!-- Só os ícones usados no site (#54). Traço/cor vêm do CSS (.icon). -->
+  <symbol id="arrow-left" viewBox="0 0 24 24">
+    <path d="m12 19-7-7 7-7" />
+    <path d="M19 12H5" />
+  </symbol>
+  <symbol id="arrow-right" viewBox="0 0 24 24">
+    <path d="M5 12h14" />
+    <path d="m12 5 7 7-7 7" />
+  </symbol>
+  <symbol id="calendar" viewBox="0 0 24 24">
+    <path d="M8 2v3" />
+    <path d="M16 2v3" />
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <path d="M3 9h18" />
+  </symbol>
+  <symbol id="camera" viewBox="0 0 24 24">
+    <path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" />
+    <circle cx="12" cy="13" r="3" />
+  </symbol>
+  <symbol id="chart-column" viewBox="0 0 24 24">
+    <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+    <path d="M18 17V9" />
+    <path d="M13 17V5" />
+    <path d="M8 17v-3" />
+  </symbol>
+  <symbol id="chevron-left" viewBox="0 0 24 24">
+    <path d="m15 18-6-6 6-6" />
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 24 24">
+    <path d="m9 18 6-6-6-6" />
+  </symbol>
+  <symbol id="clapperboard" viewBox="0 0 24 24">
+    <path d="m12.296 3.464 3.02 3.956" />
+    <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z" />
+    <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+    <path d="m6.18 5.276 3.1 3.899" />
+  </symbol>
+  <symbol id="clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 6v6l4 2" />
+  </symbol>
+  <symbol id="credit-card" viewBox="0 0 24 24">
+    <rect width="20" height="14" x="2" y="5" rx="2" />
+    <line x1="2" x2="22" y1="10" y2="10" />
+    <path d="M6 14h2" />
+  </symbol>
+  <symbol id="flame" viewBox="0 0 24 24">
+    <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" />
+  </symbol>
+  <symbol id="frown" viewBox="0 0 24 24">
+    <path d="M15 10V9" />
+    <path d="M9 10V9" />
+    <path d="M9 16a5 5 0 016 0" />
+    <circle cx="12" cy="12" r="10" />
+  </symbol>
+  <symbol id="globe" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+    <path d="M2 12h20" />
+  </symbol>
+  <symbol id="heart" viewBox="0 0 24 24">
+    <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+  </symbol>
+  <symbol id="info" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 16v-4" />
+    <path d="M12 8h.01" />
+  </symbol>
+  <symbol id="loader-circle" viewBox="0 0 24 24">
+    <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+  </symbol>
+  <symbol id="log-out" viewBox="0 0 24 24">
+    <path d="m16 17 5-5-5-5" />
+    <path d="M21 12H9" />
+    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+  </symbol>
+  <symbol id="medal" viewBox="0 0 24 24">
+    <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15" />
+    <path d="M11 12 5.12 2.2" />
+    <path d="m13 12 5.88-9.8" />
+    <path d="M8 7h8" />
+    <circle cx="12" cy="17" r="5" />
+    <path d="M12 18v-2h-.5" />
+  </symbol>
+  <symbol id="message-circle" viewBox="0 0 24 24">
+    <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+  </symbol>
+  <symbol id="pencil" viewBox="0 0 24 24">
+    <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+    <path d="m15 5 4 4" />
+  </symbol>
+  <symbol id="play" viewBox="0 0 24 24">
+    <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+  </symbol>
+  <symbol id="popcorn" viewBox="0 0 24 24">
+    <path d="M18 8a2 2 0 0 0 0-4 2 2 0 0 0-4 0 2 2 0 0 0-4 0 2 2 0 0 0-4 0 2 2 0 0 0 0 4" />
+    <path d="M10 22 9 8" />
+    <path d="m14 22 1-14" />
+    <path d="M20 8c.5 0 .9.4.8 1l-2.6 12c-.1.5-.7 1-1.2 1H7c-.6 0-1.1-.4-1.2-1L3.2 9c-.1-.6.3-1 .8-1Z" />
+  </symbol>
+  <symbol id="repeat-2" viewBox="0 0 24 24">
+    <path d="m2 9 3-3 3 3" />
+    <path d="M13 18H7a2 2 0 0 1-2-2V6" />
+    <path d="m22 15-3 3-3-3" />
+    <path d="M11 6h6a2 2 0 0 1 2 2v10" />
+  </symbol>
+  <symbol id="rocket" viewBox="0 0 24 24">
+    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" />
+    <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" />
+    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" />
+  </symbol>
+  <symbol id="search" viewBox="0 0 24 24">
+    <path d="m21 21-4.34-4.34" />
+    <circle cx="11" cy="11" r="8" />
+  </symbol>
+  <symbol id="shopping-cart" viewBox="0 0 24 24">
+    <path d="m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18" />
+    <path d="M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25" />
+    <circle cx="18" cy="20" r="2" />
+    <circle cx="8" cy="20" r="2" />
+  </symbol>
+  <symbol id="star" viewBox="0 0 24 24">
+    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
+  </symbol>
+  <symbol id="trophy" viewBox="0 0 24 24">
+    <path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2" />
+    <path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2" />
+    <path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3" />
+    <path d="M4 22h16" />
+    <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" />
+    <path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3" />
+  </symbol>
+  <symbol id="tv" viewBox="0 0 24 24">
+    <path d="m17 2-5 5-5-5" />
+    <rect width="20" height="15" x="2" y="7" rx="2" />
+  </symbol>
+  <symbol id="tv-minimal-play" viewBox="0 0 24 24">
+    <path d="M15.033 9.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56V7.648a.645.645 0 0 1 .967-.56z" />
+    <path d="M7 21h10" />
+    <rect width="20" height="14" x="2" y="3" rx="2" />
+  </symbol>
+  <symbol id="x" viewBox="0 0 24 24">
+    <path d="M18 6 6 18" />
+    <path d="m6 6 12 12" />
+  </symbol>
+  <symbol id="zap" viewBox="0 0 24 24">
+    <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" />
+  </symbol>
+</svg>

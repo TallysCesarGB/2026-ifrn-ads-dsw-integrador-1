@@ -23,7 +23,12 @@ FAKE_FILM = {
     "streaming": {"stream": [], "rent": [], "buy": []},
 }
 
-FAKE_RANKING = {"category": "movies", "label": "Top 10 Filmes 🇧🇷", "items": []}
+FAKE_RANKING = {
+    "category": "movies",
+    "label": "Top 10 Filmes do Brasil",
+    "icon": "clapperboard",
+    "items": [],
+}
 
 
 @pytest.mark.django_db

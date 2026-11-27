@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static %}
+{% load static icons %}
 
 {% block title %}@{{ profile_user.username }} — CineClub{% endblock %}
 {% block content %}
@@ -8,8 +8,8 @@
     <div class="profile-header">
       <a href="{% url 'posts:feed' %}"
          class="back-btn"
-         style="margin-bottom:16px;
-                display:inline-block">←</a>
+         aria-label="Voltar ao feed"
+         style="margin-bottom:16px">{% icon "arrow-left" %}</a>
       <div class="profile-top">
         <div class="profile-avatar-wrap">
           <img src="{{ profile.avatar_url }}" alt="{{ profile_user.username }}" />
@@ -17,7 +17,8 @@
             <button class="profile-avatar-edit"
                     id="avatarEditBtn"
                     title="Trocar foto"
-                    type="button">📷</button>
+                    aria-label="Trocar foto"
+                    type="button">{% icon "camera" class="icon-sm" %}</button>
           {% endif %}
         </div>
         <div style="flex:1;min-width:0;">
@@ -74,7 +75,9 @@
             </div>
           </div>
           {% if is_me %}
-            <button class="edit-btn" id="editProfileBtn" type="button">✏️ Editar perfil</button>
+            <button class="edit-btn"
+                    id="editProfileBtn"
+                    type="button">{% icon "pencil" class="icon-sm" %} Editar perfil</button>
           {% else %}
             <button type="button"
                     class="follow-btn {% if is_following %}following{% endif %}"
@@ -97,12 +100,12 @@
       <a href="{{ profile_url }}?tipo=filmes"
          class="{% if active_tab == 'filmes' %}active{% endif %}"
          {% if active_tab == 'filmes' %}aria-current="page"{% endif %}>
-        🎬 Filmes <span class="tab-count">{{ tab_counts.filmes }}</span>
+        {% icon "clapperboard" class="icon-sm" %} Filmes <span class="tab-count">{{ tab_counts.filmes }}</span>
       </a>
       <a href="{{ profile_url }}?tipo=series"
          class="{% if active_tab == 'series' %}active{% endif %}"
          {% if active_tab == 'series' %}aria-current="page"{% endif %}>
-        📺 Séries <span class="tab-count">{{ tab_counts.series }}</span>
+        {% icon "tv" class="icon-sm" %} Séries <span class="tab-count">{{ tab_counts.series }}</span>
       </a>
     </nav>
     <div id="tab-posts">
@@ -114,17 +117,17 @@
               {% if post.poster_url %}
                 <img src="{{ post.poster_url }}" alt="{{ post.title }}" />
               {% else %}
-                <div class="post-poster-empty" style="height:100%;">🎬</div>
+                <div class="post-poster-empty" style="height:100%;">{% icon "clapperboard" %}</div>
               {% endif %}
               {% if active_tab == "todos" and post.media_type == "tv" %}
-                <span class="post-grid-badge" title="Série" aria-label="Série">📺</span>
+                <span class="post-grid-badge" title="Série">{% icon "tv" label="Série" %}</span>
               {% endif %}
             </a>
           {% endfor %}
         </div>
       {% else %}
         <div class="empty-state">
-          <div class="emoji">🍿</div>
+          <div class="empty-icon">{% icon "popcorn" %}</div>
           <p>
             {% if active_tab == "filmes" %}
               Nenhum filme indicado ainda.

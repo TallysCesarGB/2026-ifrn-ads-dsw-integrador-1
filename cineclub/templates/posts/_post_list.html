@@ -1,3 +1,5 @@
+{% load icons %}
+
 {% for post in posts %}
   <div class="post-card" data-post-id="{{ post.id }}">
     <div class="post-header">
@@ -9,33 +11,48 @@
         <a href="{% url 'accounts:profile' username=post.user.username %}"
            class="username">@{{ post.user.username }}</a>
       </div>
-      <span style="font-size:11px;color:#444;">{% if post.media_type == "tv" %}📺{% else %}🎬{% endif %}</span>
+      <span style="font-size:13px;color:#444;display:flex;">
+        {% if post.media_type == "tv" %}
+          {% icon "tv" label="Série" %}
+        {% else %}
+          {% icon "clapperboard" label="Filme" %}
+        {% endif %}
+      </span>
     </div>
     <a href="{% url 'films:detail' media_type=post.media_type tmdb_id=post.tmdb_id %}"
        class="post-poster-wrap">
       {% if post.poster_url %}
         <img src="{{ post.poster_url }}" alt="{{ post.title }}" />
       {% else %}
-        <div class="post-poster-empty">🎬</div>
+        <div class="post-poster-empty">{% icon "clapperboard" %}</div>
       {% endif %}
-      <div class="post-info-badge">ⓘ</div>
+      <div class="post-info-badge">{% icon "info" %}</div>
     </a>
     <div class="post-actions">
       <button type="button"
               class="like-btn {% if post.is_liked %}liked{% endif %}"
-              data-post-id="{{ post.id }}">
-        <span class="like-icon">{% if post.is_liked %}❤️{% else %}🤍{% endif %}</span>
+              data-post-id="{{ post.id }}"
+              aria-label="Curtir"
+              aria-pressed="{{ post.is_liked|yesno:'true,false' }}">
+        {# coração em contorno; .liked preenche via CSS #}
+        {% icon "heart" %}
         <span class="like-count">{{ post.likes_count|default_if_none:"" }}</span>
       </button>
-      <button type="button" class="comment-toggle-btn" data-post-id="{{ post.id }}">
-        💬 <span class="comment-count">{{ post.comments_count|default_if_none:"" }}</span>
+      <button type="button"
+              class="comment-toggle-btn"
+              data-post-id="{{ post.id }}"
+              aria-label="Comentários">
+        {% icon "message-circle" %}
+        <span class="comment-count">{{ post.comments_count|default_if_none:"" }}</span>
       </button>
-      <button type="button" class="recommend-btn" data-post-id="{{ post.id }}">🔁 Recomendar</button>
+      <button type="button"
+              class="recommend-btn"
+              data-post-id="{{ post.id }}">{% icon "repeat-2" %} Recomendar</button>
       {# djlint:off H054 #}
       {# o botão dentro do link herda o estilo de .post-actions button #}
       <a href="{% url 'films:detail' media_type=post.media_type tmdb_id=post.tmdb_id %}"
          style="text-decoration:none">
-        <button type="button">ⓘ Ver filme</button>
+        <button type="button">{% icon "info" %} Ver filme</button>
       </a>
       {# djlint:on #}
     </div>

@@ -2,12 +2,12 @@
 // Reimplementação do visualizador de "stories" (Stories.jsx) em vanilla JS.
 (function () {
   const CATEGORIES = [
-    { key: "movies", emoji: "🎬", label: "Filmes BR" },
-    { key: "series", emoji: "📺", label: "Séries BR" },
-    { key: "world", emoji: "🌍", label: "Top Mundo" },
-    { key: "upcoming", emoji: "🚀", label: "Lançamentos" },
-    { key: "app", emoji: "⭐", label: "CineClub" },
-    { key: "rated", emoji: "🏆", label: "Avaliados" },
+    { key: "movies", icon: "clapperboard", label: "Filmes BR" },
+    { key: "series", icon: "tv", label: "Séries BR" },
+    { key: "world", icon: "globe", label: "Top Mundo" },
+    { key: "upcoming", icon: "rocket", label: "Lançamentos" },
+    { key: "app", icon: "star", label: "CineClub" },
+    { key: "rated", icon: "trophy", label: "Avaliados" },
   ];
 
   const STORY_DURATION = 5000;
@@ -36,11 +36,13 @@
   let timer = null;
   let startedAt = 0;
 
-  function rankBadgeText(rank) {
-    if (rank === 1) return "🥇 #1 — O Melhor!";
-    if (rank === 2) return "🥈 #2 — Vice";
-    if (rank === 3) return "🥉 #3 — Pódio";
-    if (rank <= 5) return `🔥 #${rank} — Top 5`;
+  // Selo da posição: medalha ouro/prata/bronze no pódio, chama no top 5.
+  function rankBadgeHTML(rank) {
+    const icon = window.icon;
+    if (rank === 1) return `${icon("medal", "icon-sm medal-1")} #1 — O Melhor!`;
+    if (rank === 2) return `${icon("medal", "icon-sm medal-2")} #2 — Vice`;
+    if (rank === 3) return `${icon("medal", "icon-sm medal-3")} #3 — Pódio`;
+    if (rank <= 5) return `${icon("flame", "icon-sm")} #${rank} — Top 5`;
     return `#${rank} — Top 10`;
   }
 
@@ -76,11 +78,12 @@
     const currentRank = total - currentIndex;
 
     const catMeta = CATEGORIES.find((c) => c.key === currentCategory);
-    catIcon.textContent = catMeta.emoji;
+    // O ícone vem da API (`icon`); o da lista local é só fallback.
+    catIcon.innerHTML = window.icon(data.icon || catMeta.icon);
     catLabel.textContent = data.label;
     rankLabel.textContent = `#${currentRank} de ${total}`;
     rankGhost.textContent = `#${currentRank}`;
-    badge.textContent = rankBadgeText(currentRank);
+    badge.innerHTML = rankBadgeHTML(currentRank);
     titleEl.textContent = item.title;
     overviewEl.textContent = item.overview || "";
 
@@ -100,11 +103,13 @@
     }
 
     const metaParts = [];
-    if (item.year) metaParts.push(`📅 ${item.year}`);
-    if (item.rating > 0) metaParts.push(`★ ${item.rating}`);
-    if (item.total_posts > 0) metaParts.push(`🎬 ${item.total_posts} indicações`);
-    if (item.total_ratings > 0) metaParts.push(`📊 ${item.total_ratings} avaliações`);
-    metaEl.innerHTML = metaParts.map((p) => `<span>${p}</span>`).join("");
+    // Os valores vêm da API como números; só os ícones são HTML.
+    const icon = window.icon;
+    if (item.year) metaParts.push(`${icon("calendar")} ${Number(item.year)}`);
+    if (item.rating > 0) metaParts.push(`${icon("star", "rating-star")} ${Number(item.rating)}`);
+    if (item.total_posts > 0) metaParts.push(`${icon("clapperboard")} ${Number(item.total_posts)} indicações`);
+    if (item.total_ratings > 0) metaParts.push(`${icon("chart-column")} ${Number(item.total_ratings)} avaliações`);
+    metaEl.innerHTML = metaParts.map((p) => `<span class="with-icon">${p}</span>`).join("");
 
     ctaBtn.onclick = () => goToFilm(item);
     poster.onclick = () => goToFilm(item);

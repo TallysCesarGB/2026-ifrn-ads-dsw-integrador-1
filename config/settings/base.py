@@ -214,6 +214,8 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "cineclub.users.context_processors.allauth_settings",
             ],
+            # {% load icons %}: sprite SVG dos ícones (#54)
+            "libraries": {"icons": "cineclub.templatetags.icons"},
         },
     },
 ]

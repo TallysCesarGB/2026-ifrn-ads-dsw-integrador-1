@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% load static %}
+{% load static icons %}
 
 {% block title %}Nova indicação — CineClub{% endblock %}
 {% block content %}
   <div class="container-narrow" style="padding:32px 20px;max-width:520px;">
     <div class="new-post-header">
-      <a href="{% url 'posts:feed' %}" class="back-btn">←</a>
+      <a href="{% url 'posts:feed' %}" class="back-btn" aria-label="Voltar">{% icon "arrow-left" %}</a>
       <h2 class="serif"
           style="font-size:22px;
                  font-weight:900;
@@ -25,7 +25,7 @@
                placeholder="Digite o nome do filme ou série…"
                autocomplete="off"
                autofocus />
-        <span class="icon" id="searchIcon">🔍</span>
+        <span class="search-icon" id="searchIcon">{% icon "search" %}</span>
       </div>
       <div id="searchError"
            style="font-size:13px;
@@ -66,10 +66,12 @@
                       display:block;
                       margin-bottom:8px">Sua indicação (opcional)</label>
         {{ form.comment }}
-        <button type="submit" class="submit-btn" style="margin-top:20px;">🎬 Publicar indicação</button>
+        <button type="submit"
+                class="submit-btn"
+                style="margin-top:20px">{% icon "clapperboard" %} Publicar indicação</button>
       </form>
       <div class="event-note">
-        <div class="title">⚡ Publicação</div>
+        <div class="title">{% icon "zap" class="icon-sm" %} Publicação</div>
         <div class="body">
           Ao publicar, a indicação aparece imediatamente no feed de quem te segue
           (processado dentro da própria aplicação Django — sem filas externas).

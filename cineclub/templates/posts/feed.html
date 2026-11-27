@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static %}
+{% load static icons %}
 
 {% block title %}Feed — CineClub{% endblock %}
 {% block content %}
@@ -15,7 +15,7 @@
                  aria-label="Buscar pessoas por @username ou nome"
                  aria-controls="userSearchResults"
                  autocomplete="off" />
-          <span class="icon" aria-hidden="true">🔍</span>
+          <span class="search-icon">{% icon "search" %}</span>
         </div>
         <div id="userSearchResults" aria-live="polite"></div>
       </section>
@@ -24,7 +24,7 @@
           {% include "posts/_post_list.html" %}
         {% else %}
           <div class="empty-state">
-            <div class="emoji">🍿</div>
+            <div class="empty-icon">{% icon "popcorn" %}</div>
             <h3>Seu feed está vazio</h3>
             <p>Siga outros usuários ou faça sua primeira indicação!</p>
             <a href="{% url 'posts:new_post' %}"

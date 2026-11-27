@@ -33,38 +33,31 @@ MIN_QUERY_LENGTH = 2
 PLATFORMS = {
     8: {
         "name": "Netflix",
-        "emoji": "🔴",
         "web": lambda i: f"https://www.netflix.com/search?q={i}",
     },
     119: {
         "name": "Prime Video",
-        "emoji": "🔵",
         "web": lambda i: f"https://www.primevideo.com/search?phrase={i}",
     },
     337: {
         "name": "Disney+",
-        "emoji": "🟦",
         "web": lambda i: f"https://www.disneyplus.com/search/{i}",
     },
     1899: {
         "name": "Max",
-        "emoji": "🟣",
         "web": lambda i: f"https://play.max.com/search?q={i}",
     },
     531: {
         "name": "Paramount+",
-        "emoji": "⭐",
         "web": lambda i: f"https://www.paramountplus.com/search/{i}",
     },
     350: {
         "name": "Apple TV+",
-        "emoji": "⬛",
         "web": lambda i: f"https://tv.apple.com/search?term={i}",
     },
-    619: {"name": "Star+", "emoji": "⚡", "web": lambda i: "https://www.starplus.com"},
+    619: {"name": "Star+", "web": lambda i: "https://www.starplus.com"},
     167: {
         "name": "Mubi",
-        "emoji": "🎭",
         "web": lambda i: f"https://mubi.com/films/{i}",
     },
 }
@@ -164,9 +157,9 @@ def get_trailer(media_type: str, tmdb_id: int) -> dict | None:
     )
     if not trailer:
         return None
-    # autoplay=1 + mute=1: o usuário já clicou em ▶, então o vídeo começa direto
-    # (navegadores só permitem autoplay sem som). Sem enablejsapi: nenhum JS
-    # controla o player, e esse modo exigiria também o parâmetro `origin`.
+    # autoplay=1 + mute=1: o usuário já clicou no botão de play, então o vídeo
+    # começa direto (navegadores só permitem autoplay sem som). Sem enablejsapi:
+    # nenhum JS controla o player, e esse modo exigiria também o parâmetro `origin`.
     return {
         "key": trailer["key"],
         "url": f"https://www.youtube.com/embed/{trailer['key']}?rel=0&autoplay=1&mute=1",
@@ -182,7 +175,6 @@ def _build_streaming(br_providers: dict, tmdb_id: int) -> dict:
             return {
                 "provider_id": p["provider_id"],
                 "name": info["name"],
-                "emoji": info["emoji"],
                 "kind": kind,
                 "logo_url": _poster(p.get("logo_path"), "original"),
                 "web_link": info["web"](tmdb_id),
@@ -432,23 +424,25 @@ def ranking_rated() -> list[dict]:
     return _cached("rankings:rated", 60 * 15, fetch)
 
 
+# categoria: (rótulo, ícone, função). O rótulo é só texto; o `icon` é o nome
+# do símbolo no sprite Lucide (static/icons/sprite.svg) que o front desenha.
 RANKINGS = {
-    "movies": ("Top 10 Filmes 🇧🇷", ranking_movies),
-    "series": ("Top 10 Séries 🇧🇷", ranking_series),
-    "world": ("Top 10 Mundo 🌍", ranking_world),
-    "upcoming": ("Lançamentos 🚀", ranking_upcoming),
-    "app": ("Top 10 CineClub ⭐", ranking_app),
-    "rated": ("Top 10 Avaliados 🏆", ranking_rated),
+    "movies": ("Top 10 Filmes do Brasil", "clapperboard", ranking_movies),
+    "series": ("Top 10 Séries do Brasil", "tv", ranking_series),
+    "world": ("Top 10 Mundo", "globe", ranking_world),
+    "upcoming": ("Lançamentos", "rocket", ranking_upcoming),
+    "app": ("Top 10 CineClub", "star", ranking_app),
+    "rated": ("Top 10 Avaliados", "trophy", ranking_rated),
 }
 
 
 def get_ranking(category: str) -> dict:
     if category not in RANKINGS:
         raise ValueError(f"Categoria de ranking inválida: {category}")
-    label, fn = RANKINGS[category]
+    label, icon, fn = RANKINGS[category]
     try:
         items = fn()
     except TMDBError as exc:
         logger.warning("Falha ao buscar ranking %s da TMDB: %s", category, exc)
         items = []
-    return {"category": category, "label": label, "items": items}
+    return {"category": category, "label": label, "icon": icon, "items": items}

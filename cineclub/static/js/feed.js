@@ -12,8 +12,9 @@
       likeBtn.addEventListener("click", async () => {
         try {
           const data = await window.fetchJSON(`/posts/${postId}/curtir/`, { method: "POST" });
+          // O CSS preenche o coração quando o botão tem .liked
           likeBtn.classList.toggle("liked", data.liked);
-          likeBtn.querySelector(".like-icon").textContent = data.liked ? "❤️" : "🤍";
+          likeBtn.setAttribute("aria-pressed", String(data.liked));
           likeBtn.querySelector(".like-count").textContent = data.likes_count || "";
         } catch (e) {
           console.error(e);
@@ -26,7 +27,7 @@
       recommendBtn.addEventListener("click", async () => {
         try {
           await window.fetchJSON(`/posts/${postId}/recomendar/`, { method: "POST" });
-          alert("Indicação recomendada para seus seguidores! 🎬");
+          alert("Indicação recomendada para seus seguidores!");
         } catch (e) {
           console.error(e);
         }
@@ -51,7 +52,7 @@
               (c) => `
               <div class="comment-item">
                 <span class="who">@${c.username}</span> ${escapeHtml(c.content)}
-                ${c.movie_rating ? `<span style="margin-left:8px;color:#f5c518;font-size:11px;">★ ${Number(c.movie_rating).toFixed(1)}</span>` : ""}
+                ${c.movie_rating ? `<span style="margin-left:8px;color:#f5c518;font-size:11px;">${window.icon("star", "icon-sm rating-star")} ${Number(c.movie_rating).toFixed(1)}</span>` : ""}
               </div>`
             )
             .join("");

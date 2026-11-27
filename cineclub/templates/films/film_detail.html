@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static %}
+{% load static icons %}
 
 {% block title %}{{ film.title }} — CineClub{% endblock %}
 {% block content %}
@@ -40,20 +40,25 @@
           <button type="button"
                   class="play-btn"
                   id="playTrailerBtn"
-                  data-trailer-url="{{ film.trailer.url }}">▶</button>
+                  data-trailer-url="{{ film.trailer.url }}"
+                  aria-label="Assistir trailer">{% icon "play" %}</button>
         {% endif %}
       </div>
-      <a href="{% url 'posts:feed' %}" class="film-back" id="filmBackLink">← Voltar</a>
+      <a href="{% url 'posts:feed' %}" class="film-back" id="filmBackLink">{% icon "arrow-left" %} Voltar</a>
       {% if film.trailer %}
         <button type="button"
                 class="film-back"
                 id="closeTrailerBtn"
                 style="left:auto;
                        right:12px;
-                       display:none">✕ Fechar trailer</button>
+                       display:none">{% icon "x" %} Fechar trailer</button>
       {% endif %}
       <div class="film-type-badge {{ film.media_type }}" id="filmTypeBadge">
-        {% if film.media_type == "tv" %}📺 Série{% else %}🎬 Filme{% endif %}
+        {% if film.media_type == "tv" %}
+          {% icon "tv" %} Série
+        {% else %}
+          {% icon "clapperboard" %} Filme
+        {% endif %}
       </div>
     </div>
     <div class="film-hero-info" id="filmHeroInfo">
@@ -67,7 +72,8 @@
                     align-items:center;
                     justify-content:center;
                     font-size:36px;
-                    background:#111">🎬</div>
+                    color:#333;
+                    background:#111">{% icon "clapperboard" %}</div>
       {% endif %}
       <div style="flex:1;min-width:0;">
         <h1 class="film-title serif">{{ film.title }}</h1>
@@ -76,10 +82,10 @@
           {% for genre in film.genres %}<span class="genre-pill">{{ genre }}</span>{% endfor %}
         </div>
         <div class="film-meta">
-          {% if film.release_date %}<span>📅 {{ film.release_date|slice:":4" }}</span>{% endif %}
-          {% if film.runtime %}<span>⏱ {{ film.runtime }} min</span>{% endif %}
-          {% if film.seasons %}<span>📺 {{ film.seasons }} temporadas</span>{% endif %}
-          {% if film.directors %}<span>🎬 {{ film.directors|join:", " }}</span>{% endif %}
+          {% if film.release_date %}<span class="with-icon">{% icon "calendar" %} {{ film.release_date|slice:":4" }}</span>{% endif %}
+          {% if film.runtime %}<span class="with-icon">{% icon "clock" %} {{ film.runtime }} min</span>{% endif %}
+          {% if film.seasons %}<span class="with-icon">{% icon "tv" %} {{ film.seasons }} temporadas</span>{% endif %}
+          {% if film.directors %}<span class="with-icon">{% icon "clapperboard" %} {{ film.directors|join:", " }}</span>{% endif %}
         </div>
       </div>
     </div>
@@ -149,14 +155,18 @@
       {% if film.streaming.stream or film.streaming.rent or film.streaming.buy %}
         {% if film.streaming.stream %}
           <div class="stream-group">
-            <div class="label">📡 Incluído no plano</div>
+            <div class="label">{% icon "tv-minimal-play" %}Incluído no plano</div>
             <div class="stream-links">
               {% for item in film.streaming.stream %}
                 <a class="stream-btn"
                    href="{{ item.web_link }}"
                    target="_blank"
                    rel="noopener noreferrer">
-                  <img src="{{ item.logo_url }}" alt="{{ item.name }}" />
+                  {% if item.logo_url %}
+                    <img src="{{ item.logo_url }}" alt="" />
+                  {% else %}
+                    {% icon "tv-minimal-play" %}
+                  {% endif %}
                   <span>{{ item.name }}</span>
                 </a>
               {% endfor %}
@@ -165,14 +175,18 @@
         {% endif %}
         {% if film.streaming.rent %}
           <div class="stream-group">
-            <div class="label">💳 Alugar</div>
+            <div class="label">{% icon "credit-card" %}Alugar</div>
             <div class="stream-links">
               {% for item in film.streaming.rent %}
                 <a class="stream-btn"
                    href="{{ item.web_link }}"
                    target="_blank"
                    rel="noopener noreferrer">
-                  <img src="{{ item.logo_url }}" alt="{{ item.name }}" />
+                  {% if item.logo_url %}
+                    <img src="{{ item.logo_url }}" alt="" />
+                  {% else %}
+                    {% icon "tv-minimal-play" %}
+                  {% endif %}
                   <span>{{ item.name }}</span>
                 </a>
               {% endfor %}
@@ -181,14 +195,18 @@
         {% endif %}
         {% if film.streaming.buy %}
           <div class="stream-group">
-            <div class="label">🛒 Comprar</div>
+            <div class="label">{% icon "shopping-cart" %}Comprar</div>
             <div class="stream-links">
               {% for item in film.streaming.buy %}
                 <a class="stream-btn"
                    href="{{ item.web_link }}"
                    target="_blank"
                    rel="noopener noreferrer">
-                  <img src="{{ item.logo_url }}" alt="{{ item.name }}" />
+                  {% if item.logo_url %}
+                    <img src="{{ item.logo_url }}" alt="" />
+                  {% else %}
+                    {% icon "tv-minimal-play" %}
+                  {% endif %}
                   <span>{{ item.name }}</span>
                 </a>
               {% endfor %}
@@ -197,7 +215,7 @@
         {% endif %}
       {% else %}
         <div style="text-align:center;padding:20px 0;">
-          <div style="font-size:32px;margin-bottom:10px;">😔</div>
+          <div style="font-size:32px;margin-bottom:10px;color:var(--muted-2);">{% icon "frown" %}</div>
           <div style="color:var(--muted-2);font-size:14px;">Não encontrado em streaming no Brasil no momento.</div>
         </div>
       {% endif %}
@@ -207,7 +225,7 @@
                   background:rgba(255,255,255,0.03);
                   border:1px solid rgba(255,255,255,0.07)">
         <div style="font-size:11px;color:var(--muted-2);line-height:1.6;">
-          ℹ️ Disponibilidade via <strong style="color:#888">TMDB Watch Providers</strong>. Abre direto no serviço de streaming.
+          {% icon "info" class="icon-sm" %} Disponibilidade via <strong style="color:#888">TMDB Watch Providers</strong>. Abre direto no serviço de streaming.
         </div>
       </div>
     </div>
