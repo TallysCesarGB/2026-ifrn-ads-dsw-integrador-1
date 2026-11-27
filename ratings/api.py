@@ -5,9 +5,17 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Rating
+from .serializers import MediaTypeQuerySerializer
 from .serializers import MyRatingSerializer
 from .serializers import RatingCreateSerializer
 from .serializers import RatingSummarySerializer
+
+
+def _media_type_from_query(request):
+    """Lê e valida ?media_type= (400 se inválido)."""
+    query = MediaTypeQuerySerializer(data=request.query_params)
+    query.is_valid(raise_exception=True)
+    return query.validated_data["media_type"]
 
 
 class RatingCreateView(APIView):
@@ -35,9 +43,12 @@ class RatingSummaryView(APIView):
 
     permission_classes = [permissions.AllowAny]
 
-    @extend_schema(responses=RatingSummarySerializer)
+    @extend_schema(
+        parameters=[MediaTypeQuerySerializer],
+        responses=RatingSummarySerializer,
+    )
     def get(self, request, tmdb_id):
-        media_type = request.query_params.get("media_type", "movie")
+        media_type = _media_type_from_query(request)
         average, total = Rating.average_for(tmdb_id, media_type)
         return Response({"average": average, "total": total})
 
@@ -47,9 +58,9 @@ class MyRatingView(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
 
-    @extend_schema(responses=MyRatingSerializer)
+    @extend_schema(parameters=[MediaTypeQuerySerializer], responses=MyRatingSerializer)
     def get(self, request, tmdb_id):
-        media_type = request.query_params.get("media_type", "movie")
+        media_type = _media_type_from_query(request)
         score = (
             Rating.objects.filter(
                 user=request.user,

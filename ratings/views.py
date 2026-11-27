@@ -2,9 +2,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 
-from .models import MAX_SCORE
-from .models import MIN_SCORE
 from .models import Rating
+from .serializers import RatingCreateSerializer
 
 
 @login_required
@@ -13,16 +12,17 @@ def rate(request):
     """Cria/atualiza a avaliação do usuário logado para um filme/série
     (equivalente ao POST /ratings original — chamado via AJAX na página
     de detalhes do filme)."""
-    try:
-        tmdb_id = int(request.POST.get("tmdb_id"))
-        media_type = request.POST.get("media_type", "movie")
-        score = int(request.POST.get("score"))
-    except TypeError, ValueError:
-        return JsonResponse({"error": "Parâmetros inválidos."}, status=400)
+    data = {"media_type": "movie", **request.POST.dict()}
+    serializer = RatingCreateSerializer(data=data)
+    if not serializer.is_valid():
+        return JsonResponse(
+            {"error": "Parâmetros inválidos.", "fields": serializer.errors},
+            status=400,
+        )
 
-    if not MIN_SCORE <= score <= MAX_SCORE:
-        return JsonResponse({"error": "Score deve ser entre 0 e 10."}, status=400)
-
+    tmdb_id = serializer.validated_data["tmdb_id"]
+    media_type = serializer.validated_data["media_type"]
+    score = serializer.validated_data["score"]
     Rating.objects.update_or_create(
         user=request.user,
         tmdb_id=tmdb_id,
