@@ -29,6 +29,20 @@ class TestRegisterAPI:
         )
         assert response.status_code == 400
 
+    def test_register_blocked_when_registration_disabled(self, api_client, settings):
+        settings.ACCOUNT_ALLOW_REGISTRATION = False
+        response = api_client.post(
+            reverse("api-register"),
+            {
+                "username": "novo_api",
+                "email": "novo_api@example.com",
+                "password": "SenhaForte123",
+            },
+        )
+        assert response.status_code == 403
+        assert response.data["detail"] == "O cadastro de novas contas está desativado."
+        assert not User.objects.filter(username="novo_api").exists()
+
 
 @pytest.mark.django_db
 class TestLoginAPI:
@@ -47,6 +61,15 @@ class TestLoginAPI:
         url = reverse("api-token-obtain")
         response = api_client.post(url, {"email": user.email, "password": "errada"})
         assert response.status_code == 401
+
+    def test_login_unknown_email(self, api_client, user):
+        url = reverse("api-token-obtain")
+        response = api_client.post(
+            url,
+            {"email": "ninguem@example.com", "password": "senha123456"},
+        )
+        assert response.status_code == 401
+        assert "access" not in response.data
 
 
 @pytest.mark.django_db
@@ -72,6 +95,23 @@ class TestFollowAPI:
         response = api_auth_client.delete(url)
         assert response.status_code == 200
         assert response.data["following"] is False
+        assert response.data["followers_count"] == 0
+
+    def test_cannot_follow_self(self, api_auth_client, user):
+        url = reverse("api-follow-toggle", kwargs={"user_id": user.id})
+        response = api_auth_client.post(url)
+        assert response.status_code == 400
+        assert response.data["error"] == "Você não pode seguir a si mesmo."
+
+    def test_unfollow_when_not_following(self, api_auth_client, other_user):
+        url = reverse("api-follow-toggle", kwargs={"user_id": other_user.id})
+        response = api_auth_client.delete(url)
+        assert response.status_code == 200
+        assert response.data == {"following": False, "followers_count": 0}
+
+    def test_unfollow_unknown_user(self, api_auth_client):
+        url = reverse("api-follow-toggle", kwargs={"user_id": 999999})
+        assert api_auth_client.delete(url).status_code == 404
 
 
 @pytest.mark.django_db

@@ -33,3 +33,12 @@ class TestRating:
         Rating.objects.create(user=user, tmdb_id=603, media_type="movie", score=8)
         with pytest.raises(IntegrityError):
             Rating.objects.create(user=user, tmdb_id=603, media_type="movie", score=9)
+
+    def test_str_representation(self, user):
+        rating = Rating.objects.create(
+            user=user,
+            tmdb_id=603,
+            media_type="movie",
+            score=9,
+        )
+        assert str(rating) == "tallys avaliou 603 (movie) com 9"
