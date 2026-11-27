@@ -8,17 +8,13 @@
     <a href="{% url 'posts:new_post' %}"
        class="btn-gold"
        aria-label="Indicar filme">+<span class="nav-label"> Indicar</span></a>
-    <a href="{% url 'accounts:profile' username=user.username %}">
+    <a href="{% url 'accounts:profile' username=user.username %}"
+       class="avatar-link">
       <img src="{{ user.profile.avatar_url }}" alt="avatar" class="avatar-nav" />
     </a>
-    <form method="post"
-          action="{% url 'accounts:logout' %}"
-          style="display:inline">
+    <form method="post" action="{% url 'accounts:logout' %}">
       {% csrf_token %}
-      <button type="submit"
-              class="logout-btn icon-btn"
-              title="Sair"
-              aria-label="Sair">{% icon "log-out" %}</button>
+      <button type="submit" class="logout-btn" title="Sair" aria-label="Sair">{% icon "log-out" %}</button>
     </form>
   </div>
 </nav>

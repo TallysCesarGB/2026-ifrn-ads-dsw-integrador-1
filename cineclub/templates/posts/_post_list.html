@@ -11,7 +11,7 @@
         <a href="{% url 'accounts:profile' username=post.user.username %}"
            class="username">@{{ post.user.username }}</a>
       </div>
-      <span style="font-size:13px;color:#444;display:flex;">
+      <span style="font-size:13px;color:var(--muted-2);display:flex;">
         {% if post.media_type == "tv" %}
           {% icon "tv" label="Série" %}
         {% else %}
@@ -48,13 +48,8 @@
       <button type="button"
               class="recommend-btn"
               data-post-id="{{ post.id }}">{% icon "repeat-2" %} Recomendar</button>
-      {# djlint:off H054 #}
-      {# o botão dentro do link herda o estilo de .post-actions button #}
       <a href="{% url 'films:detail' media_type=post.media_type tmdb_id=post.tmdb_id %}"
-         style="text-decoration:none">
-        <button type="button">{% icon "info" %} Ver filme</button>
-      </a>
-      {# djlint:on #}
+         class="post-action-link">{% icon "info" %} Ver filme</a>
     </div>
     <div class="post-body">
       <div class="post-title">{{ post.title }}</div>

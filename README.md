@@ -153,6 +153,19 @@ docker compose up -d
 
 Se não precisar dos dados, basta `docker compose down -v`, depois `up -d` e o `migrate`.
 
+### Atalhos com `make`
+
+O `make` já vem no macOS e no Linux, sem instalar nada. Na raiz do projeto:
+
+```bash
+make local              # checa Docker e TMDB, builda, sobe, migra e carrega a demo se o banco estiver vazio
+make                    # lista todos os comandos
+make logs s=django      # logs de um serviço
+make down               # derruba os containers (mantém o banco)
+make test a="films -x"  # testes com argumentos do pytest
+make manage a=createsuperuser
+```
+
 ### Atalhos com `just`
 
 ```bash

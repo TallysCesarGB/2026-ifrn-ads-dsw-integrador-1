@@ -75,7 +75,10 @@
     if (!data || !data.items || !data.items.length) return;
     const total = data.items.length;
     const item = data.items[currentIndex];
-    const currentRank = total - currentIndex;
+    // A API devolve os itens do 1º ao 10º (items[0] é o #1). O story abre no
+    // último item e anda até o primeiro, numa contagem regressiva até o #1;
+    // a posição exibida vem do `rank` do próprio item.
+    const currentRank = item.rank || currentIndex + 1;
 
     const catMeta = CATEGORIES.find((c) => c.key === currentCategory);
     // O ícone vem da API (`icon`); o da lista local é só fallback.

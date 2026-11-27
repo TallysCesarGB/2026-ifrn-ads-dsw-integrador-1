@@ -66,7 +66,7 @@
         }
         <div style="flex:1;min-width:0;text-align:left;">
           <div style="font-weight:700;font-size:14px;color:var(--fg);margin-bottom:3px;">${escapeHtml(film.title)}</div>
-          <div style="font-size:12px;color:#666;display:flex;gap:10px;margin-bottom:4px;flex-wrap:wrap;">
+          <div style="font-size:12px;color:var(--muted);display:flex;gap:10px;margin-bottom:4px;flex-wrap:wrap;">
             <span class="pill ${film.media_type}">${typePillHTML(film.media_type)}</span>
             ${film.year ? `<span class="with-icon">${icon("calendar", "icon-sm")} ${escapeHtml(film.year)}</span>` : ""}
             ${film.rating ? `<span class="with-icon">${icon("star", "icon-sm rating-star")} ${Number(film.rating).toFixed(1)}</span>` : ""}
