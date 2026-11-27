@@ -93,6 +93,15 @@ class TestFilmSearchJSON:
         response = auth_client.get(reverse("films:search_json") + "?q=m")
         assert response.json() == []
 
+    def test_502_when_tmdb_fails(self, auth_client, mocker):
+        mocker.patch(
+            "films.services.search",
+            side_effect=services.TMDBError("TMDB 500: /search/multi"),
+        )
+        response = auth_client.get(reverse("films:search_json") + "?q=matrix")
+        assert response.status_code == 502
+        assert response.json() == {"error": "Erro ao buscar na TMDB."}
+
 
 @pytest.mark.django_db
 class TestRankingsJSON:

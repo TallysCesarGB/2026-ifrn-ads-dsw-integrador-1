@@ -31,6 +31,14 @@ class TestFilmSearchAPI:
         response = api_client.get(reverse("api-film-search") + "?q=m")
         assert response.status_code == 400
 
+    def test_search_404_on_tmdb_error(self, api_client, mocker):
+        mocker.patch(
+            "films.services.search",
+            side_effect=services.TMDBError("TMDB 500: /search/multi"),
+        )
+        response = api_client.get(reverse("api-film-search") + "?q=matrix")
+        assert response.status_code == 404
+
 
 @pytest.mark.django_db
 class TestFilmDetailAPI:
@@ -85,3 +93,13 @@ class TestStreamingAPI:
             reverse("api-streaming", kwargs={"media_type": "movie", "tmdb_id": 603}),
         )
         assert response.status_code == 200
+
+    def test_streaming_404_on_tmdb_error(self, api_client, mocker):
+        mocker.patch(
+            "films.services.get_streaming",
+            side_effect=services.TMDBError("erro"),
+        )
+        response = api_client.get(
+            reverse("api-streaming", kwargs={"media_type": "movie", "tmdb_id": 603}),
+        )
+        assert response.status_code == 404
