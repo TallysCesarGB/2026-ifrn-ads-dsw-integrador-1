@@ -14,7 +14,6 @@ class FilmSearchResultSerializer(serializers.Serializer):
 class StreamingLinkSerializer(serializers.Serializer):
     provider_id = serializers.IntegerField()
     name = serializers.CharField()
-    emoji = serializers.CharField()
     kind = serializers.CharField()
     logo_url = serializers.CharField(allow_null=True)
     web_link = serializers.CharField()
@@ -73,4 +72,7 @@ class RankingItemSerializer(serializers.Serializer):
 class RankingSerializer(serializers.Serializer):
     category = serializers.CharField()
     label = serializers.CharField()
+    icon = serializers.CharField(
+        help_text="Nome do ícone no sprite Lucide (ex.: rocket).",
+    )
     items = RankingItemSerializer(many=True)

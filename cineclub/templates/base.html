@@ -29,6 +29,15 @@
     <script>
       // Token CSRF renderizado pelo Django na <meta name="csrf-token">.
       window.CSRF_TOKEN = document.querySelector('meta[name="csrf-token"]').content;
+      // Ícones do sprite Lucide: mesmo HTML que a template tag icon gera (#54).
+      window.ICON_SPRITE = "{% static 'icons/sprite.svg' %}";
+      window.icon = function(name, extraClass) {
+        const cls = extraClass ? `icon ${extraClass}` : 'icon';
+        return `<svg class="${cls}" aria-hidden="true" focusable="false"><use href="${window.ICON_SPRITE}#${name}"></use></svg>`;
+      };
+      window.setIcon = function(svg, name) {
+        svg.querySelector('use').setAttribute('href', `${window.ICON_SPRITE}#${name}`);
+      };
       window.fetchJSON = async function(url, options = {}) {
         options.headers = Object.assign({
             'X-CSRFToken': window.CSRF_TOKEN

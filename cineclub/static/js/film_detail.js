@@ -21,7 +21,7 @@
       filmHero.classList.add("is-playing");
       trailerWrap.style.display = "block";
       backdropWrap.style.display = "none";
-      closeTrailerBtn.style.display = "block";
+      closeTrailerBtn.style.display = "inline-flex";
       filmTypeBadge.style.display = "none";
     });
   }
@@ -32,7 +32,7 @@
       trailerWrap.style.display = "none";
       backdropWrap.style.display = "block";
       closeTrailerBtn.style.display = "none";
-      filmTypeBadge.style.display = "block";
+      filmTypeBadge.style.display = "";
     });
   }
 

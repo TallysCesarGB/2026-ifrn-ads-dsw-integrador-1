@@ -1,37 +1,39 @@
+{% load icons %}
+
 <div class="stories-row" id="storiesRow">
   <button type="button" class="story-bubble" data-category="movies">
     <div class="story-ring">
-      <div class="story-ring-inner">🎬</div>
+      <div class="story-ring-inner">{% icon "clapperboard" %}</div>
     </div>
     <span class="story-label">Filmes BR</span>
   </button>
   <button type="button" class="story-bubble" data-category="series">
     <div class="story-ring">
-      <div class="story-ring-inner">📺</div>
+      <div class="story-ring-inner">{% icon "tv" %}</div>
     </div>
     <span class="story-label">Séries BR</span>
   </button>
   <button type="button" class="story-bubble" data-category="world">
     <div class="story-ring">
-      <div class="story-ring-inner">🌍</div>
+      <div class="story-ring-inner">{% icon "globe" %}</div>
     </div>
     <span class="story-label">Top Mundo</span>
   </button>
   <button type="button" class="story-bubble" data-category="upcoming">
     <div class="story-ring">
-      <div class="story-ring-inner">🚀</div>
+      <div class="story-ring-inner">{% icon "rocket" %}</div>
     </div>
     <span class="story-label">Lançamentos</span>
   </button>
   <button type="button" class="story-bubble" data-category="app">
     <div class="story-ring">
-      <div class="story-ring-inner">⭐</div>
+      <div class="story-ring-inner">{% icon "star" %}</div>
     </div>
     <span class="story-label">CineClub</span>
   </button>
   <button type="button" class="story-bubble" data-category="rated">
     <div class="story-ring">
-      <div class="story-ring-inner">🏆</div>
+      <div class="story-ring-inner">{% icon "trophy" %}</div>
     </div>
     <span class="story-label">Avaliados</span>
   </button>
@@ -49,7 +51,10 @@
            id="storyCatLabel"></div>
       <div style="font-size:11px;color:var(--muted);" id="storyRankLabel"></div>
     </div>
-    <button type="button" class="story-close" id="storyCloseBtn">✕</button>
+    <button type="button"
+            class="story-close"
+            id="storyCloseBtn"
+            aria-label="Fechar stories">{% icon "x" %}</button>
   </div>
   <div class="story-content">
     <div class="story-rank-ghost" id="storyRankGhost"></div>
@@ -62,7 +67,12 @@
       </div>
     </div>
     <p class="story-overview" id="storyOverview"></p>
-    <button type="button" class="story-cta" id="storyCta">Ver detalhes completos →</button>
-    <div class="story-hint-row"><span>← voltar</span><span>avançar →</span></div>
+    <button type="button"
+            class="story-cta with-icon"
+            id="storyCta">Ver detalhes completos {% icon "arrow-right" %}</button>
+    <div class="story-hint-row">
+      <span class="with-icon">{% icon "chevron-left" class="icon-sm" %} voltar</span>
+      <span class="with-icon">avançar {% icon "chevron-right" class="icon-sm" %}</span>
+    </div>
   </div>
 </div>

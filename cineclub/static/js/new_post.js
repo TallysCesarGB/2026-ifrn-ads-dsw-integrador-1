@@ -6,7 +6,8 @@
 
   const resultsBox = document.getElementById("searchResults");
   const errorBox = document.getElementById("searchError");
-  const icon = document.getElementById("searchIcon");
+  const searchIcon = document.getElementById("searchIcon").querySelector("svg");
+  const icon = window.icon;
   const typeFilters = document.querySelectorAll(".type-filter-opt");
 
   const searchStep = document.getElementById("searchStep");
@@ -38,7 +39,8 @@
   });
 
   async function doSearch() {
-    icon.textContent = "⏳";
+    window.setIcon(searchIcon, "loader-circle");
+    searchIcon.classList.add("icon-spin");
     try {
       const query = encodeURIComponent(input.value.trim());
       const data = await window.fetchJSON(`/filmes/buscar/?q=${query}&type=${currentType}`);
@@ -47,7 +49,8 @@
     } catch (e) {
       errorBox.textContent = "Erro ao buscar na TMDB. Verifique se a API Key está configurada.";
     } finally {
-      icon.textContent = "🔍";
+      window.setIcon(searchIcon, "search");
+      searchIcon.classList.remove("icon-spin");
     }
   }
 
@@ -59,14 +62,14 @@
         ${
           film.poster_url
             ? `<img src="${film.poster_url}" alt="${escapeAttr(film.title)}">`
-            : `<div style="width:46px;height:70px;background:#1a1a2e;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">${film.media_type === "tv" ? "📺" : "🎬"}</div>`
+            : `<div style="width:46px;height:70px;background:#1a1a2e;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;color:#444;">${icon(film.media_type === "tv" ? "tv" : "clapperboard")}</div>`
         }
         <div style="flex:1;min-width:0;text-align:left;">
           <div style="font-weight:700;font-size:14px;color:var(--fg);margin-bottom:3px;">${escapeHtml(film.title)}</div>
           <div style="font-size:12px;color:var(--muted);display:flex;gap:10px;margin-bottom:4px;flex-wrap:wrap;">
-            <span class="pill ${film.media_type}">${film.media_type === "tv" ? "📺 Série" : "🎬 Filme"}</span>
-            ${film.year ? `<span>📅 ${film.year}</span>` : ""}
-            ${film.rating ? `<span>★ ${Number(film.rating).toFixed(1)}</span>` : ""}
+            <span class="pill ${film.media_type}">${typePillHTML(film.media_type)}</span>
+            ${film.year ? `<span class="with-icon">${icon("calendar", "icon-sm")} ${escapeHtml(film.year)}</span>` : ""}
+            ${film.rating ? `<span class="with-icon">${icon("star", "icon-sm rating-star")} ${Number(film.rating).toFixed(1)}</span>` : ""}
           </div>
         </div>
       </button>`
@@ -84,13 +87,13 @@
     document.getElementById("id_title").value = film.title;
     document.getElementById("id_poster_url").value = film.poster_url || "";
 
-    document.getElementById("selectedTypePill").textContent = film.media_type === "tv" ? "📺 Série" : "🎬 Filme";
+    document.getElementById("selectedTypePill").innerHTML = typePillHTML(film.media_type);
     document.getElementById("selectedTypePill").className = `pill ${film.media_type}`;
     document.getElementById("selectedTitle").textContent = film.title;
     const metaParts = [];
-    if (film.year) metaParts.push(`📅 ${film.year}`);
-    if (film.rating) metaParts.push(`★ ${Number(film.rating).toFixed(1)}`);
-    document.getElementById("selectedMeta").textContent = metaParts.join(" · ");
+    if (film.year) metaParts.push(`<span class="with-icon">${icon("calendar", "icon-sm")} ${escapeHtml(film.year)}</span>`);
+    if (film.rating) metaParts.push(`<span class="with-icon">${icon("star", "icon-sm rating-star")} ${Number(film.rating).toFixed(1)}</span>`);
+    document.getElementById("selectedMeta").innerHTML = metaParts.join(" · ");
 
     const posterEl = document.getElementById("selectedPoster");
     if (film.poster_url) {
@@ -111,6 +114,10 @@
     resultsBox.innerHTML = "";
     input.focus();
   });
+
+  function typePillHTML(mediaType) {
+    return mediaType === "tv" ? `${icon("tv", "icon-sm")} Série` : `${icon("clapperboard", "icon-sm")} Filme`;
+  }
 
   function escapeHtml(str) {
     const div = document.createElement("div");
