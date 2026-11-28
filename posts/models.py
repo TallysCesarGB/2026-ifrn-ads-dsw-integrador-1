@@ -1,8 +1,19 @@
 from django.conf import settings
 from django.db import models
+from django.db.models import Count
 from django.urls import reverse
 
 MEDIA_TYPE_CHOICES = [("movie", "Filme"), ("tv", "Série")]
+
+
+class PostQuerySet(models.QuerySet):
+    def with_counts(self):
+        """Anota curtidas e comentários numa única query, evitando um COUNT
+        por post nas listagens (#46). Lidos por `likes_count`/`comments_count`."""
+        return self.annotate(
+            num_likes=Count("likes", distinct=True),
+            num_comments=Count("comment_set", distinct=True),
+        )
 
 
 class Post(models.Model):
@@ -24,6 +35,8 @@ class Post(models.Model):
     comment = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    objects = PostQuerySet.as_manager()
+
     class Meta:
         ordering = ["-created_at"]
         indexes = [
@@ -42,10 +55,14 @@ class Post(models.Model):
 
     @property
     def likes_count(self):
+        if hasattr(self, "num_likes"):
+            return self.num_likes
         return self.likes.count()
 
     @property
     def comments_count(self):
+        if hasattr(self, "num_comments"):
+            return self.num_comments
         return self.comment_set.count()
 
 
