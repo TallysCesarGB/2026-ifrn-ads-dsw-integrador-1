@@ -19,6 +19,7 @@ from .forms import LoginForm
 from .forms import ProfileEditForm
 from .forms import RegisterForm
 from .models import Follow
+from .models import annotate_profile_counts
 
 User = get_user_model()
 
@@ -157,14 +158,14 @@ def search_users(request):
     q = request.GET.get("q", "").strip().lstrip("@")
     results = []
     if len(q) >= MIN_SEARCH_LENGTH:
-        users = (
+        users = annotate_profile_counts(
             (
                 User.objects.filter(username__icontains=q)
                 | User.objects.filter(profile__display_name__icontains=q)
             )
             .distinct()
-            .select_related("profile")[:20]
-        )
+            .select_related("profile"),
+        )[:20]
         results = [
             {
                 "id": u.id,

@@ -20,6 +20,7 @@ from .serializers import RecommendActionSerializer
 
 
 def _annotate(qs, user):
+    qs = qs.with_counts()
     if user and user.is_authenticated:
         return qs.annotate(
             is_liked=Exists(Like.objects.filter(post=OuterRef("pk"), user=user)),

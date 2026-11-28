@@ -37,8 +37,10 @@ def _feed_queryset(user):
 
 def _annotate_posts(qs, user):
     liked_subquery = Like.objects.filter(post=OuterRef("pk"), user=user)
-    return qs.select_related("user", "user__profile").annotate(
-        is_liked=Exists(liked_subquery),
+    return (
+        qs.select_related("user", "user__profile")
+        .with_counts()
+        .annotate(is_liked=Exists(liked_subquery))
     )
 
 

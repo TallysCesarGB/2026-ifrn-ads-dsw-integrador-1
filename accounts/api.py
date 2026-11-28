@@ -15,6 +15,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .models import Follow
+from .models import annotate_profile_counts
 from .serializers import FollowActionSerializer
 from .serializers import PublicUserSerializer
 from .serializers import RegisterSerializer
@@ -108,7 +109,7 @@ class MeView(APIView):
 class UserDetailView(generics.RetrieveAPIView):
     """GET /api/v1/users/{username}/"""
 
-    queryset = User.objects.select_related("profile")
+    queryset = annotate_profile_counts(User.objects.select_related("profile"))
     serializer_class = PublicUserSerializer
     lookup_field = "username"
     permission_classes = [permissions.AllowAny]
@@ -124,14 +125,14 @@ class UserSearchView(generics.ListAPIView):
         q = self.request.query_params.get("q", "").strip().lstrip("@")
         if len(q) < MIN_SEARCH_LENGTH:
             return User.objects.none()
-        return (
+        return annotate_profile_counts(
             (
                 User.objects.filter(username__icontains=q)
                 | User.objects.filter(profile__display_name__icontains=q)
             )
             .distinct()
-            .select_related("profile")[:20]
-        )
+            .select_related("profile"),
+        )[:20]
 
 
 class FollowToggleView(APIView):
