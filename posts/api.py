@@ -13,6 +13,8 @@ from .models import Comment
 from .models import Like
 from .models import Post
 from .models import Recommendation
+from .permissions import IsCommentAuthorOrPostOwnerOrReadOnly
+from .permissions import IsOwnerOrReadOnly
 from .serializers import CommentSerializer
 from .serializers import LikeActionSerializer
 from .serializers import PostSerializer
@@ -37,6 +39,18 @@ class PostListCreateView(generics.ListCreateAPIView):
         qs = Post.objects.select_related("user", "user__profile").order_by(
             "-created_at",
         )
+        return _annotate(qs, self.request.user)
+
+
+class PostDetailView(generics.RetrieveDestroyAPIView):
+    """GET /api/v1/posts/{id}/ · DELETE exclui a própria indicação (#47)."""
+
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+    lookup_url_kwarg = "post_id"
+
+    def get_queryset(self):
+        qs = Post.objects.select_related("user", "user__profile")
         return _annotate(qs, self.request.user)
 
 
@@ -108,3 +122,22 @@ class PostCommentsView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         post = get_object_or_404(Post, id=self.kwargs["post_id"])
         serializer.save(post=post, user=self.request.user)
+
+
+class CommentDetailView(generics.RetrieveDestroyAPIView):
+    """GET/DELETE /api/v1/posts/{id}/comments/{comment_id}/ — exclui o
+    comentário se for o autor dele ou o dono do post (#47)."""
+
+    serializer_class = CommentSerializer
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly,
+        IsCommentAuthorOrPostOwnerOrReadOnly,
+    ]
+    lookup_url_kwarg = "comment_id"
+
+    def get_queryset(self):
+        return Comment.objects.filter(post_id=self.kwargs["post_id"]).select_related(
+            "post",
+            "user",
+            "user__profile",
+        )

@@ -199,6 +199,12 @@ a { color: inherit; text-decoration: none; }
 .post-actions button:hover, .post-actions .post-action-link:hover { color: var(--gold); }
 .post-actions button.liked { color: var(--danger); }
 .like-btn.liked .icon { fill: currentColor; }
+.delete-post-form { margin-left: auto; display: flex; }
+.post-actions .delete-post-btn:hover, .comment-delete-btn:hover { color: var(--danger); }
+.comment-delete-btn {
+  background: transparent; border: none; color: var(--muted-2); cursor: pointer;
+  padding: 2px 4px; margin-left: 6px; vertical-align: middle; display: inline-flex;
+}
 .post-body { padding: 0 14px 12px; }
 .post-title { font-weight: 700; font-size: 14px; color: var(--fg); }
 .post-comment { font-size: 13px; color: #999; line-height: 1.55; margin-top: 4px; }

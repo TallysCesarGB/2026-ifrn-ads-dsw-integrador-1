@@ -50,6 +50,14 @@
               data-post-id="{{ post.id }}">{% icon "repeat-2" %} Recomendar</button>
       <a href="{% url 'films:detail' media_type=post.media_type tmdb_id=post.tmdb_id %}"
          class="post-action-link">{% icon "info" %} Ver filme</a>
+      {% if post.user_id == user.id %}
+        <form method="post"
+              action="{% url 'posts:delete_post' post_id=post.id %}"
+              class="delete-post-form">
+          {% csrf_token %}
+          <button type="submit" class="delete-post-btn" aria-label="Excluir indicação">{% icon "trash-2" %}</button>
+        </form>
+      {% endif %}
     </div>
     <div class="post-body">
       <div class="post-title">{{ post.title }}</div>
