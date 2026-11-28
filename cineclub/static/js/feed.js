@@ -5,7 +5,28 @@
   if (!container) return;
 
   function bindPost(card) {
+    // "Ver mais" chama bindAll de novo: não duplica os listeners dos cards já ligados.
+    if (card.dataset.bound) return;
+    card.dataset.bound = "1";
     const postId = card.dataset.postId;
+
+    const deleteForm = card.querySelector(".delete-post-form");
+    if (deleteForm) {
+      deleteForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (!confirm("Excluir esta indicação? Essa ação não pode ser desfeita.")) return;
+        try {
+          await window.fetchJSON(deleteForm.action, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+          });
+          card.remove();
+        } catch (err) {
+          console.error(err);
+          alert("Não foi possível excluir a indicação.");
+        }
+      });
+    }
 
     const likeBtn = card.querySelector(".like-btn");
     if (likeBtn) {
@@ -50,14 +71,34 @@
           list.innerHTML = comments
             .map(
               (c) => `
-              <div class="comment-item">
+              <div class="comment-item" data-comment-id="${c.id}">
                 <span class="who">@${c.username}</span> ${escapeHtml(c.content)}
                 ${c.movie_rating ? `<span style="margin-left:8px;color:#f5c518;font-size:11px;">${window.icon("star", "icon-sm rating-star")} ${Number(c.movie_rating).toFixed(1)}</span>` : ""}
+                ${deleteCommentButton(c)}
               </div>`
             )
             .join("");
         } catch (e) {
           console.error(e);
+        }
+      });
+    }
+
+    if (commentsBox) {
+      commentsBox.addEventListener("click", async (e) => {
+        const btn = e.target.closest(".comment-delete-btn");
+        if (!btn) return;
+        const item = btn.closest(".comment-item");
+        if (!confirm("Excluir este comentário?")) return;
+        try {
+          const data = await window.fetchJSON(`/comentarios/${item.dataset.commentId}/excluir/`, {
+            method: "POST",
+          });
+          item.remove();
+          card.querySelector(".comment-count").textContent = data.comments_count || "";
+        } catch (err) {
+          console.error(err);
+          alert("Não foi possível excluir o comentário.");
         }
       });
     }
@@ -78,7 +119,7 @@
           const list = commentsBox.querySelector(".comments-list");
           list.insertAdjacentHTML(
             "beforeend",
-            `<div class="comment-item"><span class="who">@${comment.username}</span> ${escapeHtml(comment.content)}</div>`
+            `<div class="comment-item" data-comment-id="${comment.id}"><span class="who">@${comment.username}</span> ${escapeHtml(comment.content)}${deleteCommentButton(comment)}</div>`
           );
           input.value = "";
           const countEl = card.querySelector(".comment-count");
@@ -88,6 +129,11 @@
         }
       });
     }
+  }
+
+  function deleteCommentButton(c) {
+    if (!c.can_delete) return "";
+    return `<button type="button" class="comment-delete-btn" aria-label="Excluir comentário">${window.icon("trash-2", "icon-sm")}</button>`;
   }
 
   function escapeHtml(str) {

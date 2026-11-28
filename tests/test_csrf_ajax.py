@@ -12,6 +12,7 @@ import pytest
 from django.urls import reverse
 
 from films import services
+from posts.models import Comment
 
 FAKE_FILM = {
     "tmdb_id": 603,
@@ -36,6 +37,7 @@ FAKE_FILM = {
 
 def _endpoints(post, other_user):
     """(nome, url, dados do POST, status esperado com token válido)."""
+    comment = Comment.objects.create(post=post, user=post.user, content="Apagar")
     return {
         "curtir": (reverse("posts:toggle_like", args=[post.id]), {}, 200),
         "recomendar": (reverse("posts:recommend", args=[post.id]), {}, 200),
@@ -50,10 +52,25 @@ def _endpoints(post, other_user):
             200,
         ),
         "seguir": (reverse("accounts:toggle_follow", args=[other_user.id]), {}, 200),
+        "excluir_comentario": (
+            reverse("posts:delete_comment", args=[comment.id]),
+            {},
+            200,
+        ),
+        # Sem Accept: application/json responde como <form> comum: redireciona.
+        "excluir_post": (reverse("posts:delete_post", args=[post.id]), {}, 302),
     }
 
 
-ACTIONS = ["curtir", "recomendar", "comentar", "avaliar", "seguir"]
+ACTIONS = [
+    "curtir",
+    "recomendar",
+    "comentar",
+    "avaliar",
+    "seguir",
+    "excluir_comentario",
+    "excluir_post",
+]
 
 
 @pytest.mark.django_db

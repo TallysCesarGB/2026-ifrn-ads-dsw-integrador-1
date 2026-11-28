@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
 from django.core.paginator import Paginator
 from django.db.models import Exists
 from django.db.models import OuterRef
@@ -16,6 +17,7 @@ from ratings.models import Rating
 
 from .forms import CommentForm
 from .forms import NewPostForm
+from .models import Comment
 from .models import Like
 from .models import Post
 from .models import Recommendation
@@ -127,6 +129,7 @@ def list_comments(request, post_id):
             "avatar_url": c.user.profile.avatar_url,
             "content": c.content,
             "movie_rating": my_rating.get(c.user_id),
+            "can_delete": can_delete_comment(request.user, c),
             "created_at": c.created_at.isoformat(),
         }
         for c in comments
@@ -152,6 +155,46 @@ def create_comment(request, post_id):
             "avatar_url": comment.user.profile.avatar_url,
             "content": comment.content,
             "created_at": comment.created_at.isoformat(),
+            "can_delete": True,
         },
         status=201,
     )
+
+
+def can_delete_comment(user, comment):
+    """Quem escreveu o comentário ou o dono do post em que ele está (#47)."""
+    return user.id in (comment.user_id, comment.post.user_id)
+
+
+def _wants_json(request):
+    return "application/json" in request.headers.get("Accept", "")
+
+
+@login_required
+@require_POST
+def delete_post(request, post_id):
+    """Exclui a própria indicação (#47). Responde JSON para o feed (AJAX) e
+    redireciona com mensagem quando vem de um <form> comum."""
+    post = get_object_or_404(Post, id=post_id)
+    if post.user_id != request.user.id:
+        if _wants_json(request):
+            return JsonResponse({"detail": "Sem permissão."}, status=403)
+        raise PermissionDenied
+    title = post.title
+    post.delete()
+    if _wants_json(request):
+        return JsonResponse({"ok": True})
+    messages.success(request, f'Indicação de "{title}" excluída.')
+    return redirect("posts:feed")
+
+
+@login_required
+@require_POST
+def delete_comment(request, comment_id):
+    """Exclui um comentário: do próprio autor ou do dono do post (#47)."""
+    comment = get_object_or_404(Comment.objects.select_related("post"), id=comment_id)
+    if not can_delete_comment(request.user, comment):
+        return JsonResponse({"detail": "Sem permissão."}, status=403)
+    post = comment.post
+    comment.delete()
+    return JsonResponse({"ok": True, "comments_count": post.comments_count})
